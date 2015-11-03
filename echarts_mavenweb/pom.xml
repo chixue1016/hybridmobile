@@ -45,6 +45,11 @@
       <artifactId>hibernate-core</artifactId>
       <version>5.0.2.Final</version>
     </dependency>
+    <dependency>
+      <groupId>commons-httpclient</groupId>
+      <artifactId>commons-httpclient</artifactId>
+      <version>3.1</version>
+    </dependency>
   </dependencies>
   <build>
     <finalName>echarts_mavenweb</finalName>
