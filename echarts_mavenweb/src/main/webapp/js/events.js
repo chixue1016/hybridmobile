@@ -1,4 +1,4 @@
-var ip = "10.1.73.43";
+var ip = "10.1.73.55";
 var port = "8080";
 var projectId = "echarts_mavenweb";
 var serverUrl = "http://" + ip + ":" + port + "/" + projectId;
@@ -25,16 +25,16 @@ $(document).ready(function() {
 		var username = 'zcc21';//$('#name').text();	
 		$.ajax({	
 			type : "GET",		
-			url : serverUrl + "/signin.jsonp",
+			url : serverUrl + "/login.jsonp",
 			// url : serverUrl + "/signin.do?name=zcc21&callback=helloCallback",
 			//                                           %jsonp%=%jsonpCallback%
-			data : "name=" + username,					
+			data : "user=" + username + "?password=123",					
 
 			dataType : 'jsonp',
 			//jsonp : 'callback', // 默认为：callback
 			//jsonpCallback : 'helloCallback',  // 不配置，jQuery会随机分配一个名称
 			success	: function(json) {
-				$("#welcome").html(JSON.stringify(json.user));				
+				$("#welcome").html(JSON.stringify(json));				
 			}
 		});
 	});	
@@ -92,7 +92,11 @@ $(document).ready(function() {
 	});
 
 	$("#draw").click(function() {
-		draw();
+		var divId ='main';
+		var data = [{"value":335,"name":"A"},{"value":679,"name":"B"},{"value":1548,"name":"C"}];
+		var title = "故障";
+		var chart = new Chart(divId, title, data);			
+		chart.draw();
 	});
 
 	$("#selectA").click(function() {

@@ -21,7 +21,8 @@
     <mvc:annotation-driven />
 
      <!-- 设置使用注解的类所在的jar包 -->
-    <context:component-scan base-package="com.echarts" /> 
+    <context:component-scan base-package="com.echarts.controllers " /> 
+    <context:component-scan base-package="com.echarts.services " /> 
     
     <bean id="mediaTypes" class="org.springframework.beans.factory.config.MapFactoryBean">
       <property name="sourceMap">  

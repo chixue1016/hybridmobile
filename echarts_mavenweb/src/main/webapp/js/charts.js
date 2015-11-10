@@ -1,106 +1,65 @@
-require.config({
-    paths: {
-        echarts: './js'
-    }
-});
+// data : [{"value":335,"name":"A"},{"value":679,"name":"B"},{"value":1548,"name":"C"}]
 
-var currentSelected;
-var currentSelectedIndex;
-var displayedData;
-var jsonData = "[{\"value\":335,\"name\":\"A\"},{\"value\":679,\"name\":\"B\"},{\"value\":1548,\"name\":\"C\"}]";
+function Chart(divId, title, data) {
+	var _title;
+	var _data;
+	var chartOption;
+	var myChart = echarts.init(document.getElementById(divId));	
 
-var myChart;
-var option;
+	// Í¼ÐÎ²ÎÊýÅäÖÃ
+	function initOption() {
+		var type = 'pie';
+		chartOption = {
+			title : {
+                text : _title
+            },
 
-// Ê¹ÓÃ
-require(
-    [
-        'echarts',
-        'echarts/chart/pie'
-	],
-    function (ec) {
-        // »ùÓÚ×¼±¸ºÃµÄdom£¬³õÊ¼»¯echartsÍ¼±í
-        myChart = ec.init(document.getElementById('main'));
-    }
-);
+			tooltip : {
+				trigger: 'item',
+				formatter: "{a} <br/>{b} : {c} ({d}%)"
+			},
+		
+			series : [
+				{
+					name : 'Src',
+					type : type,
+					selectedMode: 'single', 
+					radius : [0, 70],						
+					data : _data
+				}						
+			]
+		};
+	}
 
-// Í¼ÐÎ²ÎÊýÅäÖÃ
-function initOption() {
-	option = {
-		tooltip : {
-			trigger: 'item',
-			formatter: "{a} <br/>{b} : {c} ({d}%)"
-		},
-		legend: {
-			orient : 'vectical',
-			x : 'left',
-			data:['A','B','C']
-		},
-		toolbox: {
-			show : true,
-			feature : {
-				mark : {show: true},
-				dataView : {show: true, readOnly: false},
-				magicType : {
-					show: true, 
-					type: ['pie', 'funnel']
-				},
-			restore : {show: true},
-			saveAsImage : {show: true}
-			}
-		},
-		calculable : false,
-		series : [
-			{
-				name:'Src',
-				type:'pie',
-				selectedMode: 'single',
-				radius : [0, 70],						
-				data : displayedData
-			}						
-		]
+	var repaint = function() {
+		myChart.setOption(chartOption);
+	}
+
+	this.setData = function(data) {		
+		_data = data;		
 	};
-}
-
-function loadData() {
-	console.log(jsonData);
-	displayedData = JSON.parse(jsonData);		
-}
-
-function draw() {			
-	initOption();
-    // Îªecharts¶ÔÏó¼ÓÔØÊý¾Ý 
-    repaint(); 
-}
-
-// ÉèÖÃµ±Ç°Ñ¡ÖÐµÄÊý¾Ý
-function select(item) {
-	var selectedItem = item;
-	if (selectedItem == null || selectedItem == currentSelected)
-	{
-		return;
+	this.getData = function() {
+		return _data;
 	}
 	
-	if (currentSelected != null)
-	{
-		displayedData[currentSelectedIndex].selected = false;
-	}
 
-	var length = displayedData.length;			
-	for (var i = 0; i < length; i++)
-	{	
-		var item = displayedData[i].name;
-		if (item == selectedItem)
-		{
-			displayedData[i].selected = true;
-			currentSelected = selectedItem;
-			currentSelectedIndex = i;
-		} 
+	this.setTitle = function(title) {
+		_title = title;
+	};
+	this.getTitle = function() {
+		return _title;
+	};
 		
-	}
-	repaint();
+
+	this.draw = function() {		
+	    // Îªecharts¶ÔÏó¼ÓÔØÊý¾Ý 
+	    repaint(); 
+	};	
+
+	// Constructor Code.
+	this.setTitle(title);
+	this.setData(data);
+	initOption();
 }
 
-function repaint() {
-	myChart.setOption(option);
-}
+
