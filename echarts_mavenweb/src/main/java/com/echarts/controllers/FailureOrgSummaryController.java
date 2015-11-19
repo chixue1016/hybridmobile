@@ -1,9 +1,7 @@
 package com.echarts.controllers;
 
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
 
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpStatus;
@@ -17,14 +15,20 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.echarts.models.LoginContext;
 
 @Controller
-public class LoginController {
-	private final String SERVICE_ID = "ncLoginService";
-	private final String ACTION_NAME = "umLogin";
+public class FailureOrgSummaryController {
+	private final String SERVICE_ID = "umCommonService";
+	private final String ACTION_NAME = "loadTodayFill";
 	private final String APP_ID = "A04500.nc.yonyou.com";
 	private final String FUN_CODE = "A04500";
+	private final String VIEW_ID = "nc.mob.ui.am.controller.NCAMFailureController";
 	
-	@RequestMapping("/login.jsonp")
-	public LoginContext login(@RequestParam String user, @RequestParam String password) throws Exception {
+	@RequestMapping("/failureOrgSummary.jsonp")
+	public String loadFailureOrgSummary(
+			@RequestParam String user, 
+			@RequestParam String password,
+			@RequestParam String groupId,
+			@RequestParam String userId) throws Exception {
+		
 		HttpClient client = new HttpClient();
 		
 		String host = "10.1.72.79";
@@ -36,7 +40,7 @@ public class LoginController {
 		JSONObject appcontext = buildAppContext(user, password);
 		dataJson.put("appcontext", appcontext);
 				
-		JSONObject servicecontext = buildServiceContext();		
+		JSONObject servicecontext = buildServiceContext(groupId, userId);		
 		dataJson.put("servicecontext", servicecontext);
 		
 		JSONObject deviceinfo = buildDeviceInfo();
@@ -52,34 +56,24 @@ public class LoginController {
 		};
 		post.setQueryString(pair);
 		
-		int status = client.executeMethod(post);		
-		if(status != HttpStatus.SC_OK){
-			return null;
+		int status = client.executeMethod(post);
+		String retStr = "";
+		if(status == HttpStatus.SC_OK){
+			InputStream in = post.getResponseBodyAsStream();
+			ByteArrayOutputStream out = new ByteArrayOutputStream();
+			int len = -1;
+			while((len = in.read()) != -1){
+				out.write(len);
+			}
+			retStr = new String(out.toByteArray());
+			System.out.println(retStr);
+			JSONObject retJson = new JSONObject(retStr);
+			
 		}
-		
-		String response = getResponse(post);
-		System.out.println(response);
-		JSONObject retJson = new JSONObject(response);
-		JSONObject retContext = retJson.getJSONObject("data").getJSONObject("resultctx");
-		String token = retContext.getString("token");
-		String userId = retContext.getString("userid");
-		String groupId = retContext.getString("groupid");
 		
 		LoginContext context = new LoginContext();
-		context.setToken(token);
-		context.setGroupId(groupId);
-		context.setUserId(userId);
-		return context;
-	}
-
-	private String getResponse(PostMethod post) throws IOException, UnsupportedEncodingException {
-		InputStream in = post.getResponseBodyAsStream();
-		ByteArrayOutputStream out = new ByteArrayOutputStream();
-		int len = -1;
-		while((len = in.read()) != -1){
-			out.write(len);
-		}
-		String retStr = new String(out.toByteArray(), "UTF-8");
+		context.setGroupId("group111");
+		context.setUserId("user222");
 		return retStr;
 	}
 	
@@ -96,14 +90,19 @@ public class LoginController {
 		return deviceinfo;
 	}
 	
-	private JSONObject buildServiceContext() {
+	private JSONObject buildServiceContext(String groupId, String userId) {
 		//servicecontext
 		JSONObject servicecontext = new JSONObject();
 		servicecontext.put("action", ACTION_NAME);
 		servicecontext.put("actionid", ACTION_NAME);
 		servicecontext.put("callback", "");
 		servicecontext.put("actionname", ACTION_NAME);
-		servicecontext.put("funcode", FUN_CODE);
+		//servicecontext.put("funcode", FUN_CODE);
+		servicecontext.put("viewid", VIEW_ID);
+		JSONObject params = new JSONObject();
+		params.put("groupid", groupId); // "0001A1100000000005TN"
+		params.put("userid", userId);	// "1001A1100000000001KM"		
+		servicecontext.put("params", params);
 		return servicecontext;
 	}
 	private JSONObject buildAppContext(String user, String password) {
@@ -114,4 +113,6 @@ public class LoginController {
 		appcontext.put("pass", password);
 		return appcontext;	
 	}
+	
+
 }

@@ -11,6 +11,11 @@ public class ClassLoaderTest {
 
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
+		
+		Super parent = new Super();
+		parent.setI(10);
+		
+		
 		ClassLoader app = ClassLoaderTest.class.getClassLoader();
 		System.out.println(app);
 		System.out.println(app.getClass().getClassLoader());
@@ -43,4 +48,25 @@ public class ClassLoaderTest {
 		System.out.println("factoryImpl : " + factory + "; loader : " + factory.getClass().getClassLoader());
 	}
 
+}
+
+class Super {
+	private int i;
+	private String s;
+	
+	public int getI() {
+		return i;
+	}
+	public void setI(int i) {
+		this.i = i;
+	}
+	public String getS() {
+		return s;
+	}
+	public void setS(String s) {
+		this.s = s;
+	}
+	
+	
+	
 }

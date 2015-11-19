@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>PanGu</title>
+
+    <script src="./js/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" href="./js/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="./js/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css">
+   
+   <!-- Latest compiled and minified JavaScript --> 
+   <script src="./js/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+   <script src="./js/echarts-all.js"></script>
+   <script src="./js/charts.js"></script> 
+   <script src="./js/org.summery.model.js"></script>
+   <script src="./js/org.summary.controller.js"></script> 
+  </head>
+  <script type="text/javascript">
+        function returnToLastPage(){
+        alert("返回");
+           //window.close();
+            window.open("./failure.html","failureWindow");
+         }
+  </script>
+   <style type="text/css">
+	  .topcss {
+         display: inline-block;
+         padding: 6px 12px 0px 12px;
+         margin-top: 10px;
+         font-size: 14px;
+         font-weight: normal;
+         line-height: 1.42857143;
+         text-align: center;
+         white-space: nowrap;
+         vertical-align: middle;
+     }
+	 .font50{
+	     font-weight:blod;
+         font-size: 50px;
+		 font-family:SimHei;
+	  }
+	  .font30{
+	     font-size:30px;
+         font-family:SimHei;
+	  }
+	  .whitefont{
+	    color:white;
+	  }
+	  .textcenter{
+	     text-align:center;
+	  }
+	  .borderdiv{
+	    height:15px;
+	    background:#EEEEEE;
+	    margin-top:15px;
+	    margin-bottom:15px;
+	  }
+	</style>
+  <body>
+    <div class="container">
+           <div class="row">
+			       <div class="col-xs-2"><a href="./failure.html" class="font50 topcss" style="color:red;text-decoration: none;">返回</a></div>
+			       <div class="col-xs-8  topcss font50" > 总览</div>
+			</div>
+			<hr>
+			<div style="background:#3399CC;">
+			       <div class="row">
+			          <div class="col-xs-6 font30 whitefont textcenter">9</div>
+			          <div class="col-xs-6 font30 whitefont textcenter">58h</div>
+			       </div>
+			        <div class="row">
+			          <div class="col-xs-6 font30 whitefont textcenter">故障次数</div>
+			          <div class="col-xs-6 font30 whitefont textcenter">停机时长</div>
+			       </div>
+			</div>
+			<hr>
+			<div class="row">
+			    <div class="col-xs-12 font30 textcenter">天瑞集团总公司第一炼油厂</div>
+			</div>
+			<div class="borderdiv"></div>
+           <div id="failureType" style="height:500px;width:500px; margin:0 auto;"></div>
+           <div class="borderdiv"></div>
+           <div id="failureReason"  style="height:500px;width:500px; margin:0 auto;"></div>
+           <div class="borderdiv"></div>
+           <div id="failureSymptom"  style="height:500px;width:500px;margin:0 auto;"></div>
+    </div>
+
+
+  </body>
+  <script type="text/javascript">
+      var data = failureOrgSummaryController.onSelect('12');
+    
+     var failureTypeChart = new PieChart("failureType", '故障类别', data.failureType);
+     failureTypeChart.draw();
+     
+     
+     var failureReasonChart = new BarChart("failureReason", '故障原因', data.failureReason, true);
+     failureReasonChart.draw();
+     
+     
+     var failureSymptomChart = new BarChart("failureSymptom", '故障现象', data.failureSymptom, false);
+     failureSymptomChart.draw();
+     
+     
+      
+  </script>
+</html>

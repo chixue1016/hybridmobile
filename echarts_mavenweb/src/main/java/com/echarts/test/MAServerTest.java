@@ -66,7 +66,7 @@ public class MAServerTest extends TestCase {
 			String tpStr = "none";//none
 			StringPart tp = new StringPart("tp", tpStr);
 		
-			dataStr = UMProtocolManager.getEncryption(tpStr).decode(dataStr);
+			//dataStr = UMProtocolManager.getEncryption(tpStr).decode(dataStr);
 			StringPart data = new StringPart("data", dataStr);
 			
 			Part[] parts = new Part[]{tp,data};

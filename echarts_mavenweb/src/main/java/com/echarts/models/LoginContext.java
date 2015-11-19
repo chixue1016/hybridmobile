@@ -5,12 +5,24 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonAutoDetect
 public class LoginContext {
+	@JsonProperty("token")
+	private String token;
+	
 	@JsonProperty("groupId")
 	private String groupId;
 	
 	@JsonProperty("userId")
 	private String userId;
 
+
+	public String getToken() {
+		return token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
+	}
+	
 	public String getGroupId() {
 		return groupId;
 	}

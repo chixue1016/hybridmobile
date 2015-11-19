@@ -28,5 +28,10 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="D:/majars/mobem_pub.jar"/>
+	<classpathentry kind="lib" path="D:/majars/log.jar"/>
+	<classpathentry kind="lib" path="C:/Users/wangzhaod/Desktop/登录jar/httpmime-4.1.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/wangzhaod/Desktop/登录jar/umcontrol.jar"/>
+	<classpathentry kind="lib" path="C:/Users/wangzhaod/Desktop/登录jar/umcore.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

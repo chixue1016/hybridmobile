@@ -40,8 +40,8 @@ public class NCLoginTestCase extends TestCase {
 			dataJson.put("appcontext", appcontext);
 			//servicecontext
 			JSONObject servicecontext = new JSONObject();
-			servicecontext.put("action", "");
-			servicecontext.put("actionid", "");
+			servicecontext.put("action", "umLogin");
+			servicecontext.put("actionid", "umLogin");
 			servicecontext.put("callback", "");
 			servicecontext.put("actionname", "umLogin");
 			servicecontext.put("funcode", "A04500");

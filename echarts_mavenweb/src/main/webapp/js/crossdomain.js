@@ -1,5 +1,5 @@
  var localHandler = function(data){
-        alert('远程js数据是：' + data.result);
+        alert('远程js数据是：' + data);
  };
 
  var url = "http://10.1.73.47:8088/echarts_mavenweb/signin.do?name=zcc21&callback=localHandler";
