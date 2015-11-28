@@ -190,55 +190,88 @@ function BarChart(divId, title, data, isVertical) {
 function CircleChart(divId, title, data) {
 	var _title;
 	var _data;
-	var _values = [];
+	var _serieDatas = [];
 
 	var _type = 'pie';
 	var chartOption;
 	var myChart = echarts.init(document.getElementById(divId));	
 
+	function dataFormat() {
+		if (_data == null) {
+			return;
+		}
+
+		var length 	= _data.length;
+		var sum		= 0;
+		for (var i = 0; i < length; i++)
+		{				
+			var value = _data[i].value;
+			sum += value;						
+		}
+
+		for (var i = 0; i < length; i++)
+		{	
+			var value = _data[i].value;
+			var other = { name : 'other', value : sum - value };
+			_serieDatas[i] = [ data[i], other ];						
+		}
+
+		alert( JSON.stringify( _serieDatas ) ); 		
+	}
+
 	var labelTop = {
-    normal : {
-        label : {
-            show : true,
-            position : 'center',
-            formatter : '{b}',
-            textStyle: {
-                baseline : 'bottom'
-            }
-        },
-        labelLine : {
-            show : false
-        }
-    }
-};
-var labelFromatter = {
-    normal : {
-        label : {
-            formatter : function (params){
-                return 100 - params.value + '%'
-            },
-            textStyle: {
-                baseline : 'top'
-            }
-        }
-    },
-}
-var labelBottom = {
-    normal : {
-        color: '#ccc',
-        label : {
-            show : true,
-            position : 'center'
-        },
-        labelLine : {
-            show : false
-        }
-    },
-    emphasis: {
-        color: 'rgba(0,0,0,0)'
-    }
-};
-var radius = [40, 55];
+    	normal : {
+        	label : {
+            	show : true,
+            	position : 'center',
+            	formatter : '{b}',
+            	textStyle: {
+            		color	 : '#000000',
+            		fontSize : 15,
+                	baseline : 'bottom'
+            	}
+        	},
+        	labelLine : {
+            	show : false
+        	}
+    	}
+	};
+	var labelFromatter = {
+    	normal : {
+        	label : {
+            	formatter : function (params){
+                	return 100 - params.value + '%'
+            	},
+            	textStyle: {
+                	baseline : 'top'
+            	}
+        	}
+    	},
+	};
+
+	var labelBottom = {
+    	normal : {
+        	color: '#ccc',
+        	label : {
+            	show : true,
+            	position : 'center'
+        	},
+        	labelLine : {
+            	show : false
+        	}
+    	},
+    	emphasis: {
+        	color: 'rgba(233,43,22,0)'
+    	}
+	};
+
+	var width = window.screen.width;
+	alert(width);
+	var outerRadius = width * 0.12;
+	var innerRadius	= outerRadius * 0.5;
+	var radius = [ innerRadius, outerRadius ];
+	alert(radius);
+	var centers = [ '20%', '50%', '80%' ];
 	
 	function initOption() {	
 		chartOption = {    
@@ -246,11 +279,33 @@ var radius = [40, 55];
         		text: 'The App World',     
         		x: 'center'
     		},
+    		color	:  [ 
+    			'#ff7f50', '#87cefa', '#da70d6', '#32cd32', '#6495ed', 
+    			'#ff69b4', '#ba55d3', '#cd5c5c', '#ffa500', '#40e0d0', 
+    			'#1e90ff', '#ff6347', '#7b68ee', '#00fa9a', '#ffd700', 
+    			'#6b8e23', '#ff00ff', '#3cb371', '#b8860b', '#30e0e0' 
+			],
 
     		series : [
         		{
             		type : 'pie',
-            		center : ['10%', '30%'],
+            		center : [ centers[0], '30%'],
+            		radius : radius,
+            		x: '0%', // for funnel
+            		itemStyle : labelFromatter,
+            		data : _serieDatas[0]
+        		},
+        		{
+            		type : 'pie',
+            		center : [ centers[1], '30%'],
+            		radius : radius,
+            		x:'20%', // for funnel
+            		itemStyle : labelFromatter,
+            		data : _serieDatas[1]		
+        		},
+        		{
+            		type : 'pie',
+            		center : [ centers[2], '30%'],
             		radius : radius,
             		x: '0%', // for funnel
             		itemStyle : labelFromatter,
@@ -258,18 +313,7 @@ var radius = [40, 55];
                 		{name:'other', value:46, itemStyle : labelBottom},
                 		{name:'GoogleMaps', value:54,itemStyle : labelTop}
             		]
-        		},
-        		{
-            		type : 'pie',
-            		center : ['30%', '30%'],
-            		radius : radius,
-            		x:'20%', // for funnel
-            		itemStyle : labelFromatter,
-            		data : [
-                		{name:'other', value:56, itemStyle : labelBottom},
-                		{name:'Facebook', value:44,itemStyle : labelTop}
-            		]		
-        		}        
+        		},        
     		]
 		};
 	}
@@ -300,6 +344,7 @@ var radius = [40, 55];
 	// Constructor Code.
 	this.setTitle(title);
 	this.setData(data);
+	dataFormat();
 	initOption();
 }
 

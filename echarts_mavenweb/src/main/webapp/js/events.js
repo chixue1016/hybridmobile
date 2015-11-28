@@ -10,6 +10,13 @@ $(document).bind( "mobileinit", function() {
 });
 
 $(document).ready(function() {
+	var data = [
+		{ "name" : "11", "value" : 123 },
+		{ "name" : "22", "value" : 456 },
+	];
+	var circleChart = new CircleChart("main", "", data);
+    circleChart.draw(); 
+
 	function ajaxtest() {		
 		var username = 'zcc21';//$('#name').text();	
 		$.get({					
