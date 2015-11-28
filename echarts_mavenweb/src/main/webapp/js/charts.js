@@ -23,7 +23,7 @@ function PieChart(divId, title, data) {
 				{					
 					type : _type,
 					selectedMode: 'single', 
-					radius : [0, 90],						
+					radius : '75%',						
 					data : _data
 				}						
 			]
@@ -187,5 +187,119 @@ function BarChart(divId, title, data, isVertical) {
 	initOption();
 }
 
+function CircleChart(divId, title, data) {
+	var _title;
+	var _data;
+	var _values = [];
 
+	var _type = 'pie';
+	var chartOption;
+	var myChart = echarts.init(document.getElementById(divId));	
+
+	var labelTop = {
+    normal : {
+        label : {
+            show : true,
+            position : 'center',
+            formatter : '{b}',
+            textStyle: {
+                baseline : 'bottom'
+            }
+        },
+        labelLine : {
+            show : false
+        }
+    }
+};
+var labelFromatter = {
+    normal : {
+        label : {
+            formatter : function (params){
+                return 100 - params.value + '%'
+            },
+            textStyle: {
+                baseline : 'top'
+            }
+        }
+    },
+}
+var labelBottom = {
+    normal : {
+        color: '#ccc',
+        label : {
+            show : true,
+            position : 'center'
+        },
+        labelLine : {
+            show : false
+        }
+    },
+    emphasis: {
+        color: 'rgba(0,0,0,0)'
+    }
+};
+var radius = [40, 55];
+	
+	function initOption() {	
+		chartOption = {    
+    		title : {
+        		text: 'The App World',     
+        		x: 'center'
+    		},
+
+    		series : [
+        		{
+            		type : 'pie',
+            		center : ['10%', '30%'],
+            		radius : radius,
+            		x: '0%', // for funnel
+            		itemStyle : labelFromatter,
+            		data : [
+                		{name:'other', value:46, itemStyle : labelBottom},
+                		{name:'GoogleMaps', value:54,itemStyle : labelTop}
+            		]
+        		},
+        		{
+            		type : 'pie',
+            		center : ['30%', '30%'],
+            		radius : radius,
+            		x:'20%', // for funnel
+            		itemStyle : labelFromatter,
+            		data : [
+                		{name:'other', value:56, itemStyle : labelBottom},
+                		{name:'Facebook', value:44,itemStyle : labelTop}
+            		]		
+        		}        
+    		]
+		};
+	}
+
+	function repaint() {
+		myChart.setOption(chartOption);
+	}
+
+	this.setData = function(data) {		
+		_data = data;		
+	};
+	this.getData = function() {
+		return _data;
+	};	
+
+	this.setTitle = function(title) {
+		_title = title;
+	};
+	this.getTitle = function() {
+		return _title;
+	};		
+
+	this.draw = function() {		
+	    // Îªecharts¶ÔÏó¼ÓÔØÊý¾Ý 
+	    repaint(); 
+	};	
+
+	// Constructor Code.
+	this.setTitle(title);
+	this.setData(data);
+	initOption();
+}
 

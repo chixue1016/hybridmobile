@@ -3,6 +3,7 @@ package com.echarts.views;
 import java.io.OutputStream;
 import java.util.HashSet;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
@@ -33,11 +34,21 @@ public class MappingJackson2JsonpView extends MappingJackson2JsonView {
 			Map<String, String[]> params = request.getParameterMap();
 			if ( params.containsKey("callback") ) {
 				OutputStream out = response.getOutputStream();
-				out.write((params.get("callback")[0] + "(").getBytes());
-				super.render(model, request, response);
-				out.write((")").getBytes());
+				String responseJsonp = params.get("callback")[0] + "(";				
+		
+				Set<String> renderedAttributes = (!CollectionUtils.isEmpty(getModelKeys()) ? getModelKeys() : model.keySet());
+				for (Entry<String, ?> entry : model.entrySet()) {
+					if (!(entry.getValue() instanceof BindingResult) && renderedAttributes.contains(entry.getKey())) {					
+						responseJsonp += entry.getValue().toString();
+					}					
+				}
+				responseJsonp += ")";
+				
+				//out.write(model.toString().getBytes());
+				//super.render(model, request, response);
+				out.write(responseJsonp.getBytes("UTF-8"));
 				response.setContentType("application/javascript");
-			} else {
+			} else { 
 				super.render(model, request, response);
 			}			
 		} else {

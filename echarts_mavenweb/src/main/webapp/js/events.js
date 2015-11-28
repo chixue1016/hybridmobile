@@ -1,4 +1,4 @@
-var ip = "10.1.73.54";
+var ip = "10.1.73.40";
 var port = "8080";
 var projectId = "echarts_mavenweb";
 var serverUrl = "http://" + ip + ":" + port + "/" + projectId;
@@ -114,7 +114,8 @@ $(document).ready(function() {
 	});
 
 	$("#draw").click(function() {
-		draw();
+		var circleChart = new CircleChart("main", "", "");
+		circleChart.draw();
 	});
 
 	$("#selectA").click(function() {

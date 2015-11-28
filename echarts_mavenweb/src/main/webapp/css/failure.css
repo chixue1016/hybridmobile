@@ -1,0 +1,65 @@
+.labelheight{
+	font-size: 35px;
+	padding-top: 3px;
+	display: inline;
+}
+.height50px{
+	height: 50px;
+}
+.hovercolor{
+	border-color: red;
+	border-width: 2px;
+	border-left-width: 1px;
+	border-right-width: 1px;
+}
+.hovercolor:hover,
+.hovercolor.hover{
+	background: red;
+	border-color: red;
+	color: white;
+}
+.hovercolor:first-child{
+	border-left-width: 2px;
+}
+.hovercolor:last-child{
+	border-right-width: 2px;
+}  
+ 
+.col1{
+	width: 50%;
+}
+	  
+.col2{
+	width: 25%;
+}
+.col3{
+	width: 25%;
+}
+.table-hover{
+	     
+}
+.table-hover>tbody>tr:hover>td{
+	background: red;
+}
+.marginbottom40px{
+	margin-bottom:40px;
+}
+.relative_position{
+  position:relative;
+  height:60px;
+}
+.absolute_position_left{
+    position:absolute;
+    left:0px;
+} 
+.absolute_position_right{
+    position:absolute;
+    right:0px
+}
+.width47persent{
+   width:47%;
+}
+
+.separator_div{
+  height:20px;
+}

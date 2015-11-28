@@ -1,0 +1,47 @@
+.font35 {
+   font-size: 35px;
+}
+.font40{
+    font-weight: blod;
+    font-size: 40px;
+    font-family: SimHei;
+}
+.height60px {
+   height: 60px;
+   padding-top: 3px;
+   display: inline;
+}
+.width35px{
+   width : 35px;
+   height: 35px;
+}
+.bottommargin10px{
+   margin-bottom: 10px;
+}
+.hiddenBorder{
+   border-style: none;
+}
+.leftfloat{
+    float: left;
+}
+.rightfloat{
+    float: right;
+}
+input:focus,
+input.focus{
+    outline: none; 
+}
+.paddingleft15px{
+    padding-left: 15px;
+}
+        
+.paddingright15px{
+    padding-right: 15px;
+}
+.height80px{
+    height: 80px;
+}
+        
+.redbackground{
+    background: red;
+}

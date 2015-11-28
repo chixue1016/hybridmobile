@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>PanGu</title>
+        <script src="./js/jquery-1.11.3.min.js"></script>
+        <link rel="stylesheet" href="./js/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="./js/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="./css/common.css">
+        <!-- Latest compiled and minified JavaScript --> 
+        <script src="./js/cache.js"></script> 
+        <script src="./js/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+        <script src="./js/echarts-2.2.7/echarts-all.js"></script>
+        <script src="./js/echarts-2.2.7/pie.js"></script>
+        <script src="./js/echarts-2.2.7/bar.js"></script>   
+        <script src="./js/charts.js"></script>
+        <script src="./js/login.context.js"></script> 
+        <script src="./js/failure.snapshot.js"></script> 
+        <script src="./js/pseudo.data.local.js"></script>
+        <script src="./js/pseudo.data.remote.js"></script> 
+        <script src="./js/failure.model.js"></script>
+        <script src="./js/failure.controller.js"></script>  
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+			    <div class="col-xs-2">
+                    <a href="./failure.html" class="font50 topcss textcenter" style="color:red;text-decoration: none;">返回</a>
+                </div>
+			    <div id="title" class="col-xs-8  topcss font50 textcenter"></div>
+			</div>
+			<hr>
+
+			<div style="background:#3399CC;">
+			    <div class="row">
+			        <div id="haltedTimes" class="col-xs-6 font30 whitefont textcenter">9</div>
+			        <div id="haltedHours" class="col-xs-6 font30 whitefont textcenter">58h</div>
+			    </div>
+
+			    <div class="row">
+			        <div class="col-xs-6 font30 whitefont textcenter">故障次数</div>
+			        <div class="col-xs-6 font30 whitefont textcenter">停机时长</div>
+			    </div>
+			</div>
+			<hr>
+
+			<div class="row">
+			    <div class="col-xs-12 font30 textcenter">天瑞集团总公司第一炼油厂</div>
+			</div>
+
+			<div class="borderdiv"></div>
+            <div id="chart1" style="height:500px;width:500px; margin:0 auto;"></div>
+            <div class="borderdiv"></div>
+            <div id="chart2" style="height:500px;width:500px; margin:0 auto;"></div>
+            <div class="borderdiv"></div>
+            <div id="chart3" style="height:500px;width:500px;margin:0 auto;"></div>
+        </div>
+    </body>
+
+    <script src="./js/failure.detail.view.js"></script>
+</html>

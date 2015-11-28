@@ -23,7 +23,7 @@ public class MAServerTest extends TestCase {
 	
 	protected void setUp() throws Exception {
 		client = new HttpClient();
-		post = new PostMethod("http://10.1.72.79:80/umserver/core");
+		post = new PostMethod("http://10.1.73.49:80/umserver/core");
 	}
 
 	public void test(){
@@ -32,20 +32,21 @@ public class MAServerTest extends TestCase {
 			//appcontext
 			JSONObject appcontext = new JSONObject();
 			appcontext.put("appid", "A04500.nc.yonyou.com");
-			appcontext.put("user", "zhoud");
+			appcontext.put("user", "songyp");
 			appcontext.put("pass", "yonyou1");
 			//appcontext.put("token", "00000150d08bc7a139423538363245303345333236313338333342394430334541443730333343442e7365727665723293e21333b73280c9523745445598d5044c4ef625614f25e5f5ad8200000150d08bc7a1");
 			dataJson.put("appcontext", appcontext);
 			//servicecontext
 			JSONObject servicecontext = new JSONObject();
-			servicecontext.put("action", "loadTodayFill");
-			servicecontext.put("actionid", "loadTodayFill");
+			servicecontext.put("action", "querySummaryList");
+			servicecontext.put("actionid", "querySummaryList");
 			servicecontext.put("callback", "nothing");
-			servicecontext.put("actionname", "loadTodayFill");
-			servicecontext.put("viewid", "nc.mob.ui.am.controller.NCAMFailureController");
+			servicecontext.put("actionname", "querySummaryList");
+			servicecontext.put("funcode", "A04500");
+			servicecontext.put("viewid", "nc.mob.ui.am.controller.NCAMFailureAnalyzeController");
 			JSONObject params = new JSONObject();
-			params.put("groupid","0001A1100000000005TN");
-			params.put("userid","1001A1100000000001KM");			
+			params.put("bmonth","2014-01-01 00:00:00");
+			params.put("emonth","2015-11-31 23:59:59");			
 			servicecontext.put("params", params);
 			dataJson.put("servicecontext", servicecontext);
 			//deviceinfo

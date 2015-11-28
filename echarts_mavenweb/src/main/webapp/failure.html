@@ -1,200 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <!-- <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />-->
+		<meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+		<title>PanGu</title>		
+		<link rel="stylesheet" href="./js/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="./js/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="./css/failure.css">
+		<link rel="stylesheet" href="./css/common.css">
 
-       <meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>PanGu</title>
-
-    <script src="./js/jquery-1.11.3.min.js"></script>
-     
-    <link rel="stylesheet" href="./js/bootstrap-3.3.5-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./js/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css">
-     
-   <!-- Latest compiled and minified JavaScript -->  
-   <script src="./js/cordova-2.6.0.js" charset="utf-8"></script>
-   <script src="./js/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
-  
-   <script src="./js/cache.js"></script>
-   <script src="./js/org.summery.model.js"></script>
-   <script src="./js/org.summary.controller.js"></script>
-    <!-- Cross Domain Test -->
-    <!--
-   <script src="./js/crossdomain.js"></script>
-    -->
-
-   <style type="text/css">
-	 .topcss {
-         display: inline-block;
-         padding: 6px 12px 0px 12px;
-         margin-top: 10px;
-         font-size: 14px;
-         font-weight: normal;
-         line-height: 1.42857143;
-         text-align: center;
-         white-space: nowrap;
-         vertical-align: middle;
-     }
-	 .font50{
-	     font-weight:blod;
-         font-size: 50px;
-		 font-family:SimHei;
-	  }
-	  .labelheight{
-		 font-size: 35px;
-		 padding-top:3px;
-		 display: inline;
-		 text-align: center;
-	  }
-      .font30{
-	     font-size:30px;
-         font-family:SimHei;
-	  }
-	  .height50px{
-	    height:50px;
-	  }
-	  .hovercolor{
-	    border-color:red;
-	    border-width:2px;
-	    border-left-width:1px;
-	    border-right-width:1px;
-	  }
-	  .hovercolor:hover,
-	  .hovercolor.hover{
-	    background:red;
-	    border-color:red;
-	    color:white;
-	  }
-	  .hovercolor:first-child{
-	    border-left-width:2px;
-	  }
-	  .hovercolor:last-child{
-	    border-right-width:2px;
-	  }  
-	  .left45persent{
-	    width:47%;
-	    float:left;
-	  }
-	  .right45persent{
-	    width:47%;
-	    float:right;
-	  }
-	  .col1{
-	     width:50%;
-	  }
-	  
-	  .col2{
-	     width:25%;
-	  }
-	  .col3{
-	     width:25%;
-	  }
-	  .table-hover{
-	     
-	  }
-	  .table-hover>tbody>tr:hover>td{
-	    background:red;
-	  }
-  </style>
-  <script type="text/javascript">
-     //给窗口一个名称，打开其他窗口返回的时候直接根据名称打开该窗口，避免在此加载影响性能
-     window.name = "failureWindow";
-     alert("打开窗口failure");
-
-     var loginContext = Cache.get("loginContext");
-     alert(loginContext.getGroupId());
-  </script>
-  </head>
-  <body>
-  
-       <div class="container">
-	         <div class="row">
-			       <div class="col-xs-2"><a href="./login.html" class="font50 topcss" style="color:red;text-decoration: none;">返回</a></div>
-			       <div class="col-xs-8  topcss font50" > 故障分析</div>
-			 </div>
-			 <hr>
-
- 			 <div id="btngroup" class="btn-group btn-group-justified" role="group" aria-label="...">
-	             <a href="#" role="button" class="btn btn-default font50 hovercolor hover" id="defaultSelectBtn">总览</a>
-                 <a href="#" role="button" class="btn btn-default font50 hovercolor">类别</a>
-			     <a href="#" role="button" class="btn btn-default font50 hovercolor">现象</a>
-			     <a href="#" role="button" class="btn btn-default font50 hovercolor">原因</a>
-	        </div>
+		<script src="./js/jquery-1.11.3.min.js"></script>
+		<script src="./js/const.js"></script>
+		<script src="./js/cordova-2.6.0.js" charset="utf-8"></script>
+		<script src="./js/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+		<script src="./js/cache.js"></script> 
+		<script src="./js/pseudo.data.local.js"></script>
+		<script src="./js/pseudo.data.remote.js"></script>
+		<script src="./js/login.context.js"></script> 
+		<script src="./js/failure.snapshot.js"></script>
+		<script src="./js/failure.model.js"></script>
+		<script src="./js/failure.controller.js"></script>
+		<script type="text/javascript">
+			//给窗口一个名称，打开其他窗口返回的时候直接根据名称打开该窗口，避免再次加载影响性能
+			window.name = "failureWindow";
+		</script>
+	</head>
+	<body>  
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-2">
+					<a href="./login.html" class="font50 topcss textcenter" style="color:red;text-decoration: none;">返回</a>
+				</div>
+				<div class="col-xs-8 topcss font50 textcenter">故障分析</div>
+			</div>
 			<hr>
 
-          
-           <div>
-                <label for="starttime" class="labelheight height50px left45persent">开始日期</label>
-                <label for="endtime"   class="labelheight height50px right45persent" >结束日期</label>
-                <input type="text"  id="starttime"   class="height50px left45persent font30"/>
-                <input type="text"  id="endtime" class="height50px right45persent font30"/> 
-           </div>
-	                       
-		   <br/><br/><br/><br/><br/><hr> 
-		   
- 		       <table id="datainfo" class="table table-striped table-hover font30">
- 		              <colgroup>
- 		                  <col class="col1"></col>
- 		                  <col class="col2"></col>
- 		                  <col class="col3"></col>
- 		              </colgroup>
-                      <thead>
-					        <tr  id="tablehead">
-							     <th>名称</th>
-								 <th>停机次数</th>
-								 <th>停机时长</th>
-							</tr>
-					  </thead>
-					  <tbody id="tableBody">
-					  </tbody>
-			   </table>
- 	   </div>
- 	   <script type="text/javascript"> 
- 	          var  currPressedButton ;
- 	         $(document).ready(function(){
- 	             currPressedButton = $("#defaultSelectBtn");
-                 var jsonArray = failureOrgSummaryController.getAll();
-                 
-                 for(var i=0;i<jsonArray.length;i++){
-                     var item = jsonArray[i];
-                     
-                     var org_id = item.orgId;
-                     var org_name = item.orgName;
-                     var halt_times = item.haltedTimes;
-                     var halt_hours = item.haltedHours;
-                     
-                     var body = document.getElementById("tableBody");
-                     var row = body.insertRow(i);
-                     
-                     row.insertCell(0).innerHTML=org_name;
-                     row.insertCell(1).innerHTML=halt_times;
-                     row.insertCell(2).innerHTML=halt_hours;
-                     row.firstChild.setAttribute("id",org_id);
-                     
-                 }
-              });
-              
-              
- 	        
-             $("#btngroup").on( "click", "a" , function(event){
-                                 if(currPressedButton!=null&&currPressedButton!="undefined"){
-                                       currPressedButton.removeClass("hover");
-                                 }
-                                 currPressedButton =  $(this);
-                                 $(this).addClass("hover");
-                                 
-                          } );
-               
-              $("#tableBody").on("click","td",function(event){
-                    var  org_id = $(this).attr("id");
-                    if(org_id!=null && org_id!="undefined"){
-                        window.open("./failureOrgDetail.html?org_id="+org_id);
-                    }
-              })
-        </script>
-  </body>
+			<div id="btngroup" class="btn-group btn-group-justified" role="group" aria-label="...">
+				<a href="#" id="failureOrg" role="button" class="btn btn-default font50 hovercolor">总览</a>
+				<a href="#" id="failureType" role="button" class="btn btn-default font50 hovercolor">类别</a>
+				<a href="#" id="failureSymptom" role="button" class="btn btn-default font50 hovercolor">现象</a>
+				<a href="#" id="failureReason" role="button" class="btn btn-default font50 hovercolor">原因</a>
+			</div>
+			<hr>
+            <!--
+			<div class="relative_position" >
+				<label for="starttime" class="labelheight height50px width47persent absolute_position_left textcenter">开始日期</label>
+				<label for="endtime" class="labelheight height50px width47persent absolute_position_right textcenter" >结束日期</label>
+			</div>
+
+			<div class="relative_position">
+				<input type="month"  id="startTime"  class="height50px font30 width47persent absolute_position_left textcenter"/>
+				<input type="month"  id="endtime" class="height50px  font30 width47persent absolute_position_right textcenter"/> 
+			</div>
+            -->
+            <div class="row">
+                <div class="col-xs-5 labelheight height50px font35px">开始日期</div>
+                <div class="col-xs-5 labelheight height50px font35px">结束日期</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-5">
+                    <input type="month" id="startMonth" class="col-xs-12 height50px font30"/>
+                </div>
+                <div class="col-xs-5">
+                    <input type="month" id="endMonth" class="col-xs-12 height50px font30"/>
+                </div>
+                <div class="col-xs-2">
+                    <input type="button" id="queryByDate" class="col-xs-12 height50px font30" value="Go"/>
+                </div>
+            </div>
+			<div class="separator_div"/> 
+			<table id="dataInfo" class="table table-striped table-hover font30">
+				<colgroup>
+					<col class="col1"></col>
+					<col class="col2"></col>
+					<col class="col3"></col>
+				</colgroup>
+				<thead>
+					<tr id="tableHead">
+						<th>名称</th>
+						<th>停机次数</th>
+						<th>停机时长</th>
+					</tr>
+				</thead>
+
+				<tbody id="tableBody">
+				</tbody>
+			</table>
+		</div>
+	</body>
+
+	<script src="./js/failure.summary.view.js"></script>
+
 </html>
