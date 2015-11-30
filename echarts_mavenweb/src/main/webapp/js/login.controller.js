@@ -1,4 +1,4 @@
-var pseudoLogin = false;
+var pseudoLogin = true;
 
 $(document).bind( "mobileinit", function() {
 	$.support.cors = true;
