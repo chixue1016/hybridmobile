@@ -15,9 +15,11 @@ function FailureController() {
 		failureSummaryView.showSummary( datas );
 	};
 
-	this.onRedirectToDetailHtml = function() {
+	this.onRedirectToDetailHtml = function( failureMessage ) {
 		// Before redirect the detail html, save the summary html firstly.
-		failureSummaryView.snapshot();		
+		failureSummaryView.snapshot();
+		// Send message to the detail html
+		failureMessage.send( );		
         redirectToDetailHtml();
 	};
 

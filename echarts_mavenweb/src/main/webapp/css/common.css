@@ -13,10 +13,28 @@
 }
 .font50{
 	font-weight: blod;
-    font-size: 50px;
+  font-size: 50px;
 	font-family: SimHei;
 }
-.font30{
-	font-size: 30px;
-    font-family: SimHei;
+.hiddenBorder{
+   border-style: none;
+}
+input:focus,
+input.focus{
+    outline: none; 
+}
+.separator{
+    border:1px solid ;
+    border-color: #c9c4c3;
+}
+.marginTop40px{
+    margin-top: 40px;
+}
+.marginBottom40px{
+    margin-bottom:  40px;
+}
+.font40px{
+   font-size: 40px;
+   font-weight: blod;
+   font-family: SimHei;
 }

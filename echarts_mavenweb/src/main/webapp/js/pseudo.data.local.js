@@ -65,7 +65,3286 @@ var pseudoFailureOrgSummaries 	= {
 			"name" 			: "故障组织4",
 			"haltedTimes" 	: 9,
 			"haltedHours" 	: 240
-		}
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
+		{	
+			"id"			: 1,
+			"name" 			: "故障组织1",
+			"haltedTimes" 	: 10,
+			"haltedHours" 	: 320
+		},
+
+		{
+			"id"			: 2,
+			"name" 			: "故障组织2",
+			"haltedTimes" 	: 15,
+			"haltedHours" 	: 120
+		},
+
+		{
+			"id"			: 3,
+			"name" 			: "故障组织3",
+			"haltedTimes" 	: 6,
+			"haltedHours" 	: 160
+		},
+
+		{
+			"id"			: 4,
+			"name" 			: "故障组织4",
+			"haltedTimes" 	: 9,
+			"haltedHours" 	: 240
+		},
 	]
 };
 
@@ -206,7 +3485,7 @@ var pseudoFailureOrgDetails = {
 };
 
 var pseudoFailureOrg = [	
-	{ name 	: '故障组织1', 		value : 335 	},
+	{ name 	: '故障组织1故障组织1故障组织1', 		value : 335 	},
     { name 	: '故障组织2', 		value : 310 	},
     { name 	: '故障组织3', 		value : 234 	}, 
     { name 	: '故障组织4', 		value : 135		},
@@ -245,8 +3524,8 @@ var pseudoFailureDetailOfOneOrg = {
 
 var pseudoFailureDetailOfOneType = {
 	"failureOrg"	: pseudoFailureOrg,
-	"failureReason"	: pseudoFailureType,
-	"failureSymptom": pseudoFailureReason
+	"failureReason"	: pseudoFailureReason,
+	"failureSymptom": pseudoFailureSymptom
 };
 
 var pseudoFailureDetailOfOneReason = {

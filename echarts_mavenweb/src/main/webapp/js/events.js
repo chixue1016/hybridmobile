@@ -11,10 +11,14 @@ $(document).bind( "mobileinit", function() {
 
 $(document).ready(function() {
 	var data = [
-		{ "name" : "11", "value" : 123 },
-		{ "name" : "22", "value" : 456 },
+		{ "name" : "111", "value" : 11 },
+		{ "name" : "222", "value" : 22 },
+		{ "name" : "333", "value" : 33 },
+		{ "name" : "444", "value" : 44 },
+		{ "name" : "555", "value" : 55 },
+		{ "name" : "666", "value" : 66 },
 	];
-	var circleChart = new CircleChart("main", "", data);
+	var circleChart = new CircleChart("main", "组织图", data);
     circleChart.draw(); 
 
 	function ajaxtest() {		

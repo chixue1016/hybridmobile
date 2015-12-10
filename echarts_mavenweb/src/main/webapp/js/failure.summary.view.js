@@ -1,88 +1,91 @@
 
-$(document).ready(function() {
-	failureSummaryView.onReloadHtml();                   
-});
-         
-$("#btngroup").on("click", "a", function(event) {		
-	var selectedSummaryTab = $(this);
-	failureSummaryView.onChangeTab(selectedSummaryTab);	
-});
-
-// On select one row of the table.             
-$("#tableBody").on("click", "tr", function(event) {
-	failureSummaryView.onSelectRow($(this));   
-});
-
-$("#queryByDate").click(function() {
-	failureSummaryView.onQueryByDate();
-});
-
-$("#maTest").click(function() {
-	failureSummaryView.onReloadSummary();
-});
-
-function FailureSummaryView() {
-	var _snapshot	= new FailureSnapshot();
+function FailureSummaryView() {		
 	var _summaryType;
 	var _startMonth, _endMonth;
-	var _selectedSummaryData;
 	var _summaryDatas;
+
+	var _table;
+
+	function init() {
+		_table = new FailureSummaryTableBuilder( "dataInfo" ).build();
+		eventBind();
+	}
+	// 事件绑定
+	function eventBind() {
+		_table.on("select", function(e, dt, type, indexes) {
+	    	var rowDatas 	= _table.rows( indexes ).data();
+	    	var selectData 	= rowDatas[0];
+	    	failureSummaryView.onSelectRow( selectData );  
+
+		});
+
+		$("#btngroup").on("click", "a", function(event) {		
+			var selectedSummaryTab = $(this);
+			failureSummaryView.onChangeTab(selectedSummaryTab);	
+		});
+
+		$("#queryByDate").click(function() {
+			failureSummaryView.onQueryByDate();
+		});
+
+		 //initiating jQuery
+        jQuery(function($) {
+            $(document).ready( function() {              
+                $('#matest').stickUp();
+                failureSummaryView.onReloadHtml();  
+            });
+        });
+	
+	};
 
 	var loadSummary 	= function() {
 		_startMonth 	= $("#startMonth").val();
-		_endMonth	= $("#endMonth").val();
+		_endMonth		= $("#endMonth").val();
 		
 		// Just send loading data request.		
         failureController.onLoadSummary( _summaryType, _startMonth, _endMonth );
 	};
-	this.showSummary  	= function(datas) {
-		// Reload summary data, the old data must be cleared.
-		clearTable();	
-		
-		_summaryDatas = datas.data;
-		for(var i = 0; i < _summaryDatas.length; i++) {	                     
-	  		var body = document.getElementById("tableBody");
-	    	var row = body.insertRow(i);
 
-	    	var oneSummary = _summaryDatas[i];                 
-	    	row.insertCell(0).innerHTML = oneSummary.name;	    	
-	  		row.insertCell(1).innerHTML = oneSummary.haltedTimes;
-	    	row.insertCell(2).innerHTML = oneSummary.haltedHours;
+	this.showSummary  	= function( datas ) {
+		// var table = $('#dataInfo').DataTable();
+		// table.clear();
 
-	    	row.setAttribute("id", oneSummary.id);
-		}		
-	};
+ 	    _summaryDatas = datas.data;
+ 	    _table.clear();
+ 	    _table.rows.add(_summaryDatas).draw();
+ 	};
 
 	var loadDetail 	= function( summaryType, id ) {
 		failureController.onLoadDetail( summaryType, id );
 	};
 
 	this.onReloadHtml 	= function() {
-		var defaultSummaryTab 	= $("#failureOrg");
-		var currentMonth		= currentYearAndMonth();		
-		// 加载页面时，首先判断当前缓存的页签，如果为空，则说明是第一次加载。
-		// 默认总览页签
-		var startMonth, endMonth, summaryTab;	
-    	var summaryType 	= _snapshot.getSummaryType();
-    	var firstLoadHtml 	= (summaryType == null || summaryType == "undefined");
-    	if (firstLoadHtml) {
-    		summaryTab 		= defaultSummaryTab;
-    		summaryType 	= summaryTab.attr("id");    		
-    		_summaryType 	= summaryType;
+		// 加载页面时，首先判断是否为第一次加载
+    	// 恢复之前的快照
+		var snapshot		= FailureSnapshot.restore();
+    	var firstLoaded		= snapshot.isFirstLoaded();    	   
+    	if ( firstLoaded ) {
+    		// 第一次加载，默认总览页签
+    		_summaryType 	= "failureOrg";	
 
-    		startMonth	= currentMonth;
-    		endMonth	= currentMonth;    		
-    	} else {
-    		summaryTab 	= $("#" + summaryType);
-    		startMonth	= _snapshot.getStartMonth();
-    		endMonth	= _snapshot.getEndMonth();
+    		// 第一次加载，默认当前年月
+    		var currentMonth= currentYearAndMonth();
+    		_startMonth		= currentMonth;
+    		_endMonth		= currentMonth;    		
+    	} else { 
+    		_summaryType	= snapshot.getSummaryType();    		   		
+
+    		_startMonth		= snapshot.getStartMonth();
+    		_endMonth		= snapshot.getEndMonth();
     	}
     	
-   		focusOn(summaryTab);
-   		showMonthRange(startMonth, endMonth); 
+    	summaryTab 	= $("#" + _summaryType); 
+   		focusOn( summaryTab );
+   		showMonthRange( _startMonth, _endMonth ); 
    		
    		loadSummary(); 
 	};
+
 
 	var currentYearAndMonth 	= function() {
 		var currentDateTime = new Date();
@@ -95,25 +98,18 @@ function FailureSummaryView() {
    		return (year + "-" + month);
 	};
 
-	this.onSelectRow  	= function(selectedRow) {
-		var id 			= selectedRow.attr("id");
-		var name  		= selectedRow.children().eq(0).text();
-   		var haltedTimes = selectedRow.children().eq(1).text();
-   		var haltedHours = selectedRow.children().eq(2).text();
-
-		//var name = selectedRow.cells[0].getValue();
-    	if ( id != null && id != "undefined" ) {    		
-    	}
-
-    	_selectedSummaryData = {
-    		"id" 			: id,
-    		"name"			: name,
-    		"haltedTimes" 	: haltedTimes,
-    		"haltedHours"	: haltedHours
+	this.onSelectRow  	= function( selectedRow ) {
+    	var selectedSummaryData = {
+    		"id" 			: selectedRow.id,
+    		"name"			: selectedRow.name,
+    		"haltedTimes" 	: selectedRow.haltedTimes,
+    		"haltedHours"	: selectedRow.haltedHours
     	};
 
     	// 跳转到详情页面
-    	failureController.onRedirectToDetailHtml();
+    	var failureMessage = 
+    		new FailureMessage( _summaryType, _startMonth, _endMonth, selectedSummaryData );
+    	failureController.onRedirectToDetailHtml( failureMessage );
 	};
 
 	this.onChangeTab 	= function(selectedSummaryTab) {		
@@ -142,11 +138,13 @@ function FailureSummaryView() {
 	// 页面切换时，保存当前页面快照
 	this.snapshot 	= function() {
 		var snapshot = new FailureSnapshot();
+
+		snapshot.setFirstLoaded( false );
 		snapshot.setSummaryType( _summaryType );
 		snapshot.setStartMonth( _startMonth );
 		snapshot.setEndMonth( _endMonth );
 		snapshot.setSummaryDatas( _summaryDatas );
-		snapshot.setSelectedSummaryData( _selectedSummaryData );
+
 		snapshot.save();
 	}
 
@@ -162,13 +160,10 @@ function FailureSummaryView() {
    		$("#endMonth").val(endMonth);
 	};
 
-	var clearTable = function() {
-		var body = document.getElementById("tableBody");
-		while (body.rows.length > 0) {	                     
-	    	body.deleteRow(0);                
-		}
-	};
+	// Constructor code.
+	init();
 }
+
 var failureSummaryView = new FailureSummaryView();
 
 

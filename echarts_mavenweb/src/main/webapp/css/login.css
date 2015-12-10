@@ -1,11 +1,3 @@
-.font35 {
-   font-size: 35px;
-}
-.font40{
-    font-weight: blod;
-    font-size: 40px;
-    font-family: SimHei;
-}
 .height60px {
    height: 60px;
    padding-top: 3px;
@@ -18,19 +10,14 @@
 .bottommargin10px{
    margin-bottom: 10px;
 }
-.hiddenBorder{
-   border-style: none;
-}
+
 .leftfloat{
     float: left;
 }
 .rightfloat{
     float: right;
 }
-input:focus,
-input.focus{
-    outline: none; 
-}
+
 .paddingleft15px{
     padding-left: 15px;
 }

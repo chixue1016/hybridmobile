@@ -1,5 +1,5 @@
 // 本地伪数据测试
-var usePseudoLocal 	= false;
+var usePseudoLocal 	= true;
 // 远程伪数据测试
 var usePseudoRemote = false;		
 

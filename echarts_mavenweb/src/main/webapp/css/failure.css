@@ -1,8 +1,14 @@
-.labelheight{
-	font-size: 35px;
+#home .divider {
+	margin-top:40px;
+	margin-bottom:40px;
+	color: #8a888d;
+}
+
+.labelpadding{
 	padding-top: 3px;
 	display: inline;
 }
+
 .height50px{
 	height: 50px;
 }
@@ -26,21 +32,21 @@
 }  
  
 .col1{
-	width: 50%;
+	width: 44%;
 }
 	  
 .col2{
-	width: 25%;
+	width: 28%;
 }
 .col3{
-	width: 25%;
+	width: 28%;
 }
-.table-hover{
+/*.table-hover{
 	     
-}
-.table-hover>tbody>tr:hover>td{
+}*/
+/*.table-hover>tbody>tr:hover>td{
 	background: red;
-}
+}*/
 .marginbottom40px{
 	margin-bottom:40px;
 }
@@ -59,7 +65,60 @@
 .width47persent{
    width:47%;
 }
-
-.separator_div{
-  height:20px;
+.margin3px{
+	margin-bottom: 30px;
 }
+
+.height80px{
+	height:80px;
+}
+.whitefont{
+	color:white;
+}
+.lintHeight60px{
+	line-height: 60px;
+}
+.lightBlackColor{
+    color: #8a888d;
+}
+.topMargin20px{
+	margin-top: 20px;
+}
+.redButton{
+    background: red;
+	border-color: red;
+	color:white;
+}
+
+.redButton:hover{
+	 background: #a6001d;
+	 border-color: #a6001d;
+	 color:white;
+}
+.font35px{
+   font-size: 35px;
+   font-weight: blod;
+   font-family: SimHei;
+}
+option{
+	font-size: 35px;
+    font-weight: blod;
+    font-family: SimHei;
+}
+.font45px{
+   font-size: 45px;
+   font-weight: blod;
+   font-family: SimHei;
+}
+.font40px{
+   font-size: 40px;
+   font-weight: blod;
+   font-family: SimHei;
+}
+
+
+ 
+
+
+ 
+
