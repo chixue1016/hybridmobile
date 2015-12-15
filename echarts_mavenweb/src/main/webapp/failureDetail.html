@@ -9,9 +9,9 @@
         <script src="./js/jquery-1.11.3.min.js"></script>
         <link rel="stylesheet" href="./js/bootstrap-3.3.5-dist/css/bootstrap.min.css">
         <!-- Optional theme -->
-        <link rel="stylesheet" href="./js/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="./css/common.css">
-        <link rel="stylesheet" href="./css/failuredetail.css">
+        <link rel="stylesheet" href="./js/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css">    
+        <link rel="stylesheet" href="./css/failure.css">
+        
         <!-- Latest compiled and minified JavaScript --> 
         <script src="./js/cache.js"></script> 
         <script src="./js/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
@@ -30,39 +30,73 @@
     </head>
 
     <body>
-        <div class="container">
-            <div class="row">
-			    <div class="col-xs-2">
-                    <a href="./failure.html" class="font50 topcss textcenter" style="color:red;text-decoration: none;">返回</a>
-                </div>
-			    <div id="title" class="col-xs-8  topcss font50 textcenter"></div>
-			</div>
-            <hr class="separator marginTop40px marginBottom40px"/>
-
-			<div class="blueBackground">
-			    <div class="row">
-			        <div id="haltedTimes" class="col-xs-6 font40px whitefont textcenter"></div>
-			        <div id="haltedHours" class="col-xs-6 font40px whitefont textcenter"></div>
-			    </div>
-
-			    <div class="row">
-			        <div class="col-xs-6 font40px whitefont textcenter">故障次数</div>
-			        <div class="col-xs-6 font40px whitefont textcenter">停机时长</div>
-			    </div>
-			</div>
-            <hr class="separator marginTop40px marginBottom40px"/>
-
-			<div class="row">
-			    <div class="col-xs-12 font40px textcenter" id="name"></div>
-			</div>
-
-			<div class="borderdiv"></div>
-            <div id="chart1" class="height600px divAlignCenter"></div>
-            <div class="borderdiv"></div>
-            <div id="chart2" class="height600px divAlignCenter"></div>
-            <div class="borderdiv"></div>
-            <div id="chart3" class="height600px"></div>
+        <div id="head"> 
+            <div class="container">
+                <div class="head-wrapper">          
+                    <div class="head-inner">                        
+                        <div class="head-items">
+                            <div class="row" >                          
+                                <div class="col-xs-2">                          
+                                    <a id="back" class="head-back glyphicon glyphicon-menu-left"></a>
+                                </div>
+                                <div id="title" class="col-xs-8 head-captial"></div>
+                            </div>                          
+                        </div>                  
+                    </div>
+                </div>          
+            </div>
         </div>
+
+         <div class="container">
+            <div clas="separator-wrapper">
+                <hr class="separator">
+            </div>
+        </div>
+
+        <!-- START THE DETAIL-INFO -->
+        <div class="detail-info">
+            <div class="container">
+                <div class="detail-info-values-wrapper">                     
+                    <div class="detail-info-values">
+
+                        <div class="row">
+                            <div id="haltedTimes" class="col-xs-6"></div>
+                            <div id="haltedHours" class="col-xs-6"></div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-6">故障次数</div>
+                            <div class="col-xs-6">停机时长</div>
+                        </div>  
+                                         
+                    </div>
+                </div>
+
+                <div class="detail-info-name-wrapper">
+                    <div class="detail-info-name">
+                        <div class="row">
+                            <div class="col-xs-12" id="name"></div>
+                        </div> 
+                    </div> 
+                </div>
+            </div>
+        </div>
+
+        <div class="charts">
+            <div class="container">
+                <div class="charts-wrapper">
+                    <div class="charts-separator"></div>
+                    <div id="chart1" class="chart-item" style="height:600px"></div>
+
+                    <div class="charts-separator"></div>
+                    <div id="chart2" class="chart-item" style="height:600px"></div>
+
+                    <div class="charts-separator"></div>
+                    <div id="chart3" class="chart-item" style="height:600px"></div>
+                </div>
+            </div>
+        </div>      
+
     </body>
     <script src="./js/circle.chart.js"></script>
     <script src="./js/failure.detail.view.js"></script>

@@ -3,10 +3,9 @@ function FailureSummaryTableBuilder( divId ) {
 
 	// 表格布局
 	var layoutConfig = 
-		"<'row font45px'<'col-xs-12'tr>>" 							+
-       	"<'row font35px'<'col-xs-10'p><'col-xs-2'l>>"				+
-       	"<'row font35px'<'col-xs-12'f>>"							+
-       	"<'row font35px'<'col-xs-12'i>>";
+		"<'row table-info-tablewrapper'<'col-xs-12'tr>>" 							+ // 
+       	"<'row table-info-pagination'<'col-xs-9'p><'col-xs-3'l>>"					+
+       	"<'row table-info-information'<'col-xs-12'i>>";
 
 	var columnsConfig 	= [ 
 		{ "title"  : "名称", 		"data"	: "name"}, 
@@ -18,7 +17,7 @@ function FailureSummaryTableBuilder( divId ) {
     var hintsConfig	= {
         "decimal"		: "",
         "emptyTable"	: "没有数据",
-        "info"			: "共_TOTAL_条",
+        "info"			: "• _TOTAL_ •",
         "infoEmpty"		: "显示第0到第0条，共0条",
 		"infoFiltered"	: "(filtered from _MAX_ total entries)",
 		"lengthMenu"	: "_MENU_",
@@ -32,11 +31,6 @@ function FailureSummaryTableBuilder( divId ) {
   			"next"		: ">",
     		"previous"	: "<"
 		},
-
-		"aria": {
-    		"sortAscending":  ": activate to sort column ascending",
-    		"sortDescending": ": activate to sort column descending"
-		}
 	};	
 
 	var tableConfig = {
@@ -56,7 +50,8 @@ function FailureSummaryTableBuilder( divId ) {
 	};
 
 	this.build = function() {
-		return $( "#" + divId ).DataTable( tableConfig );
+		var tableDiv = $( "#" + divId );
+		return tableDiv.DataTable( tableConfig );
 	}
 
 	this.setDivId = function( divId ) {

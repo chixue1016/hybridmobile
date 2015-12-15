@@ -15,8 +15,7 @@ function PieChart( ) {
 	/***************************************************************/
 	function buildTitle( ) {
     	var title = {
-	        text 		: _title,
-	        padding		: '3',
+	        text 		: _title,	      
 	        textStyle 	: {
 	           	fontSize 	: titleFontSize,
 	            fontFamily 	: _font,
@@ -155,8 +154,7 @@ function BarChart( ) {
 	/***************************************************************/
     function buildTitle( ) {
     	var title = {
-	        text 		: _title,
-	        padding		: '3',
+	        text 		: _title,	       
 	        textStyle 	: {
 	           	fontSize 	: titleFontSize,
 	            fontFamily 	: _font,

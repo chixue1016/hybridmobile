@@ -7,31 +7,36 @@ function FailureSummaryView() {
 	var _table;
 
 	function init() {
-		_table = new FailureSummaryTableBuilder( "dataInfo" ).build();
+		_table = new FailureSummaryTableBuilder( "failureSummaryTable" ).build();
 		eventBind();
 	}
 	// 事件绑定
 	function eventBind() {
-		_table.on("select", function(e, dt, type, indexes) {
+		_table.on( "select", function(e, dt, type, indexes) {
 	    	var rowDatas 	= _table.rows( indexes ).data();
 	    	var selectData 	= rowDatas[0];
 	    	failureSummaryView.onSelectRow( selectData );  
 
 		});
 
-		$("#btngroup").on("click", "a", function(event) {		
+		$("#failureSummaryNavbar").on( "click", "a", function(event) {		
 			var selectedSummaryTab = $(this);
-			failureSummaryView.onChangeTab(selectedSummaryTab);	
+			failureSummaryView.onChangeTab( selectedSummaryTab );	
 		});
 
 		$("#queryByDate").click(function() {
 			failureSummaryView.onQueryByDate();
 		});
 
+		$("#back").click(function() {
+			failureSummaryView.onBack();
+		});
+
+
 		 //initiating jQuery
         jQuery(function($) {
             $(document).ready( function() {              
-                $('#matest').stickUp();
+                $('#head').stickUp();
                 failureSummaryView.onReloadHtml();  
             });
         });
@@ -123,8 +128,8 @@ function FailureSummaryView() {
 
     	// Summary Tab's focus switch.
     	var summaryTab = $("#" + _summaryType);
-    	removeFocusOn(summaryTab); 
-    	focusOn(selectedSummaryTab);     	
+    	removeFocusOn( summaryTab ); 
+    	focusOn( selectedSummaryTab );     	
     	_summaryType = selectedSummaryType;
     
     	// Reload the summary data.
@@ -133,6 +138,10 @@ function FailureSummaryView() {
 
 	this.onQueryByDate	= function() {
 		loadSummary();
+	}
+
+	this.onBack 	= function() {
+		failureController.onBackTo( "login.html" );
 	}
 
 	// 页面切换时，保存当前页面快照
@@ -149,10 +158,10 @@ function FailureSummaryView() {
 	}
 
 	var focusOn = function(tab) {
-		tab.addClass("hover");
+		tab.addClass( "hover" );
 	};
 	var removeFocusOn = function(tab) {
-		tab.removeClass("hover");
+		tab.removeClass( "hover" );
 	};
 
 	var showMonthRange	= function( startMonth, endMonth ) {

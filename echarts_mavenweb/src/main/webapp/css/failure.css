@@ -1,124 +1,241 @@
-#home .divider {
-	margin-top:40px;
-	margin-bottom:40px;
-	color: #8a888d;
+/* GLOBAL STYLES
+-------------------------------------------------- */
+body {
+	font-family 	: Microsoft YaHei;
+  	padding-bottom	: 50px;
+  	color 			: #1a1a1a;
 }
 
-.labelpadding{
-	padding-top: 3px;
-	display: inline;
+.separator-wrapper {
+	padding-top : 20px;
+	padding-bottom: 20px;	
 }
 
-.height50px{
-	height: 50px;
+.separator {
+    border-color: black;   
 }
-.hovercolor{
+
+/* CUSTOMIZE THE LOGIN
+-------------------------------------------------- */
+.login {	
+}
+.login-wrapper {
+
+}
+
+.login .login-item	{
+	font-size 	: 30px;
+   	font-weight	: blod;
+}
+.login .login-item .login-item-glyphicon {
+	line-height	: 60px;
+}
+.login .login-item .login-item-value {
+	height 	: 60px;
+	border-style 	: none;
+}
+
+.login .login-submit .login-submit-action {
+	font-size 	: 40px;
+   	font-weight	: blod;
+}
+
+/* CUSTOMIZE THE HEAD
+-------------------------------------------------- */
+.head-wrapper {	
+	z-index		: 15;
+	background	: white;
+	padding-top : 20px;
+	padding-bottom: 20px;
+	filter:alpha(opacity=100);  
+    -moz-opacity:1.0;  
+    -khtml-opacity: 1.0;  
+    opacity: 1.0;	
+}
+
+.head-inner {	
+}
+
+.head-inner .head-items	{
+	font-weight	: blod;
+  	font-size	: 50px;
+  	text-align	: center;
+}
+
+.head-inner .head-items	.head-back {
+	color 	: red;
+}
+
+.head-inner .head-items	.head-captial {
+	color 	: black;	
+}
+
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+
+.navbar-wrapper {
+	background	: white;
+}
+
+.navbar .navbar-static-top {
+  	
+}
+
+.navbar.navbar-static-top .button-item {
+  	color 		: black;
+  	font-size	: 50px;
+ 	border-color: red;
+ 	border-left-width	: 1px;
+	border-right-width	: 1px; 	
+}
+
+.navbar.navbar-static-top .button-item:hover, 
+.navbar.navbar-static-top .button-item.hover{
+  	background 	: red;
+	color 		: white;
+}
+
+
+/* CUSTOMIZE THE DATE
+-------------------------------------------------- */
+.date-wrapper {	
+}
+
+.date-inner .date-selector {
+	padding-top : 5px;
+	padding-bottom: 5px;
+}
+
+.date-inner .date-selector .date-name {
+	height 		: 50px;
+	font-size	: 40px;
+    font-weight	: blod;
+    color 		: #8a888d;
+}
+
+.date-inner .date-selector .date-value {
+	height 		: 50px;
+	font-size	: 40px;
+    font-weight	: blod;
+    border-style: none;
+}
+
+.date-inner .date-submit {
+	padding-top 	: 15px;
+	padding-bottom	: 15px;
+}
+
+.date-inner .date-submit-action {
+	height 		: 80px;
+	font-size	: 50px;
+	color 		: white;
+	background	: red;
 	border-color: red;
-	border-width: 2px;
-	border-left-width: 1px;
-	border-right-width: 1px;
 }
-.hovercolor:hover,
-.hovercolor.hover{
-	background: red;
-	border-color: red;
-	color: white;
+
+/* CUSTOMIZE THE TABLE
+-------------------------------------------------- */
+.table-info {
+	z-index		: 3;
 }
-.hovercolor:first-child{
-	border-left-width: 2px;
+
+.table-info-tablewrapper {
+
 }
-.hovercolor:last-child{
-	border-right-width: 2px;
-}  
- 
-.col1{
-	width: 44%;
+.table-info .table-info-head {
+	font-size 	: 35px;
+   	font-weight	: blod;
+   	color 		: #888888;
+}
+
+.table-info .table-info-column-1 {
+	width 	: 44%;
 }
 	  
-.col2{
-	width: 28%;
+.table-info .table-info-column-2 {
+	width 	: 28%;
 }
-.col3{
-	width: 28%;
-}
-/*.table-hover{
-	     
-}*/
-/*.table-hover>tbody>tr:hover>td{
-	background: red;
-}*/
-.marginbottom40px{
-	margin-bottom:40px;
-}
-.relative_position{
-  position:relative;
-  height:60px;
-}
-.absolute_position_left{
-    position:absolute;
-    left:0px;
-} 
-.absolute_position_right{
-    position:absolute;
-    right:0px
-}
-.width47persent{
-   width:47%;
-}
-.margin3px{
-	margin-bottom: 30px;
+.table-info .table-info-column-3 {
+	width 	: 28%;
 }
 
-.height80px{
-	height:80px;
-}
-.whitefont{
-	color:white;
-}
-.lintHeight60px{
-	line-height: 60px;
-}
-.lightBlackColor{
-    color: #8a888d;
-}
-.topMargin20px{
-	margin-top: 20px;
-}
-.redButton{
-    background: red;
-	border-color: red;
-	color:white;
+.table-info .table-info-body {
+	font-size 	: 45px;
+   	font-weight	: blod;
 }
 
-.redButton:hover{
-	 background: #a6001d;
-	 border-color: #a6001d;
-	 color:white;
-}
-.font35px{
-   font-size: 35px;
-   font-weight: blod;
-   font-family: SimHei;
-}
-option{
-	font-size: 35px;
-    font-weight: blod;
-    font-family: SimHei;
-}
-.font45px{
-   font-size: 45px;
-   font-weight: blod;
-   font-family: SimHei;
-}
-.font40px{
-   font-size: 40px;
-   font-weight: blod;
-   font-family: SimHei;
+/* 分页控件  */
+.table-info .table-info-pagination {
+	font-size 	: 35px;
+   	font-weight	: blod;
 }
 
+/* 每页显示数据长度的控件 控件文本样式  */
+.table-info div.dataTables_wrapper .dataTables_length .input-sm {
+    font-size: 30px;
+}
+/* 控件边框样式  */
+.table-info div.dataTables_wrapper div.dataTables_length select {
+    width: 100%;
+    display: inline-block;
+    height: 60px;
+    border-color: #0099CC;
+    margin-top: 2px;
+    color: red;
+}
+/* 数据个数等信息  */
+.table-info .table-info-information {
+	font-size 	: 35px;
+   	font-weight	: blod;
+}
 
- 
+table.dataTable.no-footer {
+  border-bottom: 10px solid;
+}
 
+/* CUSTOMIZE THE DETAIL-INFO
+-------------------------------------------------- */
+.detail-info {
 
- 
+}
+
+.detail-info-values-wrapper {
+	background 	: #3399CC;
+	padding-top : 10px;
+	padding-bottom: 10px;
+}
+
+.detail-info .detail-info-values {
+	color 		: white;
+	font-size	: 40px;
+    font-weight	: blod;
+    text-align	: center;
+}
+
+.detail-info-name-wrapper {	
+	padding-top : 20px;
+	padding-bottom: 20px;	
+}
+
+.detail-info .detail-info-name {
+	color 		: black;
+	font-size	: 40px;
+    font-weight	: blod;
+    text-align	: center;      
+}
+
+/* CUSTOMIZE THE CHARTS
+-------------------------------------------------- */
+.charts .charts-separator {
+	height 		: 15px;
+	background 	: #EEEEEE;
+	margin-top 	: 15px;
+	margin-bottom : 15px;
+}
+
+.charts .charts-item {
+	height 	: 600px;
+	margin-left	: auto;
+ 	margin-right: auto;
+}
 

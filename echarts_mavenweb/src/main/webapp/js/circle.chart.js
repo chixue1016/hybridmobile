@@ -1,16 +1,4 @@
 
-//每行三个圆形颜色渐变，这里提供四种颜色
-var colors = [
-	['#ff0033','#ff3333','#ff6633'],
-	['#ff0099','#ff3399','#ff6699'],
-	['#666699','#669999','#66cc99'],
-	['#6600ff','#6633ff','#6666ff']
-];
-
-var colorCount = 4;//圆形图的总共颜色数
-
-
-
 // 布局:
 // |		4		|		4 		|		4 		|
 // |  11    |   1   |      12 		|   1 	|   11 	| 
@@ -136,7 +124,7 @@ function CircleChart( ) {
 
 	// 构造所有数据的图形
 	function buildAllDatasHtml( datas ) {
-		var datasHtml;
+		var datasHtml = "";
 		var data = padding( datas );
 		// 向上取整
 		var rowCount 	= data.length / _circlesPerRow;

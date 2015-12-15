@@ -1,6 +1,6 @@
 
 function FailureSnapshot() {
-	var _cachedTag = FailureSnapshot.getCacheTag();
+	var _cachedTag = FailureSnapshot.getCachedTag();
 	var _firstLoaded;
 	var _summaryType;
 	var _startMonth, _endMonth;
@@ -60,14 +60,14 @@ function FailureSnapshot() {
 
 }
 
-FailureSnapshot.getCacheTag = function() {
+FailureSnapshot.getCachedTag = function() {
 	return "failureSnapshot";
 }
 
 FailureSnapshot.restore = function() {
-	var cachedTag 		= FailureSnapshot.getCacheTag();
+	var cachedTag 		= FailureSnapshot.getCachedTag();
 	var cachedSnapshot 	= JSON.parse(Cache.get( cachedTag ));
-	var FailureSnapshot = new FailureSnapshot();
+	var failureSnapshot = new FailureSnapshot();
 	if (cachedSnapshot != null) {
 		failureSnapshot.setFirstLoaded( cachedSnapshot[ "firstLoaded" ] );
 		failureSnapshot.setSummaryType( cachedSnapshot[ "summaryType" ] );

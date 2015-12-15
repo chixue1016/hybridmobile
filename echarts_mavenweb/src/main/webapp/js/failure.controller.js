@@ -20,8 +20,12 @@ function FailureController() {
 		failureSummaryView.snapshot();
 		// Send message to the detail html
 		failureMessage.send( );		
-        redirectToDetailHtml();
+        open( "failureDetail.html" );
 	};
+
+	this.onBackTo		= function( html ) {
+		open( html );
+	}
 
 	this.onLoadDetail 	= function( summaryType, id, startMonth, endMonth ) {		
 		failureModel.loadDetail( summaryType, id, startMonth, endMonth );
@@ -30,8 +34,8 @@ function FailureController() {
         failureDetailView.showDetail( datas );
 	};
 
-	var redirectToDetailHtml 	= function() {
-		window.open("./failureDetail.html");
+	function open( html ) {
+		window.open( html );
 	};
 	
 

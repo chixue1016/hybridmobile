@@ -4,52 +4,71 @@
 	    <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <!-- <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />-->
-        <meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
         <title>PanGu</title>
         <script src="./js/jquery-1.11.3.min.js"></script>
-        <script src="./js/jquery.mobile-1.4.2/jquery.mobile-1.4.2.min.js"></script>
         <link rel="stylesheet" href="./js/bootstrap-3.3.5-dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="./js/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="./css/login.css">
-        <link rel="stylesheet" href="./css/common.css">
+        <link rel="stylesheet" href="./css/failure.css">
+        
         <script src="./js/cordova-2.6.0.js" charset="utf-8"></script>
         <script src="./js/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
-        <script src="./js/cache.js"></script> 
         <script src="./js/pseudo.data.local.js"></script>
         <script src="./js/login.context.js"></script>
         <script src="./js/login.controller.js"></script>              
         <script src="./js/login.view.js"></script> 
 	</head>
+
 	<body> 
-	    <div class="container">      
-            <form name="login_form" method="post" class="form-horizontal" role="form" style="margin-top:50%;" id="loginform" onsubmit="login();"> 
-                <div class="form-group  paddingleft15px paddingright15px">
-                    <image src="./img/user-black.png" class="col-xs-1 leftfloat height60px"/>
-                    <input type="text" id="username" name="username" value="songyp" class="hiddenBorder col-xs-10 height60px font40px col-xs-offset-1"  placeholder="用户名"/> 
-                </div>  
-                <hr class="separator marginTop40px marginBottom40px"/>
+        <div class="login">
+            <div class="container">
+                <div class="login-wrapper">
+                    <form method="post" class="form-horizontal" onsubmit="login();">
+                        <div class="row login-item">
+                            <div class="col-xs-2 login-item-glyphicon">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </div>
+                            <div class="col-xs-10">
+                                <input type="text" id="username" value="songyp" class="login-item-value" placeholder="用户名"/> 
+                            </div>
+                        </div>
+                        
+                        <div class="row login-item">
+                            <div class="col-xs-2 login-item-glyphicon">
+                                <span class="glyphicon glyphicon-lock"></span>
+                            </div>
+                            <div class="col-xs-10">
+                                <input type="password" id="password" value="yonyou1" class="login-item-value"  placeholder="密码"/>
+                            </div>
+                        </div>
 
-                <div class="form-group paddingleft15px paddingright15px">
-                    <image src="./img/power-black.png" class="col-xs-1 leftfloat height60px"/>
-                    <input type="password" id="password" name="password" value="yonyou1" class="hiddenBorder col-xs-10 height60px font40px col-xs-offset-1" placeholder="密码"/>
-                </div>  
-                <hr class="separator marginTop40px marginBottom40px"/>                           
-                <div class="form-group paddingleft15px paddingright15px">
-                    <image src="./img/user-black.png" class="col-xs-1 leftfloat height60px"/>
-                    <input type="text" id="host" name="host" value="10.1.73.225" class="hiddenBorder col-xs-10 height60px font40px col-xs-offset-1" placeholder="IP"/> 
-                </div>
-                <hr class="separator marginTop40px marginBottom40px"/>                 
-                <div class="form-group paddingleft15px paddingright15px">
-                    <image src="./img/user-black.png" class="col-xs-1 leftfloat height60px" />
-                    <input type="text" id="port" name="port" value="8080" class="hiddenBorder col-xs-10 height60px font40px col-xs-offset-1" placeholder="端口"/>
-                </div>
-                <hr class="separator marginTop40px marginBottom40px"/>
+                        <div class="row login-item">
+                            <div class="col-xs-2 login-item-glyphicon">
+                                <span class="glyphicon glyphicon-info-sign"></span>
+                            </div>
+                            <div class="col-xs-10">
+                                <input type="text" id="host" value="10.1.73.225" class="login-item-value" placeholder="IP"/>
+                            </div>
+                        </div>
 
-                <div class="form-group  paddingleft15px paddingright15px">
-                    <button type="submit" class=" btn btn-default font40px  height80px col-xs-12 redbackground">登&nbsp;&nbsp;录
-                    </button>
-                </div>
-            </form>
-        </div>
+                        <div class="row login-item">
+                            <div class="col-xs-2 login-item-glyphicon">
+                                <span class="glyphicon glyphicon-object-align-horizontal"></span>
+                            </div>
+                            <div class="col-xs-10">
+                                <input type="text" id="port" value="8080" class="login-item-value" placeholder="端口"/>
+                            </div>
+                        </div>
+
+                       
+                        <div class="login-submit">                        
+                            <button type="submit" class="btn-lg btn-danger col-xs-12 login-submit-action">登&nbsp;&nbsp;录
+                            </button>
+                        </div>   
+      
+                    </form>
+                </div>               
+            </div>
+        </div>    
 	</body>
 </html>
