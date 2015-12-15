@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" table-info="IE=edge">
+		<!-- <meta name="viewport" table-info="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />-->
+		<meta name="viewport" table-info="user-scalable=yes, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+		<title>PanGu</title>		
+		<link rel="stylesheet" href="./js/bootstrap-3.3.5-dist/css/bootstrap.css">
+		<link rel="stylesheet" href="./js/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="./css/dataTables.bootstrap.css">
+		<link rel="stylesheet" href="./css/jquery.dataTables.css">
+		<link rel="stylesheet" href="css/swiper.css">
+		<link rel="stylesheet" href="./css/failure.css">
+
+		<script src="./js/jquery-1.11.3.min.js"></script>
+		<script src="./js/bootstrap-3.3.5-dist/js/bootstrap.js"></script>
+		<script src="./js/datatables/jquery.dataTables.js"></script>
+		<script src="./js/datatables/dataTables.bootstrap.js"></script>
+		<script src="./js/datatables/dataTables.select.js"></script>		
+		<script src="./js/cordova-2.6.0.js" charset="utf-8"></script>		
+		<script src="./js/stickUp.js"></script>
+
+		<script src="./js/cache.js"></script> 
+		<script src="./js/pseudo.data.local.js"></script>
+		<script src="./js/pseudo.data.remote.js"></script>
+		<script src="./js/login.context.js"></script> 
+		<script src="./js/failure.snapshot.js"></script>
+		<script src="./js/failure.message.js"></script>
+		<script src="./js/failure.summary.table.js"></script>
+		<script src="./js/failure.model.js"></script>
+		<script src="./js/failure.controller.js"></script>
+
+		 <script src="./js/echarts-2.2.7/echarts-all.js"></script>
+        <script src="./js/echarts-2.2.7/pie.js"></script>
+        <script src="./js/echarts-2.2.7/bar.js"></script> 
+		<script src="./js/failure.message.js"></script> 
+		<script src="./js/failure.detial.chartconfig.js"></script> 
+		<script type="text/javascript">
+			//给窗口一个名称，打开其他窗口返回的时候直接根据名称打开该窗口，避免再次加载影响性能
+			window.name = "failureWindow";
+		</script>
+	</head>
+
+	<body>
+		<div class="swiper-container">
+  			<div class="swiper-wrapper">
+    			
+    			<div class="swiper-slide">
+					<div id="head">	
+						<div class="container">
+							<div class="head-wrapper">			
+								<div class="head-inner">						
+									<div class="head-items">
+										<div class="row" >							
+											<div class="col-xs-2">							
+												<a id="back" class="head-back glyphicon glyphicon-menu-left"></a>
+											</div>
+											<div class="col-xs-8 head-captial">故障分析</div>
+										</div>							
+									</div>		            
+						        </div>
+						    </div>		    
+					    </div>
+				    </div>
+
+				    <div class="container">
+				    	<div clas="separator-wrapper">
+				    		<hr class="separator">
+				    	</div>
+				    </div>  
+
+
+				    <!-- START THE NAVBAR -->
+				    <div id="navbar">
+				    	<div class="container">
+				    		<div class="navbar-wrapper">
+				    			 <div class="navbar navbar-static-top">
+				    			 	<div id="failureSummaryNavbar" class="btn-group btn-group-justified">
+										<a id="failureOrg" class="btn button-item">总览</a>
+										<a id="failureType" class="btn button-item">类别</a>
+										<a id="failureSymptom" class="btn button-item">现象</a>
+										<a id="failureReason" class="btn button-item">原因</a>
+									</div> 	    			 	
+			            		</div>
+			            	</div>
+			            </div>
+			        </div>	  
+
+			        <div class="date">
+				        <div class="container">
+				        	<div class="date-wrapper">
+				        		<div class="date-inner">
+				        			
+						        	<div class="row date-selector">
+						                <div class="col-xs-4 date-name">开始日期</div>
+						                <div class="col-xs-8">
+						                    <input type="month" id="startMonth" class="col-xs-12 date-value"/>
+						                </div>   
+						            </div>
+
+						            <div class="row date-selector">
+						                <div class="col-xs-4 date-name">结束日期</div>
+						                <div class="col-xs-8">
+						                    <input type="month" id="endMonth" class="col-xs-12 date-value"/>
+						                </div>
+						            </div>
+						             
+						            <div class="row date-submit">
+						            	<div class="col-xs-12">
+						            		<button type="button" id="queryByDate" class="btn btn-small col-xs-12 date-submit-action">查&nbsp;询</button>
+						            	</div>
+						            </div>
+						            
+						        </div>
+						    </div>
+				        </div>            
+			        </div>
+
+			        <div class="container">
+				    	<div clas="separator-wrapper">
+				    		<hr class="separator">
+				    	</div>
+				    </div>     
+
+				    <div class="table-info">
+				        <div class="container">	        	
+							<table id="failureSummaryTable" class="table table-default table-hover table-striped">
+								<colgroup>
+									<col class="table-info-column-1"></col>
+									<col class="table-info-column-2"></col>
+									<col class="table-info-column-3"></col>
+								</colgroup>
+								<thead class="table-info-head" />
+								<tbody class="table-info-body" />
+							</table>
+						</div>			
+					</div>
+				</div>
+
+				<div class="swiper-slide">
+					<div id="head"> 
+			            <div class="container">
+			                <div class="head-wrapper">          
+			                    <div class="head-inner">                        
+			                        <div class="head-items">
+			                            <div class="row" >                          
+			                                <div class="col-xs-2">                          
+			                                    <a id="back" class="head-back glyphicon glyphicon-menu-left"></a>
+			                                </div>
+			                                <div id="title" class="col-xs-8 head-captial"></div>
+			                            </div>                          
+			                        </div>                  
+			                    </div>
+			                </div>          
+			            </div>
+			        </div>
+
+			         <div class="container">
+			            <div clas="separator-wrapper">
+			                <hr class="separator">
+			            </div>
+			        </div>
+
+			        <!-- START THE DETAIL-INFO -->
+			        <div class="detail-info">
+			            <div class="container">
+			                <div class="detail-info-values-wrapper">                     
+			                    <div class="detail-info-values">
+
+			                        <div class="row">
+			                            <div id="haltedTimes" class="col-xs-6"></div>
+			                            <div id="haltedHours" class="col-xs-6"></div>
+			                        </div>
+
+			                        <div class="row">
+			                            <div class="col-xs-6">故障次数</div>
+			                            <div class="col-xs-6">停机时长</div>
+			                        </div>  
+			                                         
+			                    </div>
+			                </div>
+
+			                <div class="detail-info-name-wrapper">
+			                    <div class="detail-info-name">
+			                        <div class="row">
+			                            <div class="col-xs-12" id="name"></div>
+			                        </div> 
+			                    </div> 
+			                </div>
+			            </div>
+			        </div>
+
+			        <div class="charts">
+			            <div class="container">
+			                <div class="charts-wrapper">
+			                    <div class="charts-separator"></div>
+			                    <div id="chart1" class="chart-item" style="height:600px"></div>
+
+			                    <div class="charts-separator"></div>
+			                    <div id="chart2" class="chart-item" style="height:600px"></div>
+
+			                    <div class="charts-separator"></div>
+			                    <div id="chart3" class="chart-item" style="height:600px"></div>
+			                </div>
+			            </div>
+			        </div>
+			    </div>			
+			</div>
+		</div>
+		
+		<script src="js/swiper.js"></script>
+		<script type="text/javascript">
+		  var mySwiper = new Swiper('.swiper-container',{
+		    loop: false,
+			autoplay: false,
+		  });
+
+		  alert(mySwiper.sliders);
+
+		  $("#slider2").click(function() {
+		  	mySwiper.slideTo(1, 1000, false);//切换到第一个slide，速度为1秒
+		  });
+
+		  $("#slider3").click(function() {
+		  	mySwiper.slideTo(2, 10, false);//切换到第一个slide，速度为1秒
+		  });
+		</script>
+	</body>
+	<script src="./js/failure.summary.view.js"></script>
+
+</html>
+
