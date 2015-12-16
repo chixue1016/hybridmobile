@@ -203,7 +203,7 @@ function BarChart( ) {
 			yAxis = categoryType;                     
 		}
 
-		alert(JSON.stringify(xAxis));
+		//alert(JSON.stringify(xAxis));
 
 		return [ xAxis, yAxis ];
 	}
@@ -386,7 +386,7 @@ function CirclesChart(divId, title, data) {
 			radius = [ innerRadius, outerRadius + "%" ];
 		}
 				
-		alert( "radius: " + JSON.stringify( radius ));
+		//alert( "radius: " + JSON.stringify( radius ));
 		return radius;
 	}
 	
