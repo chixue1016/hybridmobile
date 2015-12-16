@@ -6,10 +6,10 @@ function FailureSummaryView() {
 
 	var _table;
 
-	function init() {
-		_table = new FailureSummaryTableBuilder( "failureSummaryTable" ).build();
+	this.init 	= function() {
+		_table 	= new FailureSummaryTableBuilder( "failureSummaryTable" ).build();
 		eventBind();
-	}
+	};
 	// 事件绑定
 	function eventBind() {
 		_table.on( "select", function(e, dt, type, indexes) {
@@ -174,7 +174,7 @@ function FailureSummaryView() {
 	};
 
 	// Constructor code.
-	init();
+	
 }
 
 var failureSummaryView = new FailureSummaryView();

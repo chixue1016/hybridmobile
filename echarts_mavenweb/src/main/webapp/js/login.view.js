@@ -1,3 +1,5 @@
+   
+
     function login() {
         var username  = $("#username").val();
         var password  = $("#password").val();
@@ -6,3 +8,5 @@
 
         loginController.login(username, password, host, port);
     }
+
+     $("#login-button").click( login );

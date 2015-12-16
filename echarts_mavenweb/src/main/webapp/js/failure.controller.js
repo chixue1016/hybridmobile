@@ -16,6 +16,11 @@ function FailureController() {
 		failureSummaryView.showSummary( datas );
 	};
 
+	this.toSummary		= function() {
+		_failureSlider.toSummary();
+		failureSummaryView.init();
+	};
+
 	this.toDetail		= function( failureMessage ) {
 		// Before redirect the detail html, save the summary html firstly.
 		failureSummaryView.snapshot();
