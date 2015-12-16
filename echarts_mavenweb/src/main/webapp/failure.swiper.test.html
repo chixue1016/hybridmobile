@@ -42,172 +42,236 @@
 	<body>
 		<div class="swiper-container">
   			<div class="swiper-wrapper">
-    			
-    			<div class="swiper-slide">
-					<div id="head">	
-						<div class="container">
-							<div class="head-wrapper">			
-								<div class="head-inner">						
-									<div class="head-items">
-										<div class="row" >							
-											<div class="col-xs-2">							
-												<a id="back" class="head-back glyphicon glyphicon-menu-left"></a>
-											</div>
-											<div class="col-xs-8 head-captial">故障分析</div>
-										</div>							
-									</div>		            
-						        </div>
-						    </div>		    
-					    </div>
-				    </div>
-
-				    <div class="container">
-				    	<div clas="separator-wrapper">
-				    		<hr class="separator">
-				    	</div>
-				    </div>  
-
-
-				    <!-- START THE NAVBAR -->
-				    <div id="navbar">
-				    	<div class="container">
-				    		<div class="navbar-wrapper">
-				    			 <div class="navbar navbar-static-top">
-				    			 	<div id="failureSummaryNavbar" class="btn-group btn-group-justified">
-										<a id="failureOrg" class="btn button-item">总览</a>
-										<a id="failureType" class="btn button-item">类别</a>
-										<a id="failureSymptom" class="btn button-item">现象</a>
-										<a id="failureReason" class="btn button-item">原因</a>
-									</div> 	    			 	
-			            		</div>
-			            	</div>
-			            </div>
-			        </div>	  
-
-			        <div class="date">
-				        <div class="container">
-				        	<div class="date-wrapper">
-				        		<div class="date-inner">
-				        			
-						        	<div class="row date-selector">
-						                <div class="col-xs-4 date-name">开始日期</div>
-						                <div class="col-xs-8">
-						                    <input type="month" id="startMonth" class="col-xs-12 date-value"/>
-						                </div>   
-						            </div>
-
-						            <div class="row date-selector">
-						                <div class="col-xs-4 date-name">结束日期</div>
-						                <div class="col-xs-8">
-						                    <input type="month" id="endMonth" class="col-xs-12 date-value"/>
-						                </div>
-						            </div>
-						             
-						            <div class="row date-submit">
-						            	<div class="col-xs-12">
-						            		<button type="button" id="queryByDate" class="btn btn-small col-xs-12 date-submit-action">查&nbsp;询</button>
-						            	</div>
-						            </div>
-						            
-						        </div>
-						    </div>
-				        </div>            
-			        </div>
-
-			        <div class="container">
-				    	<div clas="separator-wrapper">
-				    		<hr class="separator">
-				    	</div>
-				    </div>     
-
-				    <div class="table-info">
-				        <div class="container">	        	
-							<table id="failureSummaryTable" class="table table-default table-hover table-striped">
-								<colgroup>
-									<col class="table-info-column-1"></col>
-									<col class="table-info-column-2"></col>
-									<col class="table-info-column-3"></col>
-								</colgroup>
-								<thead class="table-info-head" />
-								<tbody class="table-info-body" />
-							</table>
-						</div>			
-					</div>
-				</div>
-
-				<div class="swiper-slide">
-					<div id="head"> 
+  				<!--      Login Page     -->
+  				<div class="swiper-slide">
+  					<div class="login">
 			            <div class="container">
-			                <div class="head-wrapper">          
-			                    <div class="head-inner">                        
-			                        <div class="head-items">
-			                            <div class="row" >                          
-			                                <div class="col-xs-2">                          
-			                                    <a id="back" class="head-back glyphicon glyphicon-menu-left"></a>
-			                                </div>
-			                                <div id="title" class="col-xs-8 head-captial"></div>
-			                            </div>                          
-			                        </div>                  
-			                    </div>
-			                </div>          
-			            </div>
-			        </div>
-
-			         <div class="container">
-			            <div clas="separator-wrapper">
-			                <hr class="separator">
-			            </div>
-			        </div>
-
-			        <!-- START THE DETAIL-INFO -->
-			        <div class="detail-info">
-			            <div class="container">
-			                <div class="detail-info-values-wrapper">                     
-			                    <div class="detail-info-values">
-
-			                        <div class="row">
-			                            <div id="haltedTimes" class="col-xs-6"></div>
-			                            <div id="haltedHours" class="col-xs-6"></div>
+			                <div class="login-wrapper">
+			                    <form method="post" class="form-horizontal" onsubmit="login();">
+			                        <div class="row login-item">
+			                            <div class="col-xs-2 login-item-glyphicon">
+			                                <span class="glyphicon glyphicon-user"></span>
+			                            </div>
+			                            <div class="col-xs-10">
+			                                <input type="text" id="username" value="songyp" class="login-item-value" placeholder="用户名"/> 
+			                            </div>
+			                        </div>
+			                        
+			                        <div class="row login-item">
+			                            <div class="col-xs-2 login-item-glyphicon">
+			                                <span class="glyphicon glyphicon-lock"></span>
+			                            </div>
+			                            <div class="col-xs-10">
+			                                <input type="password" id="password" value="yonyou1" class="login-item-value"  placeholder="密码"/>
+			                            </div>
 			                        </div>
 
-			                        <div class="row">
-			                            <div class="col-xs-6">故障次数</div>
-			                            <div class="col-xs-6">停机时长</div>
-			                        </div>  
-			                                         
-			                    </div>
-			                </div>
+			                        <div class="row login-item">
+			                            <div class="col-xs-2 login-item-glyphicon">
+			                                <span class="glyphicon glyphicon-info-sign"></span>
+			                            </div>
+			                            <div class="col-xs-10">
+			                                <input type="text" id="host" value="10.1.73.225" class="login-item-value" placeholder="IP"/>
+			                            </div>
+			                        </div>
 
-			                <div class="detail-info-name-wrapper">
-			                    <div class="detail-info-name">
-			                        <div class="row">
-			                            <div class="col-xs-12" id="name"></div>
-			                        </div> 
-			                    </div> 
-			                </div>
+			                        <div class="row login-item">
+			                            <div class="col-xs-2 login-item-glyphicon">
+			                                <span class="glyphicon glyphicon-object-align-horizontal"></span>
+			                            </div>
+			                            <div class="col-xs-10">
+			                                <input type="text" id="port" value="8080" class="login-item-value" placeholder="端口"/>
+			                            </div>
+			                        </div>
+
+			                       
+			                        <div class="login-submit">                        
+			                            <button type="submit" class="btn-lg btn-danger col-xs-12 login-submit-action">登&nbsp;&nbsp;录
+			                            </button>
+			                        </div>   
+			      
+			                    </form>
+			                </div>               
 			            </div>
 			        </div>
+  				</div><!--End Login Slider -->
+    			
+    			<!--      Summary Page     -->
+    			<div class="swiper-slide">
+    				<div class="summary">
+						<div id="head">	
+							<div class="container">
+								<div class="head-wrapper">			
+									<div class="head-inner">						
+										<div class="head-items">
+											<div class="row" >							
+												<div class="col-xs-2">							
+													<a id="back" class="head-back glyphicon glyphicon-menu-left"></a>
+												</div>
+												<div class="col-xs-8 head-captial">故障分析</div>
+											</div>							
+										</div>		            
+							        </div>
+							    </div>		    
+						    </div>
+					    </div>
 
-			        <div class="charts">
-			            <div class="container">
-			                <div class="charts-wrapper">
-			                    <div class="charts-separator"></div>
-			                    <div id="chart1" class="chart-item" style="height:600px"></div>
+					    <div class="container">
+					    	<div clas="separator-wrapper">
+					    		<hr class="separator">
+					    	</div>
+					    </div>  
 
-			                    <div class="charts-separator"></div>
-			                    <div id="chart2" class="chart-item" style="height:600px"></div>
 
-			                    <div class="charts-separator"></div>
-			                    <div id="chart3" class="chart-item" style="height:600px"></div>
-			                </div>
-			            </div>
-			        </div>
-			    </div>			
+					    <!-- START THE NAVBAR -->
+					    <div id="navbar">
+					    	<div class="container">
+					    		<div class="navbar-wrapper">
+					    			 <div class="navbar navbar-static-top">
+					    			 	<div id="failureSummaryNavbar" class="btn-group btn-group-justified">
+											<a id="failureOrg" class="btn button-item">总览</a>
+											<a id="failureType" class="btn button-item">类别</a>
+											<a id="failureSymptom" class="btn button-item">现象</a>
+											<a id="failureReason" class="btn button-item">原因</a>
+										</div> 	    			 	
+				            		</div>
+				            	</div>
+				            </div>
+				        </div>	  
+
+				        <div class="date">
+					        <div class="container">
+					        	<div class="date-wrapper">
+					        		<div class="date-inner">
+					        			
+							        	<div class="row date-selector">
+							                <div class="col-xs-4 date-name">开始日期</div>
+							                <div class="col-xs-8">
+							                    <input type="month" id="startMonth" class="col-xs-12 date-value"/>
+							                </div>   
+							            </div>
+
+							            <div class="row date-selector">
+							                <div class="col-xs-4 date-name">结束日期</div>
+							                <div class="col-xs-8">
+							                    <input type="month" id="endMonth" class="col-xs-12 date-value"/>
+							                </div>
+							            </div>
+							             
+							            <div class="row date-submit">
+							            	<div class="col-xs-12">
+							            		<button type="button" id="queryByDate" class="btn btn-small col-xs-12 date-submit-action">查&nbsp;询</button>
+							            	</div>
+							            </div>
+							            
+							        </div>
+							    </div>
+					        </div>            
+				        </div>
+
+				        <div class="container">
+					    	<div clas="separator-wrapper">
+					    		<hr class="separator">
+					    	</div>
+					    </div>     
+
+					    <div class="table-info">
+					        <div class="container">	        	
+								<table id="failureSummaryTable" class="table table-default table-hover table-striped">
+									<colgroup>
+										<col class="table-info-column-1"></col>
+										<col class="table-info-column-2"></col>
+										<col class="table-info-column-3"></col>
+									</colgroup>
+									<thead class="table-info-head" />
+									<tbody class="table-info-body" />
+								</table>
+							</div>			
+						</div>
+
+					</div><!--End Summary -->
+				</div><!--End Summary Slider -->
+
+				<!--      Detail Page     -->
+				<div class="swiper-slide">
+					<div class="detail">
+						<div id="head"> 
+				            <div class="container">
+				                <div class="head-wrapper">          
+				                    <div class="head-inner">                        
+				                        <div class="head-items">
+				                            <div class="row" >                          
+				                                <div class="col-xs-2">                          
+				                                    <a id="back" class="head-back glyphicon glyphicon-menu-left"></a>
+				                                </div>
+				                                <div id="title" class="col-xs-8 head-captial"></div>
+				                            </div>                          
+				                        </div>                  
+				                    </div>
+				                </div>          
+				            </div>
+				        </div>
+
+				         <div class="container">
+				            <div clas="separator-wrapper">
+				                <hr class="separator">
+				            </div>
+				        </div>
+
+				        <!-- START THE DETAIL-INFO -->
+				        <div class="detail-info">
+				            <div class="container">
+				                <div class="detail-info-values-wrapper">                     
+				                    <div class="detail-info-values">
+
+				                        <div class="row">
+				                            <div id="haltedTimes" class="col-xs-6"></div>
+				                            <div id="haltedHours" class="col-xs-6"></div>
+				                        </div>
+
+				                        <div class="row">
+				                            <div class="col-xs-6">故障次数</div>
+				                            <div class="col-xs-6">停机时长</div>
+				                        </div>  
+				                                         
+				                    </div>
+				                </div>
+
+				                <div class="detail-info-name-wrapper">
+				                    <div class="detail-info-name">
+				                        <div class="row">
+				                            <div class="col-xs-12" id="name"></div>
+				                        </div> 
+				                    </div> 
+				                </div>
+				            </div>
+				        </div>
+
+				        <div class="charts">
+				            <div class="container">
+				                <div class="charts-wrapper">
+				                    <div class="charts-separator"></div>
+				                    <div id="chart1" class="chart-item" style="height:600px"></div>
+
+				                    <div class="charts-separator"></div>
+				                    <div id="chart2" class="chart-item" style="height:600px"></div>
+
+				                    <div class="charts-separator"></div>
+				                    <div id="chart3" class="chart-item" style="height:600px"></div>
+				                </div>
+				            </div>
+				        </div>
+
+					</div><!--End Detail -->					
+			    </div><!--End Detail Slider-->
+
 			</div>
 		</div>		
 	</body>
 	<script src="./js/swiper.js"></script>
 	<script src="./js/failure.slider.js"></script>
+	<script src="./js/login.controller.js"></script>              
+    <script src="./js/login.view.js"></script>
 	<script src="./js/failure.summary.view.js"></script>
 	<script src="./js/failure.detail.view.js"></script>
 	<script src="./js/failure.model.js"></script>
