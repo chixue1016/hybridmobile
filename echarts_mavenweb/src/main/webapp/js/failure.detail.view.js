@@ -12,7 +12,7 @@ function FailureDetailView() {
 		loadDetail( _summaryType, _selectedSummaryData.id, _startMonth, _endMonth );
 	};
 
-	var init	 	= function() {
+	this.init	 	= function() {
 		var message 	= FailureMessage.receive(); 
 		_summaryType 	= message.getSummaryType();
 		_startMonth		= message.getStartMonth();
@@ -50,9 +50,6 @@ function FailureDetailView() {
 		   	chart.draw(); 
 		}
 	};
-
-	// Constructor code.
-	init();
 }
 
 var failureDetailView = new FailureDetailView();

@@ -2,15 +2,15 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" table-info="IE=edge">
-		<!-- <meta name="viewport" table-info="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />-->
-		<meta name="viewport" table-info="user-scalable=yes, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+		<meta http-equiv="X-UA-Compatible" table-info="IE=edge">	
+		<meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+
 		<title>PanGu</title>		
 		<link rel="stylesheet" href="./js/bootstrap-3.3.5-dist/css/bootstrap.css">
 		<link rel="stylesheet" href="./js/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css">
 		<link rel="stylesheet" href="./css/dataTables.bootstrap.css">
 		<link rel="stylesheet" href="./css/jquery.dataTables.css">
-		<link rel="stylesheet" href="css/swiper.css">
+		<link rel="stylesheet" href="./css/swiper.css">
 		<link rel="stylesheet" href="./css/failure.css">
 
 		<script src="./js/jquery-1.11.3.min.js"></script>
@@ -27,15 +27,12 @@
 		<script src="./js/login.context.js"></script> 
 		<script src="./js/failure.snapshot.js"></script>
 		<script src="./js/failure.message.js"></script>
-		<script src="./js/failure.summary.table.js"></script>
-		<script src="./js/failure.model.js"></script>
-		<script src="./js/failure.controller.js"></script>
+		<script src="./js/failure.summary.table.js"></script>		
 
-		 <script src="./js/echarts-2.2.7/echarts-all.js"></script>
-        <script src="./js/echarts-2.2.7/pie.js"></script>
-        <script src="./js/echarts-2.2.7/bar.js"></script> 
+		<script src="./js/echarts-2.2.7/echarts-all.js"></script>     
 		<script src="./js/failure.message.js"></script> 
-		<script src="./js/failure.detial.chartconfig.js"></script> 
+		<script src="./js/failure.charts.js"></script> 
+		<script src="./js/failure.charts.config.js"></script> 
 		<script type="text/javascript">
 			//给窗口一个名称，打开其他窗口返回的时候直接根据名称打开该窗口，避免再次加载影响性能
 			window.name = "failureWindow";
@@ -207,27 +204,14 @@
 			        </div>
 			    </div>			
 			</div>
-		</div>
-		
-		<script src="js/swiper.js"></script>
-		<script type="text/javascript">
-		  var mySwiper = new Swiper('.swiper-container',{
-		    loop: false,
-			autoplay: false,
-		  });
-
-		  alert(mySwiper.sliders);
-
-		  $("#slider2").click(function() {
-		  	mySwiper.slideTo(1, 1000, false);//切换到第一个slide，速度为1秒
-		  });
-
-		  $("#slider3").click(function() {
-		  	mySwiper.slideTo(2, 10, false);//切换到第一个slide，速度为1秒
-		  });
-		</script>
+		</div>		
 	</body>
+	<script src="./js/swiper.js"></script>
+	<script src="./js/failure.slider.js"></script>
 	<script src="./js/failure.summary.view.js"></script>
+	<script src="./js/failure.detail.view.js"></script>
+	<script src="./js/failure.model.js"></script>
+	<script src="./js/failure.controller.js"></script>
 
 </html>
 

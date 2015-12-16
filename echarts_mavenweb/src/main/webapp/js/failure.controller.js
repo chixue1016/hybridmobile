@@ -7,6 +7,7 @@ $(document).bind( "mobileinit", function() {
 function FailureController() {
 	//var failureSummaryView 	= new FailureSummaryView();
 	var failureModel 	= new FailureModel();
+	var _failureSlider	= new FailureSlider();
 	
 	this.onLoadSummary 	= function( summaryType, startMonth, endMonth ) {
 		failureModel.loadSummary( summaryType, startMonth, endMonth );
@@ -15,12 +16,13 @@ function FailureController() {
 		failureSummaryView.showSummary( datas );
 	};
 
-	this.onRedirectToDetailHtml = function( failureMessage ) {
+	this.toDetail		= function( failureMessage ) {
 		// Before redirect the detail html, save the summary html firstly.
 		failureSummaryView.snapshot();
 		// Send message to the detail html
-		failureMessage.send( );		
-        open( "failureDetail.html" );
+		failureMessage.send( );     
+        _failureSlider.toDetail();
+        failureDetailView.init();
 	};
 
 	this.onBackTo		= function( html ) {

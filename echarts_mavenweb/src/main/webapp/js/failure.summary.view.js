@@ -32,14 +32,18 @@ function FailureSummaryView() {
 			failureSummaryView.onBack();
 		});
 
+		$(document).ready( function() {     
+               
+                failureSummaryView.onReloadHtml();  
+        });
 
-		 //initiating jQuery
+		/* //initiating jQuery
         jQuery(function($) {
             $(document).ready( function() {              
                 $('#head').stickUp();
                 failureSummaryView.onReloadHtml();  
             });
-        });
+        });*/
 	
 	};
 
@@ -114,7 +118,7 @@ function FailureSummaryView() {
     	// 跳转到详情页面
     	var failureMessage = 
     		new FailureMessage( _summaryType, _startMonth, _endMonth, selectedSummaryData );
-    	failureController.onRedirectToDetailHtml( failureMessage );
+    	failureController.toDetail( failureMessage );
 	};
 
 	this.onChangeTab 	= function(selectedSummaryTab) {		
