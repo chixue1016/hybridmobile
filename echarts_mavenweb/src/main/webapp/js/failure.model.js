@@ -39,7 +39,7 @@ function FailureModel() {
 		_userId		= responseContext.userid;
 		_token		= responseContext.token;
 	
-		failureController.toSummary();	
+		failureController.frontToSummary();	
 	}
 	function buildServerUrl( host, port ) {
 		var projectId = "echarts_mavenweb";
@@ -55,7 +55,7 @@ function FailureModel() {
 		if ( pseudoLogin ) {
 			var loginContext = pseudoLoginContext();
 			loginContext.save();
-			failureController.toSummary();			
+			failureController.frontToSummary();			
 		} else {
 			var jsonParameters	= {
 				"user" 		: _user, 	
