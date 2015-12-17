@@ -9,6 +9,10 @@ function FailureController() {
 	var failureModel 	= new FailureModel();
 	var _failureSlider	= new FailureSlider();
 	
+	this.login = function(user, password, host, port) {	
+		failureModel.login( user, password, host, port );		
+	};
+
 	this.onLoadSummary 	= function( summaryType, startMonth, endMonth ) {
 		failureModel.loadSummary( summaryType, startMonth, endMonth );
 	};
