@@ -20,12 +20,15 @@ function FailureController() {
 		failureSummaryView.showSummary( datas );
 	};
 
-	this.toSummary		= function() {
+	this.backToSummary	= function() {
+		_failureSlider.toSummary();		
+	};
+	this.frontToSummary	= function() {
 		_failureSlider.toSummary();
 		failureSummaryView.init();
 	};
 
-	this.toDetail		= function( failureMessage ) {
+	this.frontToDetail	= function( failureMessage ) {
 		// Before redirect the detail html, save the summary html firstly.
 		failureSummaryView.snapshot();
 		// Send message to the detail html
@@ -34,9 +37,9 @@ function FailureController() {
         failureDetailView.init();
 	};
 
-	this.onBackTo		= function( html ) {
-		open( html );
-	}
+	this.backToLogin	= function() {
+		_failureSlider.toLogin();
+	};
 
 	this.onLoadDetail 	= function( summaryType, id, startMonth, endMonth ) {		
 		failureModel.loadDetail( summaryType, id, startMonth, endMonth );

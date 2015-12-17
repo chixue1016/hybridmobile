@@ -33,10 +33,12 @@ function FailureDetailView() {
 
 		// 事件绑定
 		$(document).ready(function() {
-			failureDetailView.onReloadHtml();                   
+			failureDetailView.onReloadHtml();
+			$("#detailBack").click( onBack );                   
 		});
 
 	};
+
 
 	var loadDetail	= function( summaryType, id, startMonth, endMonth ) {
 		failureController.onLoadDetail( summaryType, id, startMonth, endMonth );
@@ -50,6 +52,10 @@ function FailureDetailView() {
 		   	chart.draw(); 
 		}
 	};
+
+	function onBack() {
+		failureController.backToSummary();
+	}
 }
 
 var failureDetailView = new FailureDetailView();

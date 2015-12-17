@@ -5,8 +5,6 @@
      	$(".login").attr("style", style);
     });*/
 
-   
-
     function LoginView() {
 
     	function login() {
@@ -15,7 +13,7 @@
 	        var host      = $("#host").val();
 	        var port      = $("#port").val();
 
-	        loginController.login(username, password, host, port);
+	        failureController.login( username, password, host, port );
 	    }
 
 	    function eventBind() {

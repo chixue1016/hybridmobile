@@ -7,18 +7,24 @@ function FailureSummaryView() {
 	var _table;
 
 	this.init 	= function() {
-		_table 	= new FailureSummaryTableBuilder( "failureSummaryTable" ).build();
+		initTable();
 		eventBind();
 	};
+	function initTable() {
+		if ( _table == null || _table == "undefined") {
+			_table 	= new FailureSummaryTableBuilder( "failureSummaryTable" ).build();
+			
+			_table.on( "select", function(e, dt, type, indexes) {
+		    	var rowDatas 	= _table.rows( indexes ).data();
+		    	var selectData 	= rowDatas[0];
+		    	onSelectRow( selectData );  
+
+			});
+		}
+		
+	}
 	// 事件绑定
 	function eventBind() {
-		_table.on( "select", function(e, dt, type, indexes) {
-	    	var rowDatas 	= _table.rows( indexes ).data();
-	    	var selectData 	= rowDatas[0];
-	    	onSelectRow( selectData );  
-
-		});
-
 		$("#failureSummaryNavbar").on( "click", "a", function(event) {		
 			var selectedSummaryTab = $(this);
 			onChangeTab( selectedSummaryTab );	
@@ -26,7 +32,7 @@ function FailureSummaryView() {
 
 		$("#queryByDate").click( onQueryByDate );
 
-		$("#back").click( onBack );
+		$("#summaryBack").click( onBack );
 
 		$(document).ready( function() {                
             onReloadHtml();  
@@ -113,7 +119,7 @@ function FailureSummaryView() {
     	// 跳转到详情页面
     	var failureMessage = 
     		new FailureMessage( _summaryType, _startMonth, _endMonth, selectedSummaryData );
-    	failureController.toDetail( failureMessage );
+    	failureController.frontToDetail( failureMessage );
 	};
 
 	function onChangeTab (selectedSummaryTab) {		
@@ -140,7 +146,7 @@ function FailureSummaryView() {
 	}
 
 	function onBack() {
-		failureController.onBackTo( "login.html" );
+		failureController.backToLogin( );
 	}
 
 	// 页面切换时，保存当前页面快照
