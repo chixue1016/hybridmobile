@@ -15,26 +15,21 @@ function FailureSummaryView() {
 		_table.on( "select", function(e, dt, type, indexes) {
 	    	var rowDatas 	= _table.rows( indexes ).data();
 	    	var selectData 	= rowDatas[0];
-	    	failureSummaryView.onSelectRow( selectData );  
+	    	onSelectRow( selectData );  
 
 		});
 
 		$("#failureSummaryNavbar").on( "click", "a", function(event) {		
 			var selectedSummaryTab = $(this);
-			failureSummaryView.onChangeTab( selectedSummaryTab );	
+			onChangeTab( selectedSummaryTab );	
 		});
 
-		$("#queryByDate").click(function() {
-			failureSummaryView.onQueryByDate();
-		});
+		$("#queryByDate").click( onQueryByDate );
 
-		$("#back").click(function() {
-			failureSummaryView.onBack();
-		});
+		$("#back").click( onBack );
 
-		$(document).ready( function() {     
-               
-                failureSummaryView.onReloadHtml();  
+		$(document).ready( function() {                
+            onReloadHtml();  
         });
 
 		/* //initiating jQuery
@@ -68,7 +63,7 @@ function FailureSummaryView() {
 		failureController.onLoadDetail( summaryType, id );
 	};
 
-	this.onReloadHtml 	= function() {
+	function onReloadHtml() {
 		// 加载页面时，首先判断是否为第一次加载
     	// 恢复之前的快照
 		var snapshot		= FailureSnapshot.restore();
@@ -107,7 +102,7 @@ function FailureSummaryView() {
    		return (year + "-" + month);
 	};
 
-	this.onSelectRow  	= function( selectedRow ) {
+	function onSelectRow ( selectedRow ) {
     	var selectedSummaryData = {
     		"id" 			: selectedRow.id,
     		"name"			: selectedRow.name,
@@ -121,7 +116,7 @@ function FailureSummaryView() {
     	failureController.toDetail( failureMessage );
 	};
 
-	this.onChangeTab 	= function(selectedSummaryTab) {		
+	function onChangeTab (selectedSummaryTab) {		
 		var selectedSummaryType = selectedSummaryTab.attr("id");
 		var selectedNullTab 	= (selectedSummaryType == null || selectedSummaryType == "undefined");
 				
@@ -138,13 +133,13 @@ function FailureSummaryView() {
     
     	// Reload the summary data.
     	loadSummary();
-	};
+	}
 
-	this.onQueryByDate	= function() {
+	function onQueryByDate() {
 		loadSummary();
 	}
 
-	this.onBack 	= function() {
+	function onBack() {
 		failureController.onBackTo( "login.html" );
 	}
 
