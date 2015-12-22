@@ -41,8 +41,9 @@
 
 	<body>
 		<div class="swiper-container">
-  			<div class="swiper-wrapper" style="float:left; height:auto;">
-  				<!--      Login Page     -->
+  			<div class="swiper-wrapper" style="z-index:3">
+
+  				<!-- Login Page -->    
   				<div class="swiper-slide swiper-no-swiping">
   					<div class="login">
 			            <div class="container">
@@ -93,28 +94,29 @@
 			                    <!-- </form> -->
 			                </div>               
 			            </div>
-			        </div>
+			        </div> 
   				</div><!--End Login Slider -->
     			
     			<!--      Summary Page     -->
     			<div class="swiper-slide">
-    				<div class="summary">
+    				
+					<div class="summary">
 						<div id="head">	
-							<div class="container">
-								<div class="head-wrapper">			
-									<div class="head-inner">						
-										<div class="head-items">
-											<div class="row" >							
-												<div class="col-xs-2">							
-													<a id="summaryBack" class="head-back glyphicon glyphicon-menu-left"></a>
-												</div>
-												<div class="col-xs-8 head-captial">故障分析</div>
-											</div>							
-										</div>		            
-							        </div>
-							    </div>		    
-						    </div>
-					    </div>
+									<div class="container">
+										<div class="head-wrapper">			
+											<div class="head-inner">						
+												<div class="head-items">
+													<div class="row" >							
+														<div class="col-xs-2">							
+															<a id="summaryBack" class="head-back glyphicon glyphicon-menu-left"></a>
+														</div>
+														<div class="col-xs-8 head-captial">故障分析</div>
+													</div>							
+												</div>		            
+									        </div>
+									    </div>		    
+								    </div>
+						</div>
 
 					    <div class="container">
 					    	<div clas="separator-wrapper">
@@ -173,23 +175,34 @@
 					    	<div clas="separator-wrapper">
 					    		<hr class="separator">
 					    	</div>
-					    </div>     
+					    </div>
 
-					    <div class="table-info">
-					        <div class="container">	        	
-								<table id="failureSummaryTable" class="table table-default table-hover table-striped">
-									<colgroup>
-										<col class="table-info-column-1"></col>
-										<col class="table-info-column-2"></col>
-										<col class="table-info-column-3"></col>
-									</colgroup>
-									<thead class="table-info-head" />
-									<tbody class="table-info-body" />
-								</table>
-							</div>			
+					    <div id="summary-scroller-wrapper">
+							<div id="scroller">
+
+							    <div class="table-info">
+							        <div class="container">	        	
+										<table id="failureSummaryTable" class="table table-default table-hover table-striped">
+											<colgroup>
+												<col class="table-info-column-1"></col>
+												<col class="table-info-column-2"></col>
+												<col class="table-info-column-3"></col>
+											</colgroup>
+											<thead class="table-info-head" />
+											<tbody class="table-info-body" />
+										</table>
+									</div>			
+								</div><!--End Table -->
+
+								<div id="pullUp">
+									<span class="pullUpIcon"></span><span class="pullUpLabel">Pull up to refresh...</span>
+								</div>
+
+							</div><!--End Summary Scroller -->
 						</div>
 
-					</div><!--End Summary -->
+					</div><!--End Summary -->					
+
 				</div><!--End Summary Slider -->
 
 				<!--      Detail Page     -->
@@ -263,11 +276,12 @@
 				        </div>
 
 					</div><!--End Detail -->					
-			    </div><!--End Detail Slider-->
+			    </div><!--End Detail Slider -->
 
 			</div>
 		</div>		
 	</body>
+	<script src="./js/iscroll/iscroll-4.2.js"></script>
 	<script src="./js/swiper.js"></script>
 	<script src="./js/failure.slider.js"></script>            
     <script src="./js/login.view.js"></script>

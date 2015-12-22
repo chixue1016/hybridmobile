@@ -20,7 +20,8 @@ body {
 .login {	
 }
 .login-wrapper {
-
+	height 	: 100%;
+	color 	: white;
 }
 
 .login .login-item	{
@@ -95,6 +96,8 @@ body {
 	color 		: white;
 }
 
+/* CUSTOMIZE THE PULL-UP
+-------------------------------------------------- */
 
 /* CUSTOMIZE THE DATE
 -------------------------------------------------- */
@@ -136,7 +139,7 @@ body {
 /* CUSTOMIZE THE TABLE
 -------------------------------------------------- */
 .table-info {
-	z-index		: 3;
+	z-index		: 15;
 }
 
 .table-info-tablewrapper {

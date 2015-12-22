@@ -24,8 +24,8 @@ function FailureController() {
 		_failureSlider.toSummary();		
 	};
 	this.frontToSummary	= function() {
-		_failureSlider.toSummary();
 		failureSummaryView.init();
+		_failureSlider.toSummary();		
 	};
 
 	this.frontToDetail	= function( failureMessage ) {
@@ -55,4 +55,3 @@ function FailureController() {
 
 }
 
-var failureController = new FailureController();

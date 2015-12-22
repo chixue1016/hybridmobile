@@ -1,4 +1,4 @@
-var myScroll,
+var myScroll, mySwiper,
 	pullDownEl, pullDownOffset,
 	pullUpEl, pullUpOffset,
 	generatedCount = 0;
@@ -39,9 +39,17 @@ function loaded() {
 	pullUpEl = document.getElementById('pullUp');	
 	pullUpOffset = pullUpEl.offsetHeight;
 	
-	myScroll = new IScroll('#wrapper', {
+	mySwiper 	= new Swiper( '.swiper-container', {
+			noSwiping 	: true, // 如果slide上增加了类swiper-no-swiping，则无法滑动。		
+		    autoHeight	: true,
+		    loop		: false,
+			autoplay	: false,
+	});
+
+	myScroll = new iScroll('wrapper', {
 		useTransition: true,
-		topOffset: pullDownOffset,
+		topOffset	: pullDownOffset,
+		
 		onRefresh: function () {
 			if (pullDownEl.className.match('loading')) {
 				pullDownEl.className = '';

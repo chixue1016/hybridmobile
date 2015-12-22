@@ -4,10 +4,16 @@ function FailureSummaryView() {
 	var _startMonth, _endMonth;
 	var _summaryDatas;
 
+	var _tableScroller;
 	var _table;
 
+	// 表格每页显示的数据个数
+	var _pageSize	= 3;
+	// 记录当前界面显示的数据的索引
+	var _currentDataIndex = 0;
 	this.init 	= function() {
 		initTable();
+		initScroller();
 		eventBind();
 	};
 	function initTable() {
@@ -23,6 +29,83 @@ function FailureSummaryView() {
 		}
 		
 	}
+
+	function pullDownAction () {			
+		loadOnePage();
+		_tableScroller.refresh();		// Remember to refresh when contents are loaded (ie: on ajax completion)
+	}	
+
+	function pullUpAction () {
+		loadOnePage();
+		_tableScroller.refresh();		// Remember to refresh when contents are loaded (ie: on ajax completion)
+	}
+
+	function initScroller() {
+		var pullDownEl 		= document.getElementById('pullDown');
+		var pullDownOffset 	= pullDownEl.offsetHeight;
+		//var pullDownOffset = $('#pullDown').height(); // jQuery获取的高度不包括内 外边距和边框
+		var pullUpEl 		= document.getElementById('pullUp');	
+		var pullUpOffset 	= pullUpEl.offsetHeight;		
+
+		var scrollWrapper 			= document.getElementById('wrapper');
+		// 表格滚动条的位置相对于表格分隔符确定
+		var separatorPadding		= 20;
+		var scrollWrapperTopOffset 	= document.getElementById('tableSeparator').offsetTop + separatorPadding;
+		//var scrollWrapperTopOffset 		= $('#tableSeparator').offset().top + 20/*.offsetTop + 20*/;
+		scrollWrapper.style.top  	= scrollWrapperTopOffset + "px";
+		
+		// 表格滚动条包装器高度
+	    var scrollWrapperHeight		= $(window).height() - scrollWrapperTopOffset;
+		scrollWrapper.style.height= scrollWrapperHeight + "px";
+		
+		scrollWrapper.style.left 	= '0';
+
+		_tableScroller = new iScroll('wrapper', {
+			topOffset		: pullDownOffset,
+			useTransition 	: true,
+			
+			onRefresh: function () {
+				if (pullDownEl.className.match('loading')) {
+					pullDownEl.className = '';
+					pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Pull down to refresh...';
+				} else if (pullUpEl.className.match('loading')) {
+					pullUpEl.className = '';
+					pullUpEl.querySelector('.pullUpLabel').innerHTML = 'Pull up to load more...';
+				}
+			},
+			onScrollMove: function () {
+				var currentY = this.y;
+				if (this.y > pullThreshold && !pullDownEl.className.match('flip')) {
+					pullDownEl.className = 'flip';
+					pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Release to refresh...';
+					this.minScrollY = 0;
+				} else if (this.y < pullThreshold && pullDownEl.className.match('flip')) {
+					pullDownEl.className = '';
+					pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Pull down to refresh...';
+					this.minScrollY = -pullDownOffset;
+				} else if (this.y < (this.maxScrollY - pullThreshold) && !pullUpEl.className.match('flip')) {
+					pullUpEl.className = 'flip';
+					pullUpEl.querySelector('.pullUpLabel').innerHTML = 'Release to refresh...';
+				} else if (this.y > (this.maxScrollY - pullThreshold) && pullUpEl.className.match('flip')) {
+					pullUpEl.className = '';
+					pullUpEl.querySelector('.pullUpLabel').innerHTML = 'Pull up to load more...';
+					
+				}
+			},
+			onScrollEnd: function () {
+				if (pullDownEl.className.match('flip')) {
+					pullDownEl.className = 'loading';
+					pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Loading...';				
+					pullDownAction();	// Execute custom function (ajax call?)
+				} else if (pullUpEl.className.match('flip')) {
+					pullUpEl.className = 'loading';
+					pullUpEl.querySelector('.pullUpLabel').innerHTML = 'Loading...';				
+					pullUpAction();	// Execute custom function (ajax call?)
+				}
+			}
+		});
+	}
+
 	// 事件绑定
 	function eventBind() {
 		$("#failureSummaryNavbar").on( "click", "a", function(event) {		
@@ -56,13 +139,26 @@ function FailureSummaryView() {
         failureController.onLoadSummary( _summaryType, _startMonth, _endMonth );
 	};
 
+	function loadOnePage() {
+		var length 		= _summaryDatas.length ;		
+		var startIndex 	= _currentDataIndex;
+		var endIndex	= Math.min( _currentDataIndex + _pageSize, length );
+		var onePage 	= [];
+		for ( var i = startIndex ; i < endIndex ; i++) {		   
+			onePage.push( _summaryDatas[ i ] );		   
+		}
+
+		_currentDataIndex = endIndex;
+		_table.rows.add( onePage ).draw();
+	}
+
 	this.showSummary  	= function( datas ) {
 		// var table = $('#dataInfo').DataTable();
 		// table.clear();
 
  	    _summaryDatas = datas.data;
  	    _table.clear();
- 	    _table.rows.add(_summaryDatas).draw();
+ 	    loadOnePage();
  	};
 
 	var loadDetail 	= function( summaryType, id ) {
@@ -178,7 +274,7 @@ function FailureSummaryView() {
 	
 }
 
-var failureSummaryView = new FailureSummaryView();
+
 
 
 

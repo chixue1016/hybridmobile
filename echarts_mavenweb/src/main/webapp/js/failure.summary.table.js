@@ -3,9 +3,9 @@ function FailureSummaryTableBuilder( divId ) {
 
 	// 表格布局
 	var layoutConfig = 
-		"<'row table-info-tablewrapper'<'col-xs-12'tr>>" 							+ // 
+		"<'row table-info-tablewrapper'<'col-xs-12'tr>>" 							/*+ // 
        	"<'row table-info-pagination'<'col-xs-9'p><'col-xs-3'l>>"					+
-       	"<'row table-info-information'<'col-xs-12'i>>";
+       	"<'row table-info-information'<'col-xs-12'i>>"*/;
 
 	var columnsConfig 	= [ 
 		{ "title"  : "名称", 		"data"	: "name"}, 
@@ -37,6 +37,7 @@ function FailureSummaryTableBuilder( divId ) {
 		"dom"       : layoutConfig,    
 	    "columns"   : columnsConfig,
 	    "searching" : false,
+	    "paging" 	: false,	
 	    "rowId"     : "id",
 	    "select"    : {
 	    	"style" : "single",
