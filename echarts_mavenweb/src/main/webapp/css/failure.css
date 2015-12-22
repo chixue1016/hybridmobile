@@ -21,7 +21,6 @@ body {
 }
 .login-wrapper {
 	height 	: 100%;
-	color 	: white;
 }
 
 .login .login-item	{
@@ -43,6 +42,9 @@ body {
 
 /* CUSTOMIZE THE HEAD
 -------------------------------------------------- */
+#fixedPart {	
+	background 	: #ffffff;
+}
 .head-wrapper {	
 	z-index		: 15;
 	background	: white;

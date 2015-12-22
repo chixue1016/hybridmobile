@@ -17,7 +17,7 @@ function FailureSummaryView() {
 		eventBind();
 	};
 	function initTable() {
-		if ( _table == null || _table == "undefined") {
+		if ( _table == null || _table == "undefined" ) {
 			_table 	= new FailureSummaryTableBuilder( "failureSummaryTable" ).build();
 			
 			_table.on( "select", function(e, dt, type, indexes) {
@@ -41,16 +41,18 @@ function FailureSummaryView() {
 	}
 
 	function initScroller() {
+		if ( _tableScroller  != null && _table != "undefined" ) {
+			return;
+		}
 		var pullDownEl 		= document.getElementById('pullDown');
 		var pullDownHeight 	= pullDownEl.offsetHeight;
 		//var pullDownHeight = $('#pullDown').height(); // jQuery获取的高度不包括内 外边距和边框
-		/*var pullUpEl 		= document.getElementById('pullUp');	
-		var pullUpOffset 	= pullUpEl.offsetHeight;	*/	
+		var pullUpEl 		= document.getElementById('pullUp');	
+		/*var pullUpOffset 	= pullUpEl.offsetHeight;*/		
 
 		var scrollWrapper 			= document.getElementById('wrapper');
-		// 表格滚动条的位置相对于表格分隔符确定
-		var separatorPadding		= 20;
-		var scrollWrapperTopOffset 	= document.getElementById('tableSeparator').offsetTop + separatorPadding;
+		// 表格滚动条的位置相对于页面 固定区域 确定		
+		var scrollWrapperTopOffset 	= document.getElementById('fixedPart').offsetHeight;
 		//var scrollWrapperTopOffset 		= $('#tableSeparator').offset().top + 20/*.offsetTop + 20*/;
 		scrollWrapper.style.top  	= scrollWrapperTopOffset + "px";
 		
@@ -60,8 +62,8 @@ function FailureSummaryView() {
 		
 		scrollWrapper.style.left 	= '0';
 
-		var pullThreshold = 5, // 上拉或下拉动作，触发加载数据时的偏移值
-		_tableScroller = new iScroll('wrapper', {
+		var pullThreshold = 5; // 上拉或下拉动作，触发加载数据时的偏移值
+		_tableScroller = new iScroll( 'wrapper', {
 			topOffset		: pullDownHeight,
 			useTransition 	: true,
 			
@@ -158,7 +160,9 @@ function FailureSummaryView() {
 		// table.clear();
 
  	    _summaryDatas = datas.data;
+ 	    // 重新加载数据后，表格需要清空，当前显示的数据下标清零
  	    _table.clear();
+ 	    _currentDataIndex = 0;
  	    loadOnePage();
  	};
 

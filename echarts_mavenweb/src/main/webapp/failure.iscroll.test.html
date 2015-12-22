@@ -99,109 +99,114 @@
 				<div class="swiper-slide">
 
 					<div class="summary">
-						<div id="head">	
-							<div class="container">
-								<div class="head-wrapper">			
-									<div class="head-inner">						
-										<div class="head-items">
-											<div class="row" >							
-												<div class="col-xs-2">							
-													<a id="summaryBack" class="head-back glyphicon glyphicon-menu-left"></a>
-												</div>
-												<div class="col-xs-8 head-captial">故障分析</div>
-											</div>							
-										</div>		            
-							        </div>
-							    </div>		    
-						    </div>
-						</div>
-
-					    <div class="container">
-					    	<div clas="separator-wrapper">
-					    		<hr class="separator">
-					    	</div>
-					    </div>  
-
-
-					    <!-- START THE NAVBAR -->
-					    <div id="navbar">
-					    	<div class="container">
-					    		<div class="navbar-wrapper">
-					    			 <div class="navbar navbar-static-top">
-					    			 	<div id="failureSummaryNavbar" class="btn-group btn-group-justified">
-											<a id="failureOrg" class="btn button-item">总览</a>
-											<a id="failureType" class="btn button-item">类别</a>
-											<a id="failureSymptom" class="btn button-item">现象</a>
-											<a id="failureReason" class="btn button-item">原因</a>
-										</div> 	    			 	
-				            		</div>
-				            	</div>
-				            </div>
-				        </div>	  
-
-				        <div class="date">
-					        <div class="container">
-					        	<div class="date-wrapper">
-					        		<div class="date-inner">
-					        			
-							        	<div class="row date-selector">
-							                <div class="col-xs-4 date-name">开始日期</div>
-							                <div class="col-xs-8">
-							                    <input type="month" id="startMonth" class="col-xs-12 date-value"/>
-							                </div>   
-							            </div>
-
-							            <div class="row date-selector">
-							                <div class="col-xs-4 date-name">结束日期</div>
-							                <div class="col-xs-8">
-							                    <input type="month" id="endMonth" class="col-xs-12 date-value"/>
-							                </div>
-							            </div>
-							             
-							            <div class="row date-submit">
-							            	<div class="col-xs-12">
-							            		<button type="button" id="queryByDate" class="btn btn-small col-xs-12 date-submit-action">查&nbsp;询</button>
-							            	</div>
-							            </div>
-							            
-							        </div>
+						<div id="fixedPart">
+							<div id="head">	
+								<div class="container">
+									<div class="head-wrapper">			
+										<div class="head-inner">						
+											<div class="head-items">
+												<div class="row" >							
+													<div class="col-xs-2">							
+														<a id="summaryBack" class="head-back glyphicon glyphicon-menu-left"></a>
+													</div>
+													<div class="col-xs-8 head-captial">故障分析</div>
+												</div>							
+											</div>		            
+								        </div>
+								    </div>		    
 							    </div>
-					        </div>            
-				        </div>
+							</div>
 
-				        <div id="tableSeparator">
-				        	<div class="container">
+						    <div class="container">
 						    	<div clas="separator-wrapper">
 						    		<hr class="separator">
 						    	</div>
-					    	</div>	
-				        </div>
-				   
-				    	<div id="wrapper">
-							<div id="scroller">
-								<div id="pullDown">
-									<span class="pullDownIcon"></span><span class="pullDownLabel">Pull down to refresh...</span>
-								</div>
+						    </div>  
 
-								<div class="table-info">
-							        <div class="container">	        	
-										<table id="failureSummaryTable" class="table table-default table-hover table-striped">
-											<colgroup>
-												<col class="table-info-column-1"></col>
-												<col class="table-info-column-2"></col>
-												<col class="table-info-column-3"></col>
-											</colgroup>
-											<thead class="table-info-head" />
-											<tbody class="table-info-body" />
-										</table>
-									</div>			
-								</div>
-								
-								<div id="pullUp">
-									<span class="pullUpIcon"></span><span class="pullUpLabel">Pull up to refresh...</span>
-								</div>
-							</div>
+
+						    <!-- START THE NAVBAR -->
+						    <div id="navbar">
+						    	<div class="container">
+						    		<div class="navbar-wrapper">
+						    			 <div class="navbar navbar-static-top">
+						    			 	<div id="failureSummaryNavbar" class="btn-group btn-group-justified">
+												<a id="failureOrg" class="btn button-item">总览</a>
+												<a id="failureType" class="btn button-item">类别</a>
+												<a id="failureSymptom" class="btn button-item">现象</a>
+												<a id="failureReason" class="btn button-item">原因</a>
+											</div> 	    			 	
+					            		</div>
+					            	</div>
+					            </div>
+					        </div>	  
+
+					        <div class="date">
+						        <div class="container">
+						        	<div class="date-wrapper">
+						        		<div class="date-inner">
+						        			
+								        	<div class="row date-selector">
+								                <div class="col-xs-4 date-name">开始日期</div>
+								                <div class="col-xs-8">
+								                    <input type="month" id="startMonth" class="col-xs-12 date-value"/>
+								                </div>   
+								            </div>
+
+								            <div class="row date-selector">
+								                <div class="col-xs-4 date-name">结束日期</div>
+								                <div class="col-xs-8">
+								                    <input type="month" id="endMonth" class="col-xs-12 date-value"/>
+								                </div>
+								            </div>
+								             
+								            <div class="row date-submit">
+								            	<div class="col-xs-12">
+								            		<button type="button" id="queryByDate" class="btn btn-small col-xs-12 date-submit-action">查&nbsp;询</button>
+								            	</div>
+								            </div>
+								            
+								        </div>
+								    </div>
+						        </div>            
+					        </div>
+
+					        <div id="tableSeparator">
+					        	<div class="container">
+							    	<div clas="separator-wrapper">
+							    		<hr class="separator">
+							    	</div>
+						    	</div>	
+					        </div>
 						</div>
+						
+				   		<div id="scrollPart">
+				   			<div id="wrapper">
+								<div id="scroller">
+									<div id="pullDown">
+										<span class="pullDownIcon"></span><span class="pullDownLabel">Pull down to refresh...</span>
+									</div>
+
+									<div class="table-info">
+								        <div class="container">	        	
+											<table id="failureSummaryTable" class="table table-default table-hover table-striped">
+												<colgroup>
+													<col class="table-info-column-1"></col>
+													<col class="table-info-column-2"></col>
+													<col class="table-info-column-3"></col>
+												</colgroup>
+												<thead class="table-info-head" />
+												<tbody class="table-info-body" />
+											</table>
+										</div>			
+									</div>
+									
+									<div id="pullUp">
+										<span class="pullUpIcon"></span><span class="pullUpLabel">Pull up to refresh...</span>
+									</div>
+								</div>
+							</div>	
+				   		</div>
+				    	
 					    
 					    
 					</div>
