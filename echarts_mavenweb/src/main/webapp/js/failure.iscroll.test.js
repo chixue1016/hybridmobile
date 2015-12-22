@@ -1,18 +1,14 @@
-var myScroll, mySwiper,
-	pullDownEl, pullDownOffset,
-	pullUpEl, pullUpOffset,
-	pullThreshold = 5, // 上拉或下拉动作，触发加载数据时的偏移值
-	failureSummaryView,
-	loginView,
+var loginView, failureSummaryView, failureDetailView, 
 	failureController;
 
 
 
 function loaded() {	
-	loginView = new LoginView();
-	failureSummaryView = new FailureSummaryView();
+	loginView 			= new LoginView();
+	failureSummaryView 	= new FailureSummaryView();
+	failureDetailView	= new FailureDetailView();
 
-	failureController = new FailureController();
+	failureController 	= new FailureController();
 	failureController.frontToSummary();
 }
 

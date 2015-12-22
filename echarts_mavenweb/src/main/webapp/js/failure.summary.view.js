@@ -42,10 +42,10 @@ function FailureSummaryView() {
 
 	function initScroller() {
 		var pullDownEl 		= document.getElementById('pullDown');
-		var pullDownOffset 	= pullDownEl.offsetHeight;
-		//var pullDownOffset = $('#pullDown').height(); // jQuery获取的高度不包括内 外边距和边框
-		var pullUpEl 		= document.getElementById('pullUp');	
-		var pullUpOffset 	= pullUpEl.offsetHeight;		
+		var pullDownHeight 	= pullDownEl.offsetHeight;
+		//var pullDownHeight = $('#pullDown').height(); // jQuery获取的高度不包括内 外边距和边框
+		/*var pullUpEl 		= document.getElementById('pullUp');	
+		var pullUpOffset 	= pullUpEl.offsetHeight;	*/	
 
 		var scrollWrapper 			= document.getElementById('wrapper');
 		// 表格滚动条的位置相对于表格分隔符确定
@@ -60,8 +60,9 @@ function FailureSummaryView() {
 		
 		scrollWrapper.style.left 	= '0';
 
+		var pullThreshold = 5, // 上拉或下拉动作，触发加载数据时的偏移值
 		_tableScroller = new iScroll('wrapper', {
-			topOffset		: pullDownOffset,
+			topOffset		: pullDownHeight,
 			useTransition 	: true,
 			
 			onRefresh: function () {
@@ -82,7 +83,7 @@ function FailureSummaryView() {
 				} else if (this.y < pullThreshold && pullDownEl.className.match('flip')) {
 					pullDownEl.className = '';
 					pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Pull down to refresh...';
-					this.minScrollY = -pullDownOffset;
+					this.minScrollY = -pullDownHeight;
 				} else if (this.y < (this.maxScrollY - pullThreshold) && !pullUpEl.className.match('flip')) {
 					pullUpEl.className = 'flip';
 					pullUpEl.querySelector('.pullUpLabel').innerHTML = 'Release to refresh...';

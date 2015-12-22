@@ -31,6 +31,10 @@
 	<script src="./js/failure.snapshot.js"></script>
 	<script src="./js/failure.message.js"></script>
 	<script src="./js/failure.summary.table.js"></script>
+
+	<script src="./js/echarts-2.2.7/echarts-all.js"></script> 
+	<script src="./js/failure.charts.js"></script> 
+	<script src="./js/failure.charts.config.js"></script> 
 	<script type="text/javascript">
 	</script>
 
@@ -203,12 +207,86 @@
 					</div>
 				</div>
 
+				<!--      Detail Page     -->
+				<div class="swiper-slide">
+					<div class="detail">
+						<div id="head"> 
+				            <div class="container">
+				                <div class="head-wrapper">          
+				                    <div class="head-inner">                        
+				                        <div class="head-items">
+				                            <div class="row" >                          
+				                                <div class="col-xs-2">                          
+				                                    <a id="detailBack" class="head-back glyphicon glyphicon-menu-left"></a>
+				                                </div>
+				                                <div id="title" class="col-xs-8 head-captial"></div>
+				                            </div>                          
+				                        </div>                  
+				                    </div>
+				                </div>          
+				            </div>
+				        </div>
+
+				         <div class="container">
+				            <div clas="separator-wrapper">
+				                <hr class="separator">
+				            </div>
+				        </div>
+
+				        <!-- START THE DETAIL-INFO -->
+				        <div class="detail-info">
+				            <div class="container">
+				                <div class="detail-info-values-wrapper">                     
+				                    <div class="detail-info-values">
+
+				                        <div class="row">
+				                            <div id="haltedTimes" class="col-xs-6"></div>
+				                            <div id="haltedHours" class="col-xs-6"></div>
+				                        </div>
+
+				                        <div class="row">
+				                            <div class="col-xs-6">故障次数</div>
+				                            <div class="col-xs-6">停机时长</div>
+				                        </div>  
+				                                         
+				                    </div>
+				                </div>
+
+				                <div class="detail-info-name-wrapper">
+				                    <div class="detail-info-name">
+				                        <div class="row">
+				                            <div class="col-xs-12" id="name"></div>
+				                        </div> 
+				                    </div> 
+				                </div>
+				            </div>
+				        </div>
+
+				        <div class="charts">
+				            <div class="container">
+				                <div class="charts-wrapper">
+				                    <div class="charts-separator"></div>
+				                    <div id="chart1" class="chart-item" style="height:600px"></div>
+
+				                    <div class="charts-separator"></div>
+				                    <div id="chart2" class="chart-item" style="height:600px"></div>
+
+				                    <div class="charts-separator"></div>
+				                    <div id="chart3" class="chart-item" style="height:600px"></div>
+				                </div>
+				            </div>
+				        </div>
+
+					</div><!--End Detail -->					
+			    </div><!--End Detail Slider -->
+
 
 			</div>
 		</div>		
 		
 		<script src="./js/login.view.js"></script>
 		<script src="./js/failure.summary.view.js"></script>
+		<script src="./js/failure.detail.view.js"></script>
 		<script src="./js/failure.slider.js"></script>
 		<script src="./js/failure.model.js"></script>
 		<script src="./js/failure.controller.js"></script>

@@ -58,5 +58,4 @@ function FailureDetailView() {
 	}
 }
 
-var failureDetailView = new FailureDetailView();
 
