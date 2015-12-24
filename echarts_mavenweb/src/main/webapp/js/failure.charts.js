@@ -83,6 +83,7 @@ function PieChart( ) {
 
 		var chartOption = {
 			title 	: buildTitle(),
+			calculable : true, // 支持可拖拽
 			tooltip : buildTooltip(),		
 			series 	: buildSeries( _data ),
 		};
