@@ -2,8 +2,7 @@
 -------------------------------------------------- */
 body {
 	font-family 	: Microsoft YaHei;
-  	padding-bottom	: 50px;
-  	color 			: #1a1a1a;
+  	padding-bottom	: 50px;  
 }
 
 .separator-wrapper {
@@ -42,7 +41,8 @@ body {
 
 /* CUSTOMIZE THE HEAD
 -------------------------------------------------- */
-#fixedPart {	
+#fixedPart {
+	z-index 	: 10;	
 	background 	: #ffffff;
 }
 .head-wrapper {	
@@ -105,32 +105,37 @@ body {
 -------------------------------------------------- */
 .date-wrapper {	
 }
+.date-collapse-label {
+	font-size	: 30px;
+	text-align 	: center;
+	color 		: black;
+}
 
-.date-inner .date-selector {
+.date-content .date-selector {
 	padding-top : 5px;
 	padding-bottom: 5px;
 }
 
-.date-inner .date-selector .date-name {
+.date-content .date-selector .date-name {
 	height 		: 50px;
 	font-size	: 40px;
     font-weight	: blod;
     color 		: #8a888d;
 }
 
-.date-inner .date-selector .date-value {
+.date-content .date-selector .date-value {
 	height 		: 50px;
 	font-size	: 40px;
     font-weight	: blod;
     border-style: none;
 }
 
-.date-inner .date-submit {
+.date-content .date-submit {
 	padding-top 	: 15px;
 	padding-bottom	: 15px;
 }
 
-.date-inner .date-submit-action {
+.date-content .date-submit-action {
 	height 		: 80px;
 	font-size	: 50px;
 	color 		: white;
@@ -142,26 +147,27 @@ body {
 -------------------------------------------------- */
 .table-info {
 	z-index		: 15;
+	background	: white;
 }
 
 .table-info-tablewrapper {
 
 }
-.table-info .table-info-head {
+.table-info-head {
 	font-size 	: 35px;
    	font-weight	: blod;
    	color 		: #888888;
 }
 
 .table-info .table-info-column-1 {
-	width 	: 44%;
+	width 	: 50%;
 }
 	  
 .table-info .table-info-column-2 {
-	width 	: 28%;
+	width 	: 25%;
 }
 .table-info .table-info-column-3 {
-	width 	: 28%;
+	width 	: 25%;
 }
 
 .table-info .table-info-body {
@@ -197,6 +203,7 @@ body {
 table.dataTable.no-footer {
   border-bottom: 10px solid;
 }
+
 
 /* CUSTOMIZE THE DETAIL-INFO
 -------------------------------------------------- */

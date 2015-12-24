@@ -7,11 +7,17 @@ function FailureSummaryTableBuilder( divId ) {
        	"<'row table-info-pagination'<'col-xs-9'p><'col-xs-3'l>>"					+
        	"<'row table-info-information'<'col-xs-12'i>>"*/;
 
+    // 表格列的标题单独设置，该表格中不再显示标题
 	var columnsConfig 	= [ 
+		{ "data"	: "name"		}, 
+		{ "data" 	: "haltedTimes"	}, 
+		{ "data"	: "haltedHours"	}
+	];
+/*	var columnsConfig 	= [ 
 		{ "title"  : "名称", 		"data"	: "name"}, 
 		{ "title"  : "停机次数",  	"data" 	: "haltedTimes"}, 
 		{ "title"  : "停机时长",	"data"	: "haltedHours"}
-	];
+	];*/
 
     // 提示语
     var hintsConfig	= {
@@ -44,6 +50,7 @@ function FailureSummaryTableBuilder( divId ) {
 	        "items" : "row",
 	        "info" 	: false
 	    },
+	    "ordering"  : false,
 
 	    // "pagingType": "full",
 

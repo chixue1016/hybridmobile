@@ -40,9 +40,10 @@ body {
 #wrapper {
 	position: absolute;
 	z-index	: -1;
-	bottom 	: 48px; 
+	bottom 	: 0px; 
 	left 	: -9999px;
 	width 	: 100%;
+	background : #666666;
 
 /*	overflow 	: auto;*/
 }
@@ -67,7 +68,7 @@ body {
 	height 		: 60px;
 	line-height : 60px;
 	padding 	: 5px 10px;
-	border-bottom : 1px solid #ccc;
+	/*border-bottom : 1px solid #ccc;*/
 	font-weight	: bold;
 	font-size	: 30px;
 	color 		: #888;

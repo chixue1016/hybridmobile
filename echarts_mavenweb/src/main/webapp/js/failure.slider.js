@@ -14,13 +14,27 @@ function FailureSlider() {
 		    loop		: false,
 			autoplay	: false,
 
-			onInit 		: function( swiper ){
-		  		swiper.container[0].style.height = swiper.slides[swiper.activeIndex].offsetHeight+'px';
+			onInit 		: function( swiper ) {
+				var screenHeight = $(window).height();
+				//swiper.container[0].style.height = swiper.slides[swiper.activeIndex].offsetHeight + 'px';
+		  		swiper.container[0].style.height = 
+		  			Math.max( screenHeight, swiper.slides[swiper.activeIndex].offsetHeight ) + 'px';
+           		/*var sliderHeight = swiper.slides[swiper.activeIndex].offsetHeight;
+		  		swiper.slides[swiper.activeIndex].style.height = 
+		  			Math.max( screenHeight, sliderHeight ) + 'px';*/
            	},
 
-			onSlideChangeEnd	: function( swiper ){
-                swiper.container[0].style.height = swiper.slides[swiper.activeIndex].offsetHeight+'px';
-            }			
+			onSlideChangeEnd	: function( swiper ) {
+				var screenHeight = $(window).height();
+				var activeIndex = swiper.activeIndex;
+				var sliderHeight = swiper.slides[ activeIndex ].offsetHeight;
+				swiper.container[0].style.height = 
+					(( activeIndex == _loginSlider ) ? sliderHeight : Math.max( screenHeight, sliderHeight )) + 'px';
+    
+            },
+            /*onTouchStart: function( swiper ) {
+            	alert("swiper touch start!");
+            }*/			
 		});	
 		
 	}

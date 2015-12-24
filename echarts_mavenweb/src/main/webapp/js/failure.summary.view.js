@@ -48,19 +48,9 @@ function FailureSummaryView() {
 		var pullDownHeight 	= pullDownEl.offsetHeight;
 		//var pullDownHeight = $('#pullDown').height(); // jQuery获取的高度不包括内 外边距和边框
 		var pullUpEl 		= document.getElementById('pullUp');	
-		/*var pullUpOffset 	= pullUpEl.offsetHeight;*/		
-
-		var scrollWrapper 			= document.getElementById('wrapper');
-		// 表格滚动条的位置相对于页面 固定区域 确定		
-		var scrollWrapperTopOffset 	= document.getElementById('fixedPart').offsetHeight;
-		//var scrollWrapperTopOffset 		= $('#tableSeparator').offset().top + 20/*.offsetTop + 20*/;
-		scrollWrapper.style.top  	= scrollWrapperTopOffset + "px";
+		/*var pullUpOffset 	= pullUpEl.offsetHeight;*/
 		
-		// 表格滚动条包装器高度
-	    var scrollWrapperHeight		= $(window).height() - scrollWrapperTopOffset;
-		scrollWrapper.style.height= scrollWrapperHeight + "px";
-		
-		scrollWrapper.style.left 	= '0';
+		resizeTableScrollHeight();
 
 		var pullThreshold = 5; // 上拉或下拉动作，触发加载数据时的偏移值
 		_tableScroller = new iScroll( 'wrapper', {
@@ -109,6 +99,23 @@ function FailureSummaryView() {
 		});
 	}
 
+	function resizeTableScrollHeight() {
+		var scrollPart				= document.getElementById('scrollPart');
+		var scrollWrapper 			= document.getElementById('wrapper');
+		// 表格滚动条的位置相对于页面 固定区域 确定		
+		var scrollWrapperTopOffset 	= document.getElementById('fixedPart').offsetHeight;
+		//var scrollWrapperTopOffset 		= $('#tableSeparator').offset().top + 20/*.offsetTop + 20*/;
+		scrollWrapper.style.top  	= scrollWrapperTopOffset + "px";
+		//scrollPart.style.top  		= scrollWrapperTopOffset + "px";
+		
+		// 表格滚动条包装器高度
+	    var scrollWrapperHeight		= $(window).height() - scrollWrapperTopOffset;
+		scrollWrapper.style.height 	= scrollWrapperHeight + "px";
+		//scrollPart.style.height 	= scrollWrapperHeight + "px";
+
+		scrollWrapper.style.left 	= '0';
+	}
+
 	// 事件绑定
 	function eventBind() {
 		$("#failureSummaryNavbar").on( "click", "a", function(event) {		
@@ -117,6 +124,19 @@ function FailureSummaryView() {
 		});
 
 		$("#queryByDate").click( onQueryByDate );
+
+		// 日期区域 折叠事件
+		$(".date-content").on("shown.bs.collapse", function() {
+			$("#dateFolder").attr("class","date-collapse-label glyphicon glyphicon-minus-sign");
+			resizeTableScrollHeight();
+			_tableScroller.refresh();
+		});
+
+		$(".date-content").on("hidden.bs.collapse", function(){
+			$("#dateFolder").attr("class","date-collapse-label glyphicon glyphicon-plus-sign");
+			resizeTableScrollHeight();
+			_tableScroller.refresh();
+		});
 
 		$("#summaryBack").click( onBack );
 

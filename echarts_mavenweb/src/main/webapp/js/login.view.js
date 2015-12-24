@@ -28,5 +28,3 @@
 	    init();
     	
     }
-
-    var loginView = new LoginView();

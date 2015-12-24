@@ -12,6 +12,10 @@ function loaded() {
 	failureController.frontToSummary();
 }
 
-document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+/*document.addEventListener('touchmove', 
+	function (e) { 
+		e.preventDefault(); 
+	}, 
+	false);*/
 
 document.addEventListener('DOMContentLoaded', loaded, false);
