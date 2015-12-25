@@ -40,11 +40,16 @@ var circleChartRowLayout =
 
 // 基于bootstrap的圆圈图
 /*function CircleChart( divId, title, data ) {*/
-function CircleChart( ) {
+function CircleChart( divId ) {
 	var _divId;
 	var _title;
 	var _data;
 
+	var _chartHtml = {
+		"titleHtml"	: "",
+		"datasHtml"	: ""
+	};
+	var _chart;
 	var _circlesPerRow = 3;
 	// bootstrap布局：
 	// | left-padding1 | column1 | right-padding1 | left-padding2 | column2 | right-padding2 |
@@ -123,7 +128,7 @@ function CircleChart( ) {
 	}
 
 	// 构造所有数据的图形
-	function buildAllDatasHtml( datas ) {
+	function buildDatasHtml( datas ) {
 		var datasHtml = "";
 		var data = padding( datas );
 		// 向上取整
@@ -141,7 +146,9 @@ function CircleChart( ) {
 			alert( rowColors );
 			datasHtml += buildRowDatasHtml( rowDatas, rowColors );
 		}
+		_chartHtml.datasHtml = datasHtml;
 		return datasHtml;
+
 	}	
 
 	// 补充数据
@@ -170,31 +177,41 @@ function CircleChart( ) {
 	    		"<div class='col-xs-12 font35px'>"	+ title + "</div>" 	+
 	    	"</div>";
 
+	    _chartHtml.titleHtml = titleHtml;
 	    return titleHtml;
     }
 
-    function buildChartHtml( title, data ) {
-    	var titleHtml = buildTitleHtml( _title );
-		var datasHtml = buildAllDatasHtml ( _data );
-		var chartHtml = titleHtml + datasHtml;
+    function buildChartHtml( ) {
+		var chartHtml = _chartHtml.titleHtml + _chartHtml.datasHtml;
 		return chartHtml;
     }
+    function repaint() {
+    	_chart.html( buildChartHtml( ) );
+    }
 
+    function buildChart( divId ) {
+    	_chart = $( "#" + divId );
+    }
 	this.draw = function() {
-		var chart = $( "#" + _divId );
-		chart.removeClass("height500px");
-		chart.html( buildChartHtml( _title, _data ) );
+		/*var chart = $( "#" + _divId );*/
+		_chart.removeClass("height500px");
+		repaint();
+	};
+	this.refresh	= function() {
+		repaint();
 	};
 
+
 	this.setDivId = function( divId ) {
-		_divId = divId;
+		_divId = divId;		
 	};
 	this.getDivId = function() {
 		return _divId;
 	};		
 
 	this.setData = function( data ) {		
-		_data = data;		
+		_data = data;
+		buildDatasHtml( data )		
 	};
 	this.getData = function() {
 		return _data;
@@ -202,15 +219,17 @@ function CircleChart( ) {
 
 	this.setTitle = function( title ) {
 		_title = title;
+		buildTitleHtml( title );
 	};
 	this.getTitle = function() {
 		return _title;
 	};
 		
 
-/*	// Constructor Code.
+	// Constructor Code.
 	this.setDivId( divId );
-	this.setTitle( title );
+	buildChart( divId );
+	/*this.setTitle( title );
 	this.setData( data );*/
 }
 	

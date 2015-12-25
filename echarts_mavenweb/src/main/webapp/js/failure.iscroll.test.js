@@ -4,6 +4,7 @@ var loginView, failureSummaryView, failureDetailView,
 
 
 function loaded() {	
+	var datas = pseudoDetailDatasByTypeFor("failureOrg", "1", "故障类别3");
 	loginView 			= new LoginView();
 	failureSummaryView 	= new FailureSummaryView();
 	failureDetailView	= new FailureDetailView();

@@ -10,7 +10,7 @@ function FailureDetailView() {
 
 	this.onReloadHtml = function() {		
 		loadDetail( _summaryType, _selectedSummaryData.id, _startMonth, _endMonth );
-	};
+	};	
 
 	this.init	 	= function() {
 		var message 	= FailureMessage.receive(); 
@@ -20,6 +20,7 @@ function FailureDetailView() {
 		_selectedSummaryData = message.getSelectedSummaryData();
 		
 		_chartConfig 	= FailureChartConfig.getConfig();
+		_chartConfig.onPieChartRecaculate( pieChartRecaculateHandler );
 		var pageTitle  	= _chartConfig.getPageTitle( _summaryType );
 		$("#title").text( pageTitle );
 
@@ -45,17 +46,21 @@ function FailureDetailView() {
 	}
 
 	this.showDetail = function( datas ) {
-		var chartCount 	= _chartConfig.getChartCount();
-
-		for (var chartIndex = 0; chartIndex < chartCount; chartIndex++) {			
-			var chart = _chartConfig.getChart( _summaryType, chartIndex, datas );
-		   	chart.draw(); 
-		}
+		_chartConfig.draw( _summaryType, datas );		
 	};
 
 	function onBack() {
 		failureController.backToSummary();
 	}
+
+	// 故障类型饼图拖拽重计算 事件: 与该类型相关的数据需要删除，重绘
+	function pieChartRecaculateHandler( event ) {
+		var typeName = event.name;
+		failureController.onRemoveDetail( _summaryType, _selectedSummaryData.id, typeName ); 
+	}
+	this.removeDetail 	= function( datas ) {
+		_chartConfig.removeDataAndRefresh( datas );
+	};
 }
 
 

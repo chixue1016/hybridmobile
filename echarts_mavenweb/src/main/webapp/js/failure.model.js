@@ -51,7 +51,7 @@ function FailureModel() {
 		_password 	= password;
 		_serverUrl 	= buildServerUrl(host, port);
 		
-		alert(_serverUrl);
+		//alert(_serverUrl);
 		if ( pseudoLogin ) {
 			var loginContext = pseudoLoginContext();
 			loginContext.save();
@@ -124,6 +124,14 @@ function FailureModel() {
 			asyncGet( _serverUrl, "LOAD_DETAIL", jsonParameters, successfullyLoadDetail);	
 		}
 	};
+
+	this.loadRemovedDetail	= function( summaryType, id, typeName ) {
+		if (usePseudoLocal) {
+			// Just for test : pseduo load Detail data.
+			var removedDetails = pseudoDetailDatasByTypeFor( summaryType, id, typeName); 
+			failureController.removeDetail( removedDetails );
+		}
+	}
 }
 
 

@@ -3,25 +3,32 @@ var _font = '微软雅黑';
 var titleFontSize = 30;
 
 /*function PieChart(divId, title, data) {*/
-function PieChart( ) {
+function PieChart( divId ) {
 	var _divId;
 	var _title;
 	var _data;
 
-	var _type = 'pie';
+	var _chartOption = {		
+		calculable : true, // 支持可拖拽		
+	};
+
+	var _myChart;
+	var _type 		= 'pie';
+	var _onRecaculate;
 
 	/***************************************************************/
 	/************************* title  ******************************/
 	/***************************************************************/
-	function buildTitle( ) {
+	function buildTitle( title ) {
     	var title = {
-	        text 		: _title,	      
+	        text 		: title,	      
 	        textStyle 	: {
 	           	fontSize 	: titleFontSize,
 	            fontFamily 	: _font,
 	            fontWeight 	: 'bold'
 	        }
 	    };
+	    _chartOption.title = title;
 
 	    return title;
     }
@@ -39,7 +46,7 @@ function PieChart( ) {
 	            fontWeight 	: 'bold'
 	        },
 		};
-
+		_chartOption.tooltip = tooltip;
 	    return tooltip;
     }
 
@@ -70,6 +77,7 @@ function PieChart( ) {
 			}						
 		];
 
+		_chartOption.series = series;
         return series;  
     }	
 
@@ -91,46 +99,65 @@ function PieChart( ) {
 		return chartOption;
 	}
 
-	this.draw = function() {		
+	function buildChart( divId ) {
+		_myChart = echarts.init(document.getElementById( divId ));
+	}
+	this.draw 		= function() {		
 	    // Îªecharts¶ÔÏó¼ÓÔØÊý¾Ý 
 	    repaint(); 
 	};
 
-	var repaint = function() {
-		var myChart = echarts.init(document.getElementById( _divId ));	
-		myChart.setOption( buildOption() );
+	this.refresh	= function() {
+		repaint(); 	
+	};
+
+	this.onRecaculate 	= function( recaculateHandler ) {
+		_myChart.on( echarts.config.EVENT.DATA_CHANGED, recaculateHandler );
+	};
+
+	function reCaculate( event ) {
+
+	}
+
+	function repaint() {
+		/*var myChart = echarts.init(document.getElementById( _divId ));
+		myChart.on( echarts.config.EVENT.DATA_CHANGED, reCaculate );
+	
+		myChart.setOption( buildOption() );*/
+		_myChart.setOption( _chartOption );
 	}
 
 	/***************************************************************/
 	/*********************** setter/getter  ************************/
 	/***************************************************************/
 	this.setDivId = function( divId ) {
-		_divId = divId;
+		_divId = divId;	
 	};
 	this.getDivId = function() {
 		return _divId;
 	};
 
-	this.setData = function(data) {		
-		_data = data;		
+	this.setData = function( data ) {		
+		_data = data;
+		buildSeries( data );		
 	};
 	this.getData = function() {
 		return _data;
 	};
 	
 
-	this.setTitle = function(title) {
+	this.setTitle = function( title ) {
 		_title = title;
+		buildTitle( title );
 	};
 	this.getTitle = function() {
 		return _title;
-	};
-		
+	};		
 
-		
-
-	/*// Constructor Code.
-	this.setTitle(title);
+	// Constructor Code.
+	this.setDivId( divId );
+	buildChart( divId );
+	/*this.setTitle(title);
 	this.setData(data);
 	initOption();*/
 }
@@ -141,28 +168,30 @@ function PieChart( ) {
 
 */
 /*function BarChart(divId, title, data, isVertical) {*/
-function BarChart( ) {
+function BarChart( divId ) {
 	var _divId;
 	var _title;
 	var _data;
 	var _isVertical;
 
-	
+	var _chartOption = {};
+	var _myChart;
+
 	var _type = 'bar';	
 
 	/***************************************************************/
 	/************************* title  ******************************/
 	/***************************************************************/
-    function buildTitle( ) {
+    function buildTitle( title ) {
     	var title = {
-	        text 		: _title,	       
+	        text 		: title,	       
 	        textStyle 	: {
 	           	fontSize 	: titleFontSize,
 	            fontFamily 	: _font,
 	            fontWeight 	: 'bold'
 	        }
 	    };
-
+	    _chartOption.title = title;
 	    return title;
     }
 
@@ -171,8 +200,13 @@ function BarChart( ) {
 	/***************************************************************/
 	/************************* axis  *******************************/
 	/***************************************************************/
+	function axisLabelFormatter( value ) {
+		var valueString = value + "";		
+		return valueString.substring(2, 5); 		
+	} 
 	function buildAxises( data ) { 
 		var axisLabel = {
+			formatter  	: axisLabelFormatter,
 	       	textStyle	: {
 	            fontFamily	: _font,
 	            fontSize	: '20',              
@@ -205,7 +239,8 @@ function BarChart( ) {
 		}
 
 		//alert(JSON.stringify(xAxis));
-
+		_chartOption.xAxis = xAxis;
+		_chartOption.yAxis = yAxis;
 		return [ xAxis, yAxis ];
 	}
 
@@ -254,6 +289,7 @@ function BarChart( ) {
             }
         ];
 
+        _chartOption.series = series;
         return series;  
     }
 
@@ -303,15 +339,22 @@ function BarChart( ) {
 		return chartOption;
 	}
 
+	function buildChart( divId ) {
+		_myChart = echarts.init(document.getElementById( divId ));
+	}
 	this.draw = function() {		
 	    // Îªecharts¶ÔÏó¼ÓÔØÊý¾Ý 
 	    repaint(); 
 	};	
 	
+	this.refresh 	= function() {
+		repaint();
+	}
 
 	function repaint() {
-		var myChart = echarts.init( document.getElementById( _divId ) );
-		myChart.setOption( buildOption() );
+		/*var myChart = echarts.init( document.getElementById( _divId ) );
+		myChart.setOption( buildOption() );*/
+		_myChart.setOption( _chartOption );
 	}
 
 
@@ -319,14 +362,16 @@ function BarChart( ) {
 	/*********************** setter/getter  ************************/
 	/***************************************************************/
 	this.setDivId = function( divId ) {
-		_divId = divId;
+		_divId = divId;		
 	};
 	this.getDivId = function() {
 		return _divId;
 	};
 
 	this.setData = function(data) {		
-		_data = data;		
+		_data = data;
+		buildAxises( data );
+		buildSeries( data );		
 	};
 	this.getData = function() {
 		return _data;
@@ -349,9 +394,10 @@ function BarChart( ) {
 		
 
 	
-	/*// Constructor Code.
+	// Constructor Code.
 	this.setDivId( divId );
-	this.setTitle( title );
+	buildChart( divId );
+	/*this.setTitle( title );
 	this.setData( data );
 	this.setVertical( isVertical );*/
 }

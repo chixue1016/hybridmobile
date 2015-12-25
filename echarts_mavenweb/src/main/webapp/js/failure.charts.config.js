@@ -1,12 +1,82 @@
 
 function FailureChartConfig() {
+	
 	var _chartCount 	= 3;
+	function getChartCount( ) {
+		return _chartCount;
+	};
+
+	var _onPieChartRecaculateHandler;
+	this.onPieChartRecaculate 	= function( handler ) {
+		_onPieChartRecaculateHandler = handler;
+	};
+	this.removeDataAndRefresh	= function( allRemovedDataArray ) {
+		for ( var type in allRemovedDataArray ) {
+			var chart 	= _charts[ type ];
+			var oldDataArray = chart.getData();
+			var removedDataArray = allRemovedDataArray[ type ];
+			var newDataArray	= removeData( oldDataArray, removedDataArray );
+			chart.setData( newDataArray );
+			chart.refresh();
+		}
+	};
+
+	function removeData( oldDataArray, removedDataArray ) {
+		var oldDataMap	= toMap( oldDataArray );
+		var removedDataMap = toMap( removedDataArray );		
+		var newDataArray = [];
+		for ( var name in removedDataMap ) {
+			if ( name == null || name == "undefined" ) {
+				continue;
+			}
+
+			var oneRemoveData 	= removedDataMap[ name ];
+			var removedValue  	= oneRemoveData.value;
+			var oldData 		= oldDataMap[ name ];
+			var oldValue		= oldData.value;
+			var newValue 		= oldValue - removedValue;
+			if ( newValue <= 0 ) {
+				continue;
+			}
+			var newData = {};
+			newData.name = name;
+			newData.value = newValue;
+			newDataArray.push( newData );			
+		}
+
+		return newDataArray;
+	}		
+
+	function toMap( dataArray ) {
+		if ( dataArray == null || dataArray == "undefined" ) {
+			return null;
+		}
+		
+		var length = dataArray.length;
+		if ( length <= 0 ) {
+			return null;
+		}
+
+		var dataMap = {};
+		for ( var i = 0; i < length; i++ ) {			
+			var oneData = dataArray[i];
+			var name = oneData.name;
+			if ( name != null && name != "undefined" ) {
+				dataMap[name] = oneData ;
+			}			
+		}
+
+		return dataMap;
+	}
 
 	var _chartDivIds 	=  [ "chart1", "chart2", "chart3" ];
 	function divIdFor( chartIndex ) {
 		return _chartDivIds[ chartIndex ];
 	}
 
+	/***************************************************************/
+	/*********************** Titles Config  ************************/
+	/***************************************************************/
 	// 图标标题
 	var _chartTitles	= {
 		"failureOrg"	: "故障发生组织",
@@ -19,6 +89,9 @@ function FailureChartConfig() {
 		return _chartTitles[ dataType ];
 	}
 
+	/***************************************************************/
+	/*********************** Charts Config  ************************/
+	/***************************************************************/
 	var _chartsConfig 	= {
 		"failureOrg" 	: {
 			dataTypes	: [	"failureType", 	"failureReason",	"failureSymptom"],
@@ -48,15 +121,18 @@ function FailureChartConfig() {
 		var chartTypes 	= _chartsConfig[ summaryType ].chartTypes;
 		return chartTypes[ chartIndex ];
 	}
-	function chartFor ( chartType ) {
+
+	var _charts = { };
+	function chartFor ( chartType, chartDiv ) {
 		var chart;		
 		if ( chartType == "pie" ) {
-			chart = new PieChart( );    			
+			chart = new PieChart( chartDiv );
+			chart.onRecaculate( _onPieChartRecaculateHandler );    			
 		} else if ( chartType == "barHorizen" ) {
-    		chart = new BarChart( );
+    		chart = new BarChart( chartDiv );
     		chart.setVertical( false );        		
 		} else if ( chartType == "barVectical" ) {
-    		chart = new BarChart( );
+    		chart = new BarChart( chartDiv );
     		chart.setVertical( true );         		
 		} else if ( chartType == "circle" ) {
 			chart = new CircleChart( );    			   			
@@ -65,7 +141,35 @@ function FailureChartConfig() {
 		return chart;
 	}
 
-	// 详情页面标题
+	function getChart( summaryType, chartIndex, datas ) {		
+		
+		var chartType 	= chartTypeFor( summaryType, chartIndex );
+		var chartDiv 	=  divIdFor( chartIndex );
+		var chart 		= chartFor( chartType, chartDiv );
+
+		var dataType 	= dataTypeFor( summaryType, chartIndex );
+		var data 		= datas[ dataType ];
+		var title  		= chartTitleFor( dataType );	
+		chart.setTitle( title );
+		chart.setData( data );	
+
+		return chart;
+	};
+
+	this.draw	= function( summaryType, datas ) {
+		var chartCount 	= getChartCount();
+
+		for (var chartIndex = 0; chartIndex < chartCount; chartIndex++) {
+			var dataType 	= dataTypeFor( summaryType, chartIndex );			
+			var chart 		= getChart( summaryType, chartIndex, datas );
+			_charts[ dataType ] = chart;
+		   	chart.draw(); 
+		}
+	}
+
+	/***************************************************************/
+	/*********************** Pages Config  ************************/
+	/***************************************************************/
 	var _pageTitles	= {
 		"failureOrg"	: "总览",
 		"failureType"	: "故障类别",
@@ -77,33 +181,9 @@ function FailureChartConfig() {
 	};
 	
 
-	this.getChart = function( summaryType, chartIndex, datas ) {		
-		
-		var chartType 	= chartTypeFor( summaryType, chartIndex );
-		var chart 		= chartFor( chartType );
+	
 
-		var dataType 	= dataTypeFor( summaryType, chartIndex );
-		var data 		= datas[ dataType ];
-		var title  		= chartTitleFor( dataType );
-		chart.setDivId( divIdFor( chartIndex ) );
-		chart.setTitle( title );
-		chart.setData( data );
-		/*if ( chartType == "pie" ) {
-			chart = new PieChart(chartDivId, title, data);    			
-		} else if ( chartType == "barHorizen" ) {
-    		chart = new BarChart(chartDivId, title, data, false);        		
-		} else if ( chartType == "barVectical" ) {
-    		chart = new BarChart(chartDivId, title, data, true);        		
-		} else if ( chartType == "circle" ) {
-			chart = new CircleChart(chartDivId, title, data );    			   			
-		}*/
 
-		return chart;
-	};
-
-	this.getChartCount 	= function( ) {
-		return _chartCount;
-	};
 
 }
 

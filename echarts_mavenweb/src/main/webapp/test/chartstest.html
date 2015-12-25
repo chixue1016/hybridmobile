@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<title>ECharts</title>
+	 <script src="../js/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" href="../js/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+	<script src="../js/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+	<script src="../js/echarts-2.2.7/echarts-all.js"></script>
+    <script src="../js/echarts-2.2.7/pie.js"></script>
+    <script src="../js/echarts-2.2.7/bar.js"></script> 
+     <script src="../js/circle.chart.js"></script>
+    <script src="../js/failure.charts.js"></script>
+	<script src="../js/testjs/test.js"></script>
+
+	<script type="text/javascript">
+
+    </script>
+          
+</head>
+
+<body>
+	
+	<div id="main" style="height:1000px"></div> 
+  	
+	<script type="text/javascript">
+		var data1 = [
+			{	"name" : "111", "value"	: 11 },
+			{	"name" : "222", "value"	: 22 },
+			
+		];
+		
+		var pieChart = new PieChart( "main" );
+		pieChart.setTitle("zcc21");
+		pieChart.setData( data1 );
+		pieChart.draw();
+
+		var data2 = [
+			{	"name" : "111", "value"	: 11 },
+			{	"name" : "222", "value"	: 22 },
+			{	"name" : "222", "value"	: 33 },
+			
+		];
+		pieChart.setData( data2 );
+		pieChart.refresh();
+
+		/*var data3 = [
+			{	"name" : "111", "value"	: 11 },
+			{	"name" : "222", "value"	: 22 },
+			
+		];
+		
+		var barChart = new BarChart( "main" );	
+		barChart.setTitle("zcc21");
+		barChart.setData( data3 );
+		barChart.draw();
+
+		var data4 = [
+			{	"name" : "111", "value"	: 11 },
+			{	"name" : "222", "value"	: 22 },
+			{	"name" : "333", "value"	: 33 },
+			
+		];
+		barChart.setData( data4 );
+		barChart.refresh();
+*/
+		/*var data5 = [
+			{	"name" : "111", "value"	: 11 },
+			{	"name" : "222", "value"	: 22 },
+			
+		];
+		
+		var circleChart = new CircleChart();
+		circleChart.setDivId("main");
+		circleChart.setTitle("zcc21");
+		circleChart.setData( data5 );
+		circleChart.draw();
+
+		var data6 = [
+			{	"name" : "111", "value"	: 11 },
+			{	"name" : "222", "value"	: 22 },
+			{	"name" : "333", "value"	: 33 },
+			{	"name" : "444", "value"	: 44 },
+			
+		];
+		circleChart.setData( data6 );
+		circleChart.refresh();*/
+
+		var oldDataArray = barChart.getData();
+		var toRemoveDataArray = [
+			{	"name" : "111", "value"	: 1 },
+			{	"name" : "222", "value"	: 2 },
+			{	"name" : "333", "value"	: 3 },
+			
+		];
+		var toRemoveDataMap = toMap(  toRemoveDataArray );
+		var oldDataMap	= toMap( oldDataArray );
+		var newDataArray = [];
+		for ( var name in toRemoveDataMap ) {
+			if ( name == null || name == "undefined" ) {
+				continue;
+			}
+
+			var oneRemoveData 	= toRemoveDataMap[ name ];
+			var removedValue  	= oneRemoveData.value;
+			var oldData 		= oldDataMap[ name ];
+			var oldValue		= oldData.value;
+			var newValue 		= oldValue - removedValue;
+			if ( newValue <= 0 ) {
+				continue;
+			}
+			var newData = {};
+			newData.name = name;
+			newData.value = newValue;
+			newDataArray.push( newData );			
+		}
+		
+		barChart.setData( newDataArray );
+		barChart.refresh();
+
+		function toArray( dataMap ) {
+			var dataArray = [];
+			for ( var name in toRemoveDataMap ) {
+				if ( name == null || name == "undefined" ) {
+					continue;
+				}
+
+				var data 		= dataMap[ name ];
+				var value		= data.value;
+				if ( value > 0 ) {
+					dataArray.push( data );
+				}			
+			}
+		}
+
+		function toMap( dataArray ) {
+			if ( dataArray == null || dataArray == "undefined" ) {
+				return null;
+			}
+			
+			var length = dataArray.length;
+			if ( length <= 0 ) {
+				return null;
+			}
+
+			var dataMap = {};
+			for ( var i = 0; i < length; i++ ) {			
+				var oneData = dataArray[i];
+				var name = oneData.name;
+				if ( name != null && name != "undefined" ) {
+					dataMap[name] = oneData ;
+				}			
+			}
+
+			return dataMap;
+		}
+	</script>
+</body>

@@ -11,6 +11,9 @@ function FailureSummaryView() {
 	var _pageSize	= 3;
 	// 记录当前界面显示的数据的索引
 	var _currentDataIndex = 0;
+
+	var _invalidDate = false;
+
 	this.init 	= function() {
 		initTable();
 		initScroller();
@@ -106,7 +109,7 @@ function FailureSummaryView() {
 		var scrollWrapperTopOffset 	= document.getElementById('fixedPart').offsetHeight;
 		//var scrollWrapperTopOffset 		= $('#tableSeparator').offset().top + 20/*.offsetTop + 20*/;
 		scrollWrapper.style.top  	= scrollWrapperTopOffset + "px";
-		//scrollPart.style.top  		= scrollWrapperTopOffset + "px";
+		scrollPart.style.top  		= scrollWrapperTopOffset + "px";
 		
 		// 表格滚动条包装器高度
 	    var scrollWrapperHeight		= $(window).height() - scrollWrapperTopOffset;
@@ -126,7 +129,7 @@ function FailureSummaryView() {
 		$("#queryByDate").click( onQueryByDate );
 
 		// 日期区域 折叠事件
-		$(".date-content").on("shown.bs.collapse", function() {
+		/*$(".date-content").on("shown.bs.collapse", function() {
 			$("#dateFolder").attr("class","date-collapse-label glyphicon glyphicon-minus-sign");
 			resizeTableScrollHeight();
 			_tableScroller.refresh();
@@ -135,6 +138,108 @@ function FailureSummaryView() {
 		$(".date-content").on("hidden.bs.collapse", function(){
 			$("#dateFolder").attr("class","date-collapse-label glyphicon glyphicon-plus-sign");
 			resizeTableScrollHeight();
+			_tableScroller.refresh();
+		});*/
+
+		function isEmpty( value ){
+			if(value=='' || value=='undefined'){
+				return true;
+			}
+			return false;
+		}
+	
+		function queryButtonStateChange( disabled ) {
+			var queryButton = $("#queryByDate");
+			queryButton.attr("disabled", disabled);
+			if ( disabled ) {
+				queryButton.removeClass( "date-submit-action-enable" );
+				queryButton.addClass( "date-submit-action-disable" );				
+			} else {
+				queryButton.removeClass( "date-submit-action-disable" );
+				queryButton.addClass( "date-submit-action-enable" );				
+			}
+			
+		}
+		//比较日期大小，参数格式为年-月，如2015-05，若是startDate<=endDate返回true
+		function isLessOrEqual(startDate , endDate){
+			var startYearMonth = startDate.split("-");
+			var endYearMonth 	= endDate.split("-");
+			var startYear 	= parseInt(startYearMonth[0]);
+			var startMonth 	= parseInt(startYearMonth[1]);
+			var endYear 	= parseInt(endYearMonth[0]);
+			var endMonth 	= parseInt(endYearMonth[1]);
+
+			return ( startYear < endYear ) || 
+				 ( ( startYear == endYear ) && ( startMonth <= endMonth ) );						
+		}
+
+		function dateValidator() {
+			var startMonth = $("#startMonth").val();
+			var endMonth = $("#endMonth").val();
+
+			// 保存之前的日期是否合法状态
+			var invalidOldDate	= _invalidDate;
+			var invalidNewDate;
+			if( isEmpty( startMonth ) || isEmpty( endMonth ) ) {				
+				invalidNewDate = true;
+			} else {				
+				if( isLessOrEqual( startMonth, endMonth ) ) {					
+					invalidNewDate = false;
+				}else{					
+					invalidNewDate = true;
+				}				
+			}
+
+			var dateStateChange = ( invalidOldDate == invalidNewDate ) ? false : true;
+			if( dateStateChange ) {
+				_invalidDate 	= invalidNewDate;
+				queryButtonStateChange( _invalidDate );
+			}
+
+		};
+
+		$("#startMonth").on( 'input', dateValidator );
+		$("#endMonth").on( 'input', dateValidator );		
+
+		$("#dateEditor").on("hidden.bs.collapse", function() {
+			showStaticDate();
+			
+			setTimeout(resizeTableScrollHeight, 150);		
+			_tableScroller.refresh();
+			
+			// alert("开始日期："++";结束日期："+$("#endMonth").val());
+		});
+
+		function showStaticDate() {
+			$("#dateShow").collapse('toggle');			
+
+			setStaticDate();
+		}
+
+		function setStaticDate() {
+			var startMonth 	= $("#startMonth").val();
+			var endMonth 	= $("#endMonth").val();
+
+			var formattedStartMonth , formattedEndMonth;
+			formattedStartMonth = isEmpty(startMonth) ? "?" : startMonth.replace("-", ".");
+			formattedEndMonth 	= isEmpty(endMonth) ? "?" : endMonth.replace("-", ".");
+			
+			var staticDate = $("#staticDate");
+			var dateRange = formattedStartMonth + " -- " + formattedEndMonth;
+			$("#staticDate").text(dateRange);
+
+			if( _invalidDate ){
+				staticDate.addClass( 'invalid-date-input' );
+				//$("#staticDate").attr('class', 'invalid-date-input');
+			}else{
+				staticDate.removeClass( 'invalid-date-input' );
+				//$("#staticDate").removeAttr("class");
+			}			
+		}
+
+		$("#dateShow").on("hidden.bs.collapse", function() {
+			$("#dateEditor").collapse('toggle');
+			setTimeout(resizeTableScrollHeight, 250);
 			_tableScroller.refresh();
 		});
 

@@ -140,56 +140,61 @@
 					            		</div>
 					            	</div>
 					            </div>
-					        </div>	  
-
-					        
+					        </div>				        
 
 					        <div id="date">
-					        	<div class="container">
-						        	<div class="date-wrapper">
-						        		<div class="date-collapse row">
-						        			<div class="col-xs-6">
-							             		<a data-toggle="collapse" href=".date-content">
-							             			<span id="dateFolder" class="date-collapse-label glyphicon glyphicon-minus-sign">
-							             			</span>
-							             		</a>
-							            	</div>
+                                <div class="container">
+                                    <div class="date-wrapper">
+                                    
+                                        <div  id="dateShow" class="date-show collapse">
+                                            <div class="row">
+                                                <div class="col-xs-11 date-show-text">
+                                                    <span id="staticDate"></span>
+                                                </div>
+                                                <div class="col-xs-1 date-folder-label">
+                                                    <a data-toggle="collapse" href="#dateShow">
+                                                        <span class=" glyphicon glyphicon-plus-sign">
+                                                         </span>
+                                                    </a> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                      
+                                        <div id="dateEditor" class="date-editor collapse in">                                   
+                                            <div class="row date-selector">
+                                                <div class="col-xs-4 date-name">开始日期</div>
+                                                <div class="col-xs-7">
+                                                    <input type="month" id="startMonth" class="col-xs-12 date-value"/>
+                                                </div>
+                                                <div class="col-xs-1 ">
+                                                    <a data-toggle="collapse" href="#dateEditor">
+                                                        <span class="date-label glyphicon glyphicon-resize-small">
+                                                        </span>
+                                                    </a>
+                                                </div> 
+                                            </div>
 
-							             	<div class="col-xs-6">     		
-						             			<span class="date-collapse-label glyphicon glyphicon-calendar">
-						             			</span>
-							            	</div>			             	
-
-							            </div>
-						        		<div class="date-content collapse in">
-						        			
-								        	<div class="row date-selector">
-								                <div class="col-xs-4 date-name">开始日期</div>
-								                <div class="col-xs-8">
-								                    <input type="month" id="startMonth" class="col-xs-12 date-value"/>
-								                </div>   
-								            </div>
-
-								            <div class="row date-selector">
-								                <div class="col-xs-4 date-name">结束日期</div>
-								                <div class="col-xs-8">
-								                    <input type="month" id="endMonth" class="col-xs-12 date-value"/>
-								                </div>
-								            </div>
-								             
-								            <div class="row date-submit">
-								            	<div class="col-xs-12">
-								            		<button type="button" id="queryByDate" class="btn btn-small col-xs-12 date-submit-action">查&nbsp;询</button>
-								            	</div>
-								            </div>
-
-										    <div clas="separator-wrapper">
-									    		<hr class="separator">
-									    	</div>						
-								        </div>
-								    </div>
-						        </div> 
-					        </div>					       
+                                            <div class="row date-selector">
+                                                <div class="col-xs-4 date-name">结束日期</div>
+                                                <div class="col-xs-7">
+                                                    <input type="month" id="endMonth" class="col-xs-12 date-value"/>
+                                                </div>
+                                                <div class="col-xs-1">
+                                                    <span class="date-label glyphicon glyphicon-calendar">  
+                                                    </span>
+                                                </span>
+                                                </div>
+                                            </div>
+                                             
+                                            <div class="row date-submit">
+                                                <div class="col-xs-12">
+                                                    <button type="button" id="queryByDate" class="btn btn-small col-xs-12 date-submit-action date-submit-action-enable">查&nbsp;询</button>
+                                                </div>
+                                            </div>          
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>				       
 
 					        <div class="table-info-head">
 					        	<div class="container">

@@ -48,8 +48,12 @@ function FailureController() {
         failureDetailView.showDetail( datas );
 	};
 
-	function open( html ) {
-		window.open( html );
+	// 详情页面中类别拖拽后，删除相关的详情数据
+	this.onRemoveDetail = function( summaryType, id, typeName ) {
+		failureModel.loadRemovedDetail( summaryType, id, typeName );
+	};
+	this.removeDetail 	= function( datas ) {
+		failureDetailView.removeDetail( datas );
 	};
 	
 

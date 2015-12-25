@@ -30,11 +30,20 @@ function pseudoSummaryDatasFor( summaryType) {
 }
 
 function pseudoDetailDatasFor( summaryType, id ) {
-	var failureDetails 	= pseudoFailureDetails[summaryType];		
+	var failureDetails 			= pseudoFailureDetails[summaryType];		
 	//alert(JSON.stringify( failureSummaries ) );
-	var failureDetailOfTheId = failureDetails[id];
+	var failureDetailOfTheId 	= failureDetails[id];
 	
 	return failureDetailOfTheId;
+}
+
+function pseudoDetailDatasByTypeFor( summaryType, id, typeName ) {
+	var failureDetails 			= pseudoFailureDetailsByType[summaryType];		
+	//alert(JSON.stringify( failureSummaries ) );
+	var failureDetailsByType 	= failureDetails[id];
+	var failureDetailsOfTheType = failureDetailsByType[ typeName ];
+	
+	return failureDetailsOfTheType;
 }
 
 var pseudoFailureOrgSummaries 	= {
@@ -3485,42 +3494,103 @@ var pseudoFailureOrgDetails = {
 };
 
 var pseudoFailureOrg = [	
-	{ name 	: '故障组织1故障组织1故障组织1', 		value : 335 	},
-    { name 	: '故障组织2', 		value : 310 	},
-    { name 	: '故障组织3', 		value : 234 	}, 
-    { name 	: '故障组织4', 		value : 135		},
-    { name 	: '故障组织5', 		value : 1548 	}
+	{ name 	: '故障组织1故障组织1故障组织1', 		value : 75 	},
+    { name 	: '故障组织2', 		value : 70 	},
+    { name 	: '故障组织3', 		value : 84 	}, 
+    { name 	: '故障组织4', 		value : 65		},
+    { name 	: '故障组织5', 		value : 68 	}
+];
+var pseudoFailureOrgOfType1_4 = [
+	{ name 	: '故障组织1故障组织1故障组织1', 		value : 10 	},
+    { name 	: '故障组织2', 		value : 10 	},
+    { name 	: '故障组织3', 		value : 10 	}, 
+    { name 	: '故障组织4', 		value : 10	},
+    { name 	: '故障组织5', 		value : 10 	}
+];
+var pseudoFailureOrgOfType5 = [
+	{ name 	: '故障组织1故障组织1故障组织1', 		value : 35 	},
+    { name 	: '故障组织2', 		value : 30 	},
+    { name 	: '故障组织3', 		value : 44 	}, 
+    { name 	: '故障组织4', 		value : 25	},
+    { name 	: '故障组织5', 		value : 28 	}
 ];
 
+
 var pseudoFailureType = [	
-	{ name 	: '故障类别1', 		value : 35 		},
-    { name 	: '故障类别2', 		value : 10 		},
-    { name 	: '故障类别3', 		value : 34 		}, 
-    { name 	: '故障类别4', 		value : 35		},
-    { name 	: '故障类别5', 		value : 48 		}
+	{ name 	: '故障类别1', 		value : 75 		},
+    { name 	: '故障类别2', 		value : 70 		},
+    { name 	: '故障类别3', 		value : 84 		}, 
+    { name 	: '故障类别4', 		value : 65		},
+    { name 	: '故障类别5', 		value : 68 		}
 ];
 
 var pseudoFailureReason = [	
-	{ name 	: '故障原因1', 		value : 25 		},
+	{ name 	: '故障原因1', 		value : 75 		},
+    { name 	: '故障原因2', 		value : 70 		},
+    { name 	: '故障原因3', 		value : 84 		}, 
+    { name 	: '故障原因4', 		value : 65		},
+    { name 	: '故障原因5', 		value : 68 		}
+];
+var pseudoFailureReasonOfType1_4 = [	
+	{ name 	: '故障原因1', 		value : 10 		},
     { name 	: '故障原因2', 		value : 10 		},
-    { name 	: '故障原因3', 		value : 24 		}, 
+    { name 	: '故障原因3', 		value : 10 		}, 
+    { name 	: '故障原因4', 		value : 10		},
+    { name 	: '故障原因5', 		value : 10 		}
+];
+var pseudoFailureReasonOfType5 = [	
+	{ name 	: '故障原因1', 		value : 35 		},
+    { name 	: '故障原因2', 		value : 30 		},
+    { name 	: '故障原因3', 		value : 44 		}, 
     { name 	: '故障原因4', 		value : 25		},
-    { name 	: '故障原因5', 		value : 38 		}
+    { name 	: '故障原因5', 		value : 28 		}
 ];
 
+
 var pseudoFailureSymptom = [
-	{ name 	: '故障现象1', 		value : 15 		},
-    { name 	: '故障现象2', 		value : 15 		},
-    { name 	: '故障现象3', 		value : 23 		}, 
-    { name 	: '故障现象4', 		value : 15		},
-    { name 	: '故障现象5', 		value : 18 		}
+	{ name 	: '故障现象1', 		value : 75 		},
+    { name 	: '故障现象2', 		value : 70 		},
+    { name 	: '故障现象3', 		value : 84 		}, 
+    { name 	: '故障现象4', 		value : 65		},
+    { name 	: '故障现象5', 		value : 68 		}
 ];
+var pseudoFailureSymptomOfType1_4 = [
+	{ name 	: '故障现象1', 		value : 10 		},
+    { name 	: '故障现象2', 		value : 10 		},
+    { name 	: '故障现象3', 		value : 10 		}, 
+    { name 	: '故障现象4', 		value : 10		},
+    { name 	: '故障现象5', 		value : 10 		}
+];
+var pseudoFailureSymptomOfType5 = [
+	{ name 	: '故障现象1', 		value : 35 		},
+    { name 	: '故障现象2', 		value : 30 		},
+    { name 	: '故障现象3', 		value : 44 		}, 
+    { name 	: '故障现象4', 		value : 25		},
+    { name 	: '故障现象5', 		value : 28 		}
+];
+
 
 var pseudoFailureDetailOfOneOrg = {
 	"failureType"	: pseudoFailureType,
 	"failureReason"	: pseudoFailureReason,
 	"failureSymptom": pseudoFailureSymptom
 };
+var pseudoFailureDetailOfOneOrgAndOneType1_4 = {
+	"failureReason"	: pseudoFailureReasonOfType1_4,
+	"failureSymptom": pseudoFailureSymptomOfType1_4
+};
+var pseudoFailureDetailOfOneOrgAndOneType5 = {
+	"failureReason"	: pseudoFailureReasonOfType5,
+	"failureSymptom": pseudoFailureSymptomOfType5
+};
+var pseudoFailureDetailOfOneOrgByType 	= {
+	'故障类别1'	: pseudoFailureDetailOfOneOrgAndOneType1_4,
+    '故障类别2'	: pseudoFailureDetailOfOneOrgAndOneType1_4,
+    '故障类别3'	: pseudoFailureDetailOfOneOrgAndOneType1_4, 
+    '故障类别4'	: pseudoFailureDetailOfOneOrgAndOneType1_4,
+    '故障类别5'	: pseudoFailureDetailOfOneOrgAndOneType5,
+};
+
 
 var pseudoFailureDetailOfOneType = {
 	"failureOrg"	: pseudoFailureOrg,
@@ -3529,15 +3599,45 @@ var pseudoFailureDetailOfOneType = {
 };
 
 var pseudoFailureDetailOfOneReason = {
-	"failureOrg"	: pseudoFailureOrg,
 	"failureType"	: pseudoFailureType,
-	"failureSymptom": pseudoFailureSymptom
+	"failureSymptom": pseudoFailureSymptom,
+	"failureOrg"	: pseudoFailureOrg,
+};
+var pseudoFailureDetailOfOneReasonAndOneType1_4 = {
+	"failureSymptom": pseudoFailureSymptomOfType1_4,
+	"failureOrg"	: pseudoFailureOrgOfType1_4,	
+};
+var pseudoFailureDetailOfOneReasonAndOneType5 = {
+	"failureSymptom": pseudoFailureSymptomOfType5,
+	"failureOrg"	: pseudoFailureOrgOfType5,	
+};
+var pseudoFailureDetailOfOneReasonByType 	= {
+	'故障类别1'	: pseudoFailureDetailOfOneReasonAndOneType1_4,
+    '故障类别2'	: pseudoFailureDetailOfOneReasonAndOneType1_4,
+    '故障类别3'	: pseudoFailureDetailOfOneReasonAndOneType1_4, 
+    '故障类别4'	: pseudoFailureDetailOfOneReasonAndOneType1_4,
+    '故障类别5'	: pseudoFailureDetailOfOneReasonAndOneType5,
 };
 
-var pseudoFailureDetailOfOneSymptom = {
-	"failureOrg"	: pseudoFailureOrg,
+var pseudoFailureDetailOfOneSymptom = {	
 	"failureType"	: pseudoFailureType,
-	"failureReason"	: pseudoFailureReason
+	"failureReason"	: pseudoFailureReason,
+	"failureOrg"	: pseudoFailureOrg,
+};
+var pseudoFailureDetailOfOneSymptomAndOneType1_4 = {
+	"failureReason"	: pseudoFailureReasonOfType1_4,
+	"failureOrg"	: pseudoFailureOrgOfType1_4,	
+};
+var pseudoFailureDetailOfOneSymptomAndOneType5 = {
+	"failureReason"	: pseudoFailureReasonOfType5,
+	"failureOrg"	: pseudoFailureOrgOfType5,	
+};
+var pseudoFailureDetailOfOneSymptomByType 	= {
+	'故障类别1'	: pseudoFailureDetailOfOneSymptomAndOneType1_4,
+    '故障类别2'	: pseudoFailureDetailOfOneSymptomAndOneType1_4,
+    '故障类别3'	: pseudoFailureDetailOfOneSymptomAndOneType1_4, 
+    '故障类别4'	: pseudoFailureDetailOfOneSymptomAndOneType1_4,
+    '故障类别5'	: pseudoFailureDetailOfOneSymptomAndOneType5,
 };
 
 var pseudoFailureOrgDetails	= {
@@ -3546,31 +3646,57 @@ var pseudoFailureOrgDetails	= {
 	"3"		: pseudoFailureDetailOfOneOrg,
 	"4"		: pseudoFailureDetailOfOneOrg
 };
+var pseudoFailureOrgDetailsByType	= {
+	"1"		: pseudoFailureDetailOfOneOrgByType,
+	"2"		: pseudoFailureDetailOfOneOrgByType,
+	"3"		: pseudoFailureDetailOfOneOrgByType,
+	"4"		: pseudoFailureDetailOfOneOrgByType
+};
 
 var pseudoFailureTypeDetails	= {
 	"1"		: pseudoFailureDetailOfOneType,
 	"2"		: pseudoFailureDetailOfOneType,
 	"3"		: pseudoFailureDetailOfOneType,
-	"4"		: pseudoFailureDetailOfOneType
+	"4"		: pseudoFailureDetailOfOneType,
 };
 
 var pseudoFailureReasonDetails	= {
 	"1"		: pseudoFailureDetailOfOneReason,
 	"2"		: pseudoFailureDetailOfOneReason,
 	"3"		: pseudoFailureDetailOfOneReason,
-	"4"		: pseudoFailureDetailOfOneReason
+	"4"		: pseudoFailureDetailOfOneReason,
+};
+var pseudoFailureReasonDetailsByType	= {
+	"1"		: pseudoFailureDetailOfOneReasonByType,
+	"2"		: pseudoFailureDetailOfOneReasonByType,
+	"3"		: pseudoFailureDetailOfOneReasonByType,
+	"4"		: pseudoFailureDetailOfOneReasonByType,
 };
 
 var pseudoFailureSymptomDetails	= {
 	"1"		: pseudoFailureDetailOfOneSymptom,
 	"2"		: pseudoFailureDetailOfOneSymptom,
 	"3"		: pseudoFailureDetailOfOneSymptom,
-	"4"		: pseudoFailureDetailOfOneSymptom
+	"4"		: pseudoFailureDetailOfOneSymptom,
+};
+var pseudoFailureSymptomDetailsByType	= {
+	"1"		: pseudoFailureDetailOfOneSymptomByType,
+	"2"		: pseudoFailureDetailOfOneSymptomByType,
+	"3"		: pseudoFailureDetailOfOneSymptomByType,
+	"4"		: pseudoFailureDetailOfOneSymptomByType,
 };
 
 var pseudoFailureDetails 		= {
 	"failureOrg"	: pseudoFailureOrgDetails,
 	"failureType"	: pseudoFailureTypeDetails,
 	"failureReason"	: pseudoFailureReasonDetails,
-	"failureSymptom": pseudoFailureSymptomDetails
+	"failureSymptom": pseudoFailureSymptomDetails,
 };
+var pseudoFailureDetailsByType 		= {
+	"failureOrg"	: pseudoFailureOrgDetailsByType,
+	"failureReason"	: pseudoFailureReasonDetailsByType,
+	"failureSymptom": pseudoFailureSymptomDetailsByType,
+};
+
+
+
