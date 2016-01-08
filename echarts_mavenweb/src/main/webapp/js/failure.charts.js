@@ -14,7 +14,11 @@ function PieChart( divId ) {
 
 	var _myChart;
 	var _type 		= 'pie';
-	var _onRecaculate;
+
+	// 事件
+	var _onDraggedCallback;
+	var _onSelectedCallback;
+	var _onUnselectedCallback;
 
 	/***************************************************************/
 	/************************* title  ******************************/
@@ -101,6 +105,9 @@ function PieChart( divId ) {
 
 	function buildChart( divId ) {
 		_myChart = echarts.init(document.getElementById( divId ));
+		_myChart.on( echarts.config.EVENT.DATA_CHANGED, onPieChartDragged );
+		_myChart.on( echarts.config.EVENT.PIE_SELECTED, onPieChartSelected );
+		//_myChart.on( echarts.config.EVENT.CLICK, onPieChartClick );
 	}
 	this.draw 		= function() {		
 	    // Îªecharts¶ÔÏó¼ÓÔØÊý¾Ý 
@@ -108,16 +115,9 @@ function PieChart( divId ) {
 	};
 
 	this.refresh	= function() {
-		repaint(); 	
+		repaint(); 
+		_myChart.refresh();	
 	};
-
-	this.onRecaculate 	= function( recaculateHandler ) {
-		_myChart.on( echarts.config.EVENT.DATA_CHANGED, recaculateHandler );
-	};
-
-	function reCaculate( event ) {
-
-	}
 
 	function repaint() {
 		/*var myChart = echarts.init(document.getElementById( _divId ));
@@ -125,6 +125,63 @@ function PieChart( divId ) {
 	
 		myChart.setOption( buildOption() );*/
 		_myChart.setOption( _chartOption );
+
+	}
+
+	/***************************************************************/
+	/************************* events  *****************************/
+	/***************************************************************/
+	this.onDragged 	= function( callback ) {
+		_onDraggedCallback = callback;
+	};
+
+	function onPieChartDragged( eventParameters ) {
+		var draggedData = eventParameters.data;
+		var draggedId 	= draggedData.id;
+		var name	= eventParameters.name;
+		_onDraggedCallback( draggedId );
+	}
+
+	this.onSelected 	= function( callback ) {
+		_onSelectedCallback 	= callback;
+	};
+	this.onUnselected 	= function( callback ) {
+		_onUnselectedCallback 	= callback;
+	};
+
+	this.onClick		= function( clickHandler ) {
+		_myChart.on( echarts.config.EVENT.DATA_VIEW_CHANGED, clickHandler );
+	};
+
+	function onPieChartClick( eventParameters ) {
+		var dataIndex 	= eventParameters.dataIndex;
+		var serieIndex  = eventParameters.seriesIndex;
+		var serie 		= _myChart.getSeries();//[ serieIndex ];
+		var selected  	= _data[dataIndex].selected;
+	}
+	function onPieChartSelected( eventParameters ) {
+		var itemSelectedArray 	= eventParameters.selected[0];		
+		var selectedIndex 		= selectedIndexOf( itemSelectedArray );
+		if ( selectedIndex < 0 ) {
+			//alert("unSelected!");
+			_onUnselectedCallback();
+		} else {
+			//alert("Selected!");
+			var name 	= _data[ selectedIndex ].name;
+			var id 		= _data[ selectedIndex ].id;
+			_onSelectedCallback( id );
+		}
+	}
+	function selectedIndexOf( itemSelectedArray ) {
+		var selectedIndex = -1;		
+		for ( var index = 0; index < itemSelectedArray.length; index++ ) {
+			if ( itemSelectedArray[ index ] == true ) {
+				selectedIndex = index;
+				break;
+			}
+		}
+
+		return selectedIndex;
 	}
 
 	/***************************************************************/
@@ -343,18 +400,19 @@ function BarChart( divId ) {
 		_myChart = echarts.init(document.getElementById( divId ));
 	}
 	this.draw = function() {		
-	    // Îªecharts¶ÔÏó¼ÓÔØÊý¾Ý 
+	    // Îªecharts¶ÔÏó¼ÓÔØÊý¾Ý 	    
 	    repaint(); 
 	};	
 	
 	this.refresh 	= function() {
+		_myChart.clear();
 		repaint();
 	}
 
 	function repaint() {
 		/*var myChart = echarts.init( document.getElementById( _divId ) );
 		myChart.setOption( buildOption() );*/
-		_myChart.setOption( _chartOption );
+		_myChart.setOption( _chartOption, true );
 	}
 
 
@@ -380,6 +438,7 @@ function BarChart( divId ) {
 
 	this.setTitle = function(title) {
 		_title = title;
+		buildTitle( title );
 	};
 	this.getTitle = function() {
 		return _title;

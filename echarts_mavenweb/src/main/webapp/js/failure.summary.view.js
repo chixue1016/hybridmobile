@@ -34,8 +34,7 @@ function FailureSummaryView() {
 	}
 
 	function pullDownAction () {			
-		loadOnePage();
-		_tableScroller.refresh();		// Remember to refresh when contents are loaded (ie: on ajax completion)
+		loadSummary();
 	}	
 
 	function pullUpAction () {
@@ -196,19 +195,7 @@ function FailureSummaryView() {
 				queryButtonStateChange( _invalidDate );
 			}
 
-		};
-
-		$("#startMonth").on( 'input', dateValidator );
-		$("#endMonth").on( 'input', dateValidator );		
-
-		$("#dateEditor").on("hidden.bs.collapse", function() {
-			showStaticDate();
-			
-			setTimeout(resizeTableScrollHeight, 150);		
-			_tableScroller.refresh();
-			
-			// alert("开始日期："++";结束日期："+$("#endMonth").val());
-		});
+		}
 
 		function showStaticDate() {
 			$("#dateShow").collapse('toggle');			
@@ -237,6 +224,20 @@ function FailureSummaryView() {
 			}			
 		}
 
+
+		$("#startMonth").on( 'input', dateValidator );
+		$("#endMonth").on( 'input', dateValidator );		
+
+		$("#dateEditor").on("hidden.bs.collapse", function() {
+			showStaticDate();
+			
+			setTimeout(resizeTableScrollHeight, 150);		
+			_tableScroller.refresh();
+			
+			// alert("开始日期："++";结束日期："+$("#endMonth").val());
+		});
+
+		
 		$("#dateShow").on("hidden.bs.collapse", function() {
 			$("#dateEditor").collapse('toggle');
 			setTimeout(resizeTableScrollHeight, 250);
@@ -245,9 +246,12 @@ function FailureSummaryView() {
 
 		$("#summaryBack").click( onBack );
 
-		$(document).ready( function() {                
-            onReloadHtml();  
-        });
+		// 二维码
+		$("#qrcode").click( onQRCodeScaned );
+
+		// 加载页面               
+        onReloadHtml();  
+     
 
 		/* //initiating jQuery
         jQuery(function($) {
@@ -258,6 +262,24 @@ function FailureSummaryView() {
         });*/
 	
 	};
+
+	function successfullyScanned( data ) {
+		//alert(JSON.stringify(data));
+		/*var contentString 	= data.text;
+		var contentJson 	= JSON.parse( contentString );*/
+		var contentJson = {"id":"1","haltedHours":"4","haltedTimes":"1","name":"aa新版本"};
+		alert(contentJson.id);
+		// 跳转到详情页面
+    	var failureMessage = 
+    		new FailureMessage( _summaryType, _startMonth, _endMonth, contentJson );
+    	failureController.frontToDetail( failureMessage );
+		//alert("successed scan!");
+	}
+	function onQRCodeScaned() {
+		//var codeScanner = new BarcodeScanner();
+		window.plugins.barcodeScanner.scan(successfullyScanned);
+		//successfullyScanned("");
+	}
 
 	var loadSummary 	= function() {
 		_startMonth 	= $("#startMonth").val();
@@ -289,6 +311,7 @@ function FailureSummaryView() {
  	    _table.clear();
  	    _currentDataIndex = 0;
  	    loadOnePage();
+ 	    _tableScroller.refresh();
  	};
 
 	var loadDetail 	= function( summaryType, id ) {

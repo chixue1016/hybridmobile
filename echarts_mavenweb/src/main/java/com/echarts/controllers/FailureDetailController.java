@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.echarts.utils.MaConfig;
 import com.echarts.utils.MaRequestBuilder;
 import com.echarts.utils.ServiceMapperConfig;
+import org.apache.commons.lang.StringUtils;
 
 @Controller
 public class FailureDetailController {
@@ -30,15 +31,20 @@ public class FailureDetailController {
 			@RequestParam String startMonth,
 			@RequestParam String endMonth,
 			@RequestParam String summaryType,
-			@RequestParam String id) throws Exception {	
+			@RequestParam String id,
+			@RequestParam(value="detailId", required=false) String detailId) throws Exception {	
 
+		String mappedSummaryDataIdName = mappedSummaryDataIdNameFor(summaryType);
 		// ²ÎÊý
 		Map<String, Object> parameters = new HashMap<String, Object>();
 		parameters.put("userid",  userId);
 		parameters.put("groupid", groupId);
-		parameters.put("pk_org",  id);
+		parameters.put(mappedSummaryDataIdName,  id);
 		parameters.put("bmonth",  beginTimeOf(startMonth)); 
 		parameters.put("emonth",  lastTimeOf(endMonth));
+		if (StringUtils.isNotEmpty(detailId)) {
+			parameters.put("pk_failure_type", detailId);
+		}
 		
 		String action = ServiceMapperConfig.mappedDetailService(summaryType);
 		MaRequestBuilder builder = new MaRequestBuilder();
@@ -84,6 +90,28 @@ public class FailureDetailController {
 		return summaries;*/
 	}
 	
+	private String mappedSummaryDataIdNameFor(String summaryType) {
+		// TODO Auto-generated method stub
+		String result = "";
+		switch(summaryType) {
+		case "failureOrg" :
+			result = "pk_org";
+			break;
+		case "failureType" :
+			result = "pk_failure_type";
+			break;
+		case "failureReason" :
+			result = "pk_failure_symptom";
+			break;
+		case "failureSymptom" :
+			result = "pk_failure_symptom";
+			break;
+		default:
+			result = "";
+		}
+		return result;
+	}
+
 	private String beginTimeOf(String month) {
 		return month + "-" + BEGIN_TIME_OF_ONE_MONTH;
 	}

@@ -43,7 +43,7 @@ body {
 	bottom 	: 0px; 
 	left 	: -9999px;
 	width 	: 100%;
-	background : #666666;
+	background : white;
 
 /*	overflow 	: auto;*/
 }
@@ -67,7 +67,8 @@ body {
 	background 	: #fff;
 	height 		: 60px;
 	line-height : 60px;
-	padding 	: 5px 10px;
+	padding-top : 5px;
+	padding-bottom : 5px;
 	/*border-bottom : 1px solid #ccc;*/
 	font-weight	: bold;
 	font-size	: 30px;

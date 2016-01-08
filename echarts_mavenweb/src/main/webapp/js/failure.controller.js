@@ -1,8 +1,8 @@
-$(document).bind( "mobileinit", function() {
+/*$(document).bind( "mobileinit", function() {
 	$.support.cors = true;
 	$.mobile.allowCrossDomainPages = true;
 	$.mobile.pushStateEnabled = false; 
-});
+});*/
 
 function FailureController() {
 	//var failureSummaryView 	= new FailureSummaryView();
@@ -49,13 +49,23 @@ function FailureController() {
 	};
 
 	// 详情页面中类别拖拽后，删除相关的详情数据
-	this.onRemoveDetail = function( summaryType, id, typeName ) {
-		failureModel.loadRemovedDetail( summaryType, id, typeName );
+	this.onRemoveDetail = function( summaryType, summaryDataId, detailDataId, startMonth, endMonth ) {
+		failureModel.loadRemovedDetail( summaryType, summaryDataId, detailDataId, startMonth, endMonth );
 	};
 	this.removeDetail 	= function( datas ) {
 		failureDetailView.removeDetail( datas );
 	};
-	
 
+	// 选中
+	this.onLocateDetail = function( summaryType, summaryDataId, detailDataId, startMonth, endMonth ) {
+		failureModel.loadLocatedDetail( summaryType, summaryDataId, detailDataId, startMonth, endMonth );
+	};
+	this.locateDetail 	= function( datas ) {
+		failureDetailView.locateDetail( datas );
+	};
+	// 取消选择，则恢复所有数据
+	this.onRestoreDetail = function( summaryType ) {
+		failureDetailView.restoreDetail( summaryType );
+	};
 }
 

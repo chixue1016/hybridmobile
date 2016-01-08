@@ -6,12 +6,20 @@ function FailureChartConfig() {
 		return _chartCount;
 	};
 
-	var _onPieChartRecaculateHandler;
-	this.onPieChartRecaculate 	= function( handler ) {
-		_onPieChartRecaculateHandler = handler;
+	/***************************************************************/
+	/*********************** Events Handler ************************/
+	/***************************************************************/
+	// 饼图拖拽事件
+	var _onPieChartDraggedHandler;
+	this.onPieChartDragged 	= function( handler ) {
+		_onPieChartDraggedHandler = handler;
 	};
-	this.removeDataAndRefresh	= function( allRemovedDataArray ) {
+	this.removeDataAndRefresh	= function( allRemovedDataArray ) {		
 		for ( var type in allRemovedDataArray ) {
+			// 故障类别除外
+			if (type == "failureType") {
+				continue;
+			}
 			var chart 	= _charts[ type ];
 			var oldDataArray = chart.getData();
 			var removedDataArray = allRemovedDataArray[ type ];
@@ -68,6 +76,47 @@ function FailureChartConfig() {
 
 		return dataMap;
 	}
+
+	// 饼图选中事件
+	var _onPieChartSelectedHandler;
+	this.onPieChartSelected 	= function( handler ) {
+		_onPieChartSelectedHandler 	= handler;
+	};
+	this.locateDataAndRefresh	= function( locatedDataArray ) {		
+		for ( var type in locatedDataArray ) {
+			// 故障类别除外
+			if (type == "failureType") {
+				continue;
+			}
+			var chart 	= _charts[ type ];			
+			var locatedData = locatedDataArray[ type ];
+			
+			chart.setData( locatedData );
+			chart.refresh();
+		}
+	};
+	// 饼图取消选中事件
+	var _onPieChartUnselectedHandler;
+	this.onPieChartUnselected 	= function( handler ) {
+		_onPieChartUnselectedHandler 	= handler;
+	};
+	this.restoreDataAndRefresh	= function( summaryType ) {	
+		var chartCount 	= getChartCount();
+
+		for (var chartIndex = 0; chartIndex < chartCount; chartIndex++) {
+			var dataType 	= dataTypeFor( summaryType, chartIndex );
+			// 故障类别除外
+			if (dataType == "failureType") {
+				continue;
+			}			
+			
+			var chart 	= _charts[ dataType ];
+		   	var restoredData 		= _datas[ dataType ];			
+			
+			chart.setData( restoredData );
+			chart.refresh(); 
+		}	
+	};
 
 	var _chartDivIds 	=  [ "chart1", "chart2", "chart3" ];
 	function divIdFor( chartIndex ) {
@@ -127,7 +176,9 @@ function FailureChartConfig() {
 		var chart;		
 		if ( chartType == "pie" ) {
 			chart = new PieChart( chartDiv );
-			chart.onRecaculate( _onPieChartRecaculateHandler );    			
+			chart.onDragged( _onPieChartDraggedHandler );
+			chart.onSelected( _onPieChartSelectedHandler ); 
+			chart.onUnselected( _onPieChartUnselectedHandler );    			
 		} else if ( chartType == "barHorizen" ) {
     		chart = new BarChart( chartDiv );
     		chart.setVertical( false );        		
@@ -135,7 +186,7 @@ function FailureChartConfig() {
     		chart = new BarChart( chartDiv );
     		chart.setVertical( true );         		
 		} else if ( chartType == "circle" ) {
-			chart = new CircleChart( );    			   			
+			chart = new CircleChart( chartDiv );    			   			
 		}
 
 		return chart;
@@ -156,7 +207,9 @@ function FailureChartConfig() {
 		return chart;
 	};
 
+	var _datas;
 	this.draw	= function( summaryType, datas ) {
+		_datas 	= datas;
 		var chartCount 	= getChartCount();
 
 		for (var chartIndex = 0; chartIndex < chartCount; chartIndex++) {

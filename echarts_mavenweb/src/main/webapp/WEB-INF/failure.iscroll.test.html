@@ -15,12 +15,6 @@
 	<link rel="stylesheet" href="./css/swiper.css">
 	<link rel="stylesheet" href="./css/failure.css">	
 
-	<!-- 
-	
-	-->
-	<script src="./js/cordova.js"></script>
-	<script src="./js/barcodescanner.js"></script>
-
 	<script src="./js/iscroll/iscroll-4.2.js"></script>
 	<script src="./js/failure.iscroll.test.js"></script>
 	<script src="./js/swiper.js"></script>
@@ -42,8 +36,6 @@
 	<script src="./js/failure.charts.js"></script> 
 	<script src="./js/circle.chart.js"></script>
 	<script src="./js/failure.charts.config.js"></script> 
-
-	<script src="http://localhost:8090/target/target-script-min.js#anonymous"></script>
 	<script type="text/javascript">
 
 	</script>
@@ -82,7 +74,7 @@
 		                                <span class="glyphicon glyphicon-info-sign"></span>
 		                            </div>
 		                            <div class="col-xs-10">
-		                                <input type="text" id="host" value="10.1.73.48" class="login-item-value" placeholder="IP"/>
+		                                <input type="text" id="host" value="10.1.73.225" class="login-item-value" placeholder="IP"/>
 		                            </div>
 		                        </div>
 
@@ -116,14 +108,12 @@
 										<div class="head-inner">						
 											<div class="head-items">
 												<div class="row" >							
-													<div class="col-xs-2">				
+													<div class="col-xs-2">							
 														<a id="summaryBack" class="head-back glyphicon glyphicon-menu-left"></a>
 													</div>
-
 													<div class="col-xs-8 head-captial">故障分析</div>
-
 													<div class="col-xs-2">
-														<a id="qrcode" class="head-qrcode glyphicon glyphicon-qrcode"></a>
+														<span class="glyphicon glyphicon-barcode"></span>
 													</div>
 												</div>							
 											</div>		            
@@ -166,7 +156,7 @@
                                                 </div>
                                                 <div class="col-xs-2 date-show-label">
                                                     <a data-toggle="collapse" href="#dateShow">
-                                                        <span class="glyphicon glyphicon-resize-full date-folder-label">
+                                                        <span class="glyphicon glyphicon-plus-sign date-folder-label">
                                                         </span>
                                                     </a> 
                                                 </div>
@@ -196,12 +186,13 @@
                                         			</div>
                                         		</div>
 
-                                        		<div class="col-xs-2">	
-                                					<a data-toggle="collapse" href="#dateEditor">
-                                                		<span class="date-unfolder-label glyphicon glyphicon-resize-small">
-                                                		</span>
-                                            		</a>
-                                       			
+                                        		<div class="col-xs-2 text-align-center">
+                                        			<div class="collapse-border collapse-tag">
+                                        					<a data-toggle="collapse" href="#dateEditor">
+                                                        		<span class="date-unfolder-label glyphicon glyphicon-resize-small">
+                                                        		</span>
+                                                    		</a>
+                                        			</div>
                                         		</div>
                                             	
                                             </div>
@@ -235,12 +226,12 @@
 				   		<div id="scrollPart">
 				   			<div id="wrapper">
 								<div id="scroller">
-									<div class="container">	        	
-										<div id="pullDown">
-											<span class="pullDownIcon"></span><span class="pullDownLabel">Pull down to refresh...</span>
-										</div>
+									<div id="pullDown">
+										<span class="pullDownIcon"></span><span class="pullDownLabel">Pull down to refresh...</span>
+									</div>
 
-										<div class="table-info">
+									<div class="table-info">
+								        <div class="container">	        	
 											<table id="failureSummaryTable" class="table table-default table-hover table-striped">
 												<colgroup>
 													<col class="table-info-column-1"></col>
@@ -249,14 +240,13 @@
 												</colgroup>
 												<thead class="table-info-head" />
 												<tbody class="table-info-body" />
-											</table>					        			
-										</div>
-										
-										<div id="pullUp">
-											<span class="pullUpIcon"></span><span class="pullUpLabel">Pull up to refresh...</span>
-										</div>	
+											</table>
+										</div>			
 									</div>
 									
+									<div id="pullUp">
+										<span class="pullUpIcon"></span><span class="pullUpLabel">Pull up to refresh...</span>
+									</div>
 								</div>
 							</div>	
 				   		</div>

@@ -1,7 +1,7 @@
-var pseudoLogin = true;
+var pseudoLogin 	= false;
 
 // 本地伪数据测试
-var usePseudoLocal 	= true;
+var usePseudoLocal 	= false;
 // 远程伪数据测试
 var usePseudoRemote = false;		
 
@@ -125,11 +125,46 @@ function FailureModel() {
 		}
 	};
 
-	this.loadRemovedDetail	= function( summaryType, id, typeName ) {
+	// Successed in loading failure detail data.
+	function successfullyLoadRemovedDetail( datas ) {
+		var failureDetails = datas;				
+		//Cache.save("failureDetails", JSON.stringify(failureDetails));		
+		//alert(JSON.stringify(failureDetails));
+
+		failureController.removeDetail( failureDetails );
+	};
+	this.loadRemovedDetail	= function( summaryType, summaryDataId, detailId, startMonth, endMonth ) {
+		loadSpecificDetail( summaryType, summaryDataId, detailId, startMonth, endMonth, successfullyLoadRemovedDetail);
+	};
+	// Successed in loading failure detail data.
+	function successfullyLoadLocatedDetail( datas ) {
+		var failureDetails = datas;				
+		//Cache.save("failureDetails", JSON.stringify(failureDetails));		
+		//alert(JSON.stringify(failureDetails));
+
+		failureController.locateDetail( failureDetails );
+	};
+	this.loadLocatedDetail	= function( summaryType, summaryDataId, detailId, startMonth, endMonth ) {
+		loadSpecificDetail( summaryType, summaryDataId, detailId, startMonth, endMonth, successfullyLoadLocatedDetail);
+	};
+
+	// 加载 [summaryId, detailId] 指定的 详情数据
+	function loadSpecificDetail( summaryType, summaryDataId, detailId, startMonth, endMonth, callback ) {
 		if (usePseudoLocal) {
 			// Just for test : pseduo load Detail data.
-			var removedDetails = pseudoDetailDatasByTypeFor( summaryType, id, typeName); 
+			var removedDetails = pseudoDetailDatasByTypeFor( summaryType, summaryDataId, draggedDataId); 
 			failureController.removeDetail( removedDetails );
+		} else {
+			var jsonParameters = {
+				"user" 		: _user, 		"password" 		: _password, 
+				"groupId" 	: _groupId, 	"userId" 		: _userId,
+				"id"		: summaryDataId,"summaryType"	: summaryType,
+				"detailId"	: detailId,
+				"startMonth": startMonth,	"endMonth"		: endMonth,
+				"token"		: _token
+			};
+
+			asyncGet( _serverUrl, "LOAD_DETAIL", jsonParameters, callback);
 		}
 	}
 }

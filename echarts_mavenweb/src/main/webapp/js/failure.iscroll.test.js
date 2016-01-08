@@ -10,7 +10,7 @@ function loaded() {
 	failureDetailView	= new FailureDetailView();
 
 	failureController 	= new FailureController();
-	failureController.frontToSummary();
+	//failureController.frontToSummary();
 }
 
 /*document.addEventListener('touchmove', 

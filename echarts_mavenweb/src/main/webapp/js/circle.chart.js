@@ -8,7 +8,7 @@ var circleChartRowLayout =
 			"<div class='row'>"												+						
 				"<div class='col-xs-11'>"									+
 					"<div style='%circle1%'>%value1%</div>"					+
-					"<div class='font35px marginTop8px'>%name1%</div>"		+
+					"<div class='circle-chart-name'>%name1%</div>"		+
 				"</div>"													+
 				"<div class='col-xs-1'>"									+
 				"</div>"													+
@@ -19,7 +19,7 @@ var circleChartRowLayout =
 			"<div class='row'>"												+
 				"<div class='col-xs-12'>"									+
 					"<div style='%circle2% divAlignCenter'>%value2%</div>"	+
-					"<div class='font35px marginTop8px'>%name2%</div>"		+
+					"<div class='circle-chart-name'>%name2%</div>"		+
 				"</div>"													+
 			"</div>"														+
 		"</div>"															+
@@ -30,7 +30,7 @@ var circleChartRowLayout =
 				"</div>"													+
 				"<div class='col-xs-11'>"									+
 					"<div style='%circle3%'>%value3%</div>"					+
-					"<div class='font35px marginTop8px'>%name3%</div>"		+
+					"<div class='circle-chart-name'>%name3%</div>"		+
 				"</div>"													+
 			"</div>"														+					
 		"</div>"															+
@@ -100,6 +100,8 @@ function CircleChart( divId ) {
 		   	"border-radius	: 50%;"													+
 		    "background		: " + color + ";"										+
 		    "line-height	: " + diameter + "px;"									+
+		    "font-size		: 35px;"												+
+		    "font-weight	: bold;"												+
 		    "text-align		: center;";
 
 	    return circleStyle;
@@ -173,8 +175,8 @@ function CircleChart( divId ) {
 
     function buildTitleHtml( title ) {
     	var titleHtml =   
-		 	"<div class='row marginBottom40px'>"							+
-	    		"<div class='col-xs-12 font35px'>"	+ title + "</div>" 	+
+		 	"<div class='row circle-chart-wrapper'>"							+
+	    		"<div class='col-xs-12 circle-chart-title'>"	+ title + "</div>" 	+
 	    	"</div>";
 
 	    _chartHtml.titleHtml = titleHtml;

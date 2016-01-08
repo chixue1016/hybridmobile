@@ -13,14 +13,16 @@ function FailureDetailView() {
 	};	
 
 	this.init	 	= function() {
-		var message 	= FailureMessage.receive(); 
+		var message 	= FailureMessage.receive();		
 		_summaryType 	= message.getSummaryType();
 		_startMonth		= message.getStartMonth();
 		_endMonth		= message.getEndMonth();
 		_selectedSummaryData = message.getSelectedSummaryData();
 		
 		_chartConfig 	= FailureChartConfig.getConfig();
-		_chartConfig.onPieChartRecaculate( pieChartRecaculateHandler );
+		// 事件绑定
+		bindEvents();		
+
 		var pageTitle  	= _chartConfig.getPageTitle( _summaryType );
 		$("#title").text( pageTitle );
 
@@ -32,16 +34,21 @@ function FailureDetailView() {
 		var name = _selectedSummaryData.name;
 		$("#name").text( name );
 
-		// 事件绑定
-		$(document).ready(function() {
-			failureDetailView.onReloadHtml();
-			$("#detailBack").click( onBack );                   
-		});
+		failureDetailView.onReloadHtml();		
 
 	};
 
+	function bindEvents() {
+		// 饼图拖拽，选中以及取消选择事件
+		_chartConfig.onPieChartDragged( pieChartDraggedHandler );
+		_chartConfig.onPieChartSelected( pieChartSelectedHandler );
+		_chartConfig.onPieChartUnselected( pieChartUnselectedHandler );
 
-	var loadDetail	= function( summaryType, id, startMonth, endMonth ) {
+		$("#detailBack").click( onBack );
+	}
+
+
+	function loadDetail( summaryType, id, startMonth, endMonth ) {
 		failureController.onLoadDetail( summaryType, id, startMonth, endMonth );
 	}
 
@@ -54,12 +61,25 @@ function FailureDetailView() {
 	}
 
 	// 故障类型饼图拖拽重计算 事件: 与该类型相关的数据需要删除，重绘
-	function pieChartRecaculateHandler( event ) {
-		var typeName = event.name;
-		failureController.onRemoveDetail( _summaryType, _selectedSummaryData.id, typeName ); 
+	function pieChartDraggedHandler( draggedId ) {		
+		failureController.onRemoveDetail( _summaryType, _selectedSummaryData.id, draggedId, _startMonth, _endMonth ); 
 	}
 	this.removeDetail 	= function( datas ) {
 		_chartConfig.removeDataAndRefresh( datas );
+	};
+	// 饼图选中事件
+	function pieChartSelectedHandler( detailId ) {
+		failureController.onLocateDetail( _summaryType, _selectedSummaryData.id, detailId, _startMonth, _endMonth );
+	}
+	this.locateDetail	= function( datas ) {
+		_chartConfig.locateDataAndRefresh( datas );
+	};
+	// 饼图取消选中事件
+	function pieChartUnselectedHandler( ) {
+		failureController.onRestoreDetail( _summaryType );
+	}
+	this.restoreDetail	= function( summaryType ) {
+		_chartConfig.restoreDataAndRefresh( summaryType );
 	};
 }
 

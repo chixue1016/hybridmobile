@@ -16,12 +16,22 @@
 	        failureController.login( username, password, host, port );
 	    }
 
+	    function setPosition(){
+	    	var height = $(window).height();
+		    var topOffset = height/4;
+		    var loginFormStyle = "height:"+height+"px";
+		    var loginWrapperStyle = "position:relative;top:"+topOffset+"px";
+		    $(".login").attr("style", loginFormStyle);
+		    $(".login-wrapper").attr("style",loginWrapperStyle);
+	    }
+
 	    function eventBind() {
 	    	$("#login-button").click( login );
 	    }
 
 	    function init() {
 	    	eventBind();
+	    	setPosition();
 	    }
 
 	    // Constructor code.
