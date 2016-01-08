@@ -8,7 +8,7 @@ function FailureSummaryView() {
 	var _table;
 
 	// 表格每页显示的数据个数
-	var _pageSize	= 3;
+	var _pageSize	= 1;
 	// 记录当前界面显示的数据的索引
 	var _currentDataIndex = 0;
 
