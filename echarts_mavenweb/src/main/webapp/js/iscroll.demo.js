@@ -38,7 +38,7 @@ function loaded() {
 	pullDownOffset = pullDownEl.offsetHeight;
 	pullUpEl = document.getElementById('pullUp');	
 	pullUpOffset = pullUpEl.offsetHeight;
-	
+
 	mySwiper 	= new Swiper( '.swiper-container', {
 			noSwiping 	: true, // 如果slide上增加了类swiper-no-swiping，则无法滑动。		
 		    autoHeight	: true,

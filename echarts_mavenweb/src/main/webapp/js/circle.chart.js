@@ -145,7 +145,7 @@ function CircleChart( divId ) {
 				rowDatas.push( data[ index ] );
 				rowColors.push( calColor( index ));
 			}
-			alert( rowColors );
+			//alert( rowColors );
 			datasHtml += buildRowDatasHtml( rowDatas, rowColors );
 		}
 		_chartHtml.datasHtml = datasHtml;

@@ -105,7 +105,7 @@ function PieChart( divId ) {
 
 	function buildChart( divId ) {
 		_myChart = echarts.init(document.getElementById( divId ));
-		_myChart.on( echarts.config.EVENT.DATA_CHANGED, onPieChartDragged );
+		//_myChart.on( echarts.config.EVENT.DATA_CHANGED, onPieChartDragged );
 		_myChart.on( echarts.config.EVENT.PIE_SELECTED, onPieChartSelected );
 		//_myChart.on( echarts.config.EVENT.CLICK, onPieChartClick );
 	}

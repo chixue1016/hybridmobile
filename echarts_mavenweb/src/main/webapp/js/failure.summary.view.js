@@ -277,7 +277,7 @@ function FailureSummaryView() {
 	}
 	function onQRCodeScaned() {
 		//var codeScanner = new BarcodeScanner();
-		window.plugins.barcodeScanner.scan(successfullyScanned);
+		//window.plugins.barcodeScanner.scan(successfullyScanned);
 		//successfullyScanned("");
 	}
 

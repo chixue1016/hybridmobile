@@ -37,6 +37,14 @@ body {
   	 	font-size : 10px;
   	}
 }
+@media (min-width: 1500px) {
+  	body{
+  	 	font-size : 20px;
+  	}
+  	.container {
+  		width : 1480px;
+  	}
+}
 
 
 .separator-wrapper {
@@ -200,6 +208,9 @@ body {
 	border-color: #444444;
 }
 .date-unfolder-label {
+	text-align 	: right;
+}
+.date-unfolder-label>a {
 	color 		: red;
 }
 
